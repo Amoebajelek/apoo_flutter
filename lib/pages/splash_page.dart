@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Text(
               'APOTEK\nMARKETPLACE',
-              style: mainTitleTextStyle,
+              style: bigTitleTextStyle,
               textAlign: TextAlign.center,
             ),
           ],

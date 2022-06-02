@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     'Username',
-                    style: formTextStyle,
+                    style: descTextStyle,
                   ),
                   TextFormField(
                     controller: emailController,
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Your Username',
-                      hintStyle: descFormTextStyle,
+                      hintStyle: descTextStyle,
                     ),
                     style: TextStyle(
                       color:
@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     'Password',
-                    style: formTextStyle,
+                    style: descTextStyle,
                   ),
                   TextFormField(
                     controller: emailController,
@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Your Password',
-                      hintStyle: descFormTextStyle,
+                      hintStyle: descTextStyle,
                     ),
                     style: TextStyle(
                       color:
@@ -179,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextSpan(
                             text: ' Register',
                             style: helloTextStyle.copyWith(
-                              fontSize: 12,
+                              fontSize: 14,
                             ),
                           )
                         ]),

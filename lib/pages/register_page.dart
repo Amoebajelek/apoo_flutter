@@ -61,7 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     'Apotek\s Name',
-                    style: formTextStyle,
+                    style: descTextStyle,
                   ),
                   TextFormField(
                     controller: emailController,
@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Apotek\s Name',
-                      hintStyle: descFormTextStyle,
+                      hintStyle: descTextStyle,
                     ),
                     style: TextStyle(
                       color:
@@ -101,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     'Apotek\s Email Address',
-                    style: formTextStyle,
+                    style: descTextStyle,
                   ),
                   TextFormField(
                     controller: emailController,
@@ -121,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Apotek\s Email Address',
-                      hintStyle: descFormTextStyle,
+                      hintStyle: descTextStyle,
                     ),
                     style: TextStyle(
                       color:
@@ -141,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     'Apotek\s Password',
-                    style: formTextStyle,
+                    style: descTextStyle,
                   ),
                   TextFormField(
                     controller: emailController,
@@ -161,7 +161,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Apotek\s Password',
-                      hintStyle: descFormTextStyle,
+                      hintStyle: descTextStyle,
                     ),
                     style: TextStyle(
                       color:
@@ -221,7 +221,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           TextSpan(
                             text: ' Login',
                             style: helloTextStyle.copyWith(
-                              fontSize: 12,
+                              fontSize: 14,
                             ),
                           )
                         ]),

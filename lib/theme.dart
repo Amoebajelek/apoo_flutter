@@ -11,10 +11,15 @@ Color whiteColor = Color(0xffFFFFFF);
 double edge = 30;
 double semiEdge = 15;
 
-TextStyle mainTitleTextStyle = GoogleFonts.poppins(
+TextStyle bigTitleTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w800,
-  fontSize: 24,
+  fontSize: 22,
   color: whiteColor,
+);
+TextStyle helloTextStyle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w500,
+  fontSize: 18,
+  color: greenColor,
 );
 TextStyle titleTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
@@ -31,33 +36,8 @@ TextStyle buttonTextStyle = GoogleFonts.poppins(
   fontSize: 18,
   color: whiteColor,
 );
-TextStyle helloTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w500,
-  fontSize: 18,
-  color: greenColor,
-);
-TextStyle secondTitleTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w700,
-  fontSize: 16,
-  color: blackColor,
-);
 TextStyle descTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: secondColor,
-);
-TextStyle secondDescTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w400,
-  fontSize: 12,
-  color: thirdColor,
-);
-TextStyle formTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w500,
-  fontSize: 12,
-  color: secondColor,
-);
-TextStyle descFormTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w400,
   fontSize: 14,
   color: secondColor,
 );
