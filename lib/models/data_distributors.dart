@@ -1,8 +1,10 @@
 class DataDistributor {
   int id;
   String name;
-  int products;
+  String stocks;
   String imageUrl;
+  String location;
 
-  DataDistributor({this.id, this.name, this.products, this.imageUrl});
+  DataDistributor(
+      {this.id, this.name, this.stocks, this.imageUrl, this.location});
 }

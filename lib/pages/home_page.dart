@@ -1,183 +1,279 @@
+import 'package:apoo_flutter/models/last_transactions.dart';
+import 'package:apoo_flutter/widgets/last_transactions.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
+import 'package:apoo_flutter/widgets/top_selling_product.dart';
 import 'package:flutter/material.dart';
 
 import '../models/data_distributors.dart';
+import '../models/data_product.dart';
 import '../theme.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isEmailValid = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: edge,
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: edge),
-            child: ListView(
-              children: [
-                // Greeting
-                Row(
-                  children: [
-                    Image.asset(
-                      'assets/profile.png',
-                      width: 60,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: semiEdge, right: edge),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hello,',
-                            style: helloTextStyle,
-                          ),
-                          Text(
-                            'Permata Medical',
-                            style: titleTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Image.asset(
-                      'assets/notification.png',
-                      width: 28,
-                    ),
-                  ],
-                ),
-                // End Greeting
-
-                // Top Distributor
-                // Padding(
-                //   padding: EdgeInsets.symmetric(vertical: edge),
-                //   child: Column(
-                //     children: [
-                //       Row(
-                //         children: [
-                //           Text(
-                //             'Top Distributor',
-                //             style: titleTextStyle,
-                //           ),
-                //           Spacer(),
-                //           Text(
-                //             'See all',
-                //             style: seeAllTextStyle,
-                //           )
-                //         ],
-                //       ),
-                //       SizedBox(
-                //         height: semiEdge,
-                //       ),
-                //       Container(
-                //         height: 112,
-                //         child: ListView(
-                //           scrollDirection: Axis.horizontal,
-                //           children: [
-                //             TopDistributor(
-                //               DataDistributor(
-                //                 id: 1,
-                //                 name: 'Kalbe Farma',
-                //                 products: 241,
-                //                 imageUrl: 'assets/topDist1.png',
-                //               ),
-                //             ),
-                //             SizedBox(
-                //               width: semiEdge,
-                //             ),
-                //             TopDistributor(
-                //               DataDistributor(
-                //                 id: 2,
-                //                 name: 'Sanbe Farma',
-                //                 products: 114,
-                //                 imageUrl: 'assets/topDist2.png',
-                //               ),
-                //             ),
-                //             SizedBox(
-                //               width: semiEdge,
-                //             ),
-                //             TopDistributor(
-                //               DataDistributor(
-                //                 id: 1,
-                //                 name: 'Dexa Medica',
-                //                 products: 321,
-                //                 imageUrl: 'assets/topDist3.png',
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       )
-                //     ],
-                //   ),
-                // ),
-                // End Top Distributor
-
-                // Top Selling Product
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: edge),
-                  child: Column(
+          padding: EdgeInsets.symmetric(horizontal: edge, vertical: edge),
+          child: ListView(
+            children: [
+              // Greeting
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Top Selling Product',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Text(
-                            'See all',
-                            style: seeAllTextStyle,
-                          )
-                        ],
+                      Text(
+                        'Hello,',
+                        style: helloTextStyle,
                       ),
-                      SizedBox(
-                        height: semiEdge,
-                      ),
-                      Container(
-                        height: 112,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            TopDistributor(
-                              DataDistributor(
-                                id: 1,
-                                name: 'Kalbe Farma',
-                                products: 241,
-                                imageUrl: 'assets/topDist1.png',
-                              ),
-                            ),
-                            SizedBox(
-                              width: semiEdge,
-                            ),
-                            TopDistributor(
-                              DataDistributor(
-                                id: 2,
-                                name: 'Sanbe Farma',
-                                products: 114,
-                                imageUrl: 'assets/topDist2.png',
-                              ),
-                            ),
-                            SizedBox(
-                              width: semiEdge,
-                            ),
-                            TopDistributor(
-                              DataDistributor(
-                                id: 1,
-                                name: 'Dexa Medica',
-                                products: 321,
-                                imageUrl: 'assets/topDist3.png',
-                              ),
-                            ),
-                          ],
+                      Text(
+                        'Permata Medical',
+                        style: titleTextStyle.copyWith(
+                          fontSize: 18,
                         ),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Image.asset(
+                    'assets/notification.png',
+                    width: 50,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Image.asset(
+                    'assets/profile.png',
+                    width: 50,
+                  ),
+                ],
+              ),
+              // End Greeting
+
+              SizedBox(
+                height: edge,
+              ),
+
+              // Search
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                        fillColor: whiteColor,
+                        prefixIcon: Icon(Icons.search),
+                        hintText: 'Seach your medicine',
+                        hintStyle: descTextStyle.copyWith(
+                          color: thirdColor,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide.none,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide.none,
+                        )),
+                    style: TextStyle(
+                      color:
+                          isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+                    ),
+                  ),
+                ],
+              ),
+              // End Search
+
+              SizedBox(
+                height: edge,
+              ),
+
+              // Top Distributor
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Top Distributor',
+                        style: titleTextStyle,
+                      ),
+                      Spacer(),
+                      Text(
+                        'See all',
+                        style: seeAllTextStyle,
                       )
                     ],
                   ),
+                  SizedBox(
+                    height: semiEdge,
+                  ),
+                  Container(
+                    height: 112,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        TopDistributor(
+                          DataDistributor(
+                            id: 1,
+                            name: 'Kalbe Farma',
+                            stocks: '241',
+                            imageUrl: 'assets/topDist1.png',
+                            location: 'Kota Bandung',
+                          ),
+                        ),
+                        SizedBox(
+                          width: semiEdge,
+                        ),
+                        TopDistributor(
+                          DataDistributor(
+                            id: 2,
+                            name: 'Sanbe Farma',
+                            stocks: '114',
+                            imageUrl: 'assets/topDist2.png',
+                            location: 'Kota Cimahi',
+                          ),
+                        ),
+                        SizedBox(
+                          width: semiEdge,
+                        ),
+                        TopDistributor(
+                          DataDistributor(
+                            id: 3,
+                            name: 'Dexa Medica',
+                            stocks: '321',
+                            imageUrl: 'assets/topDist3.png',
+                            location: 'Kota Sukabumi',
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              // End Top Distributor
+
+              // Top Selling Product
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: edge),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Top Selling Product',
+                          style: titleTextStyle,
+                        ),
+                        Spacer(),
+                        Text(
+                          'See all',
+                          style: seeAllTextStyle,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    Column(
+                      children: [
+                        TopSellingProduct(
+                          DataProduct(
+                            id: 1,
+                            name: 'Paracetamol',
+                            producent: 'PT Kalbe Farma',
+                            imageUrl: 'assets/top1.png',
+                            price: '5000',
+                          ),
+                        ),
+                        SizedBox(
+                          width: semiEdge,
+                        ),
+                        TopSellingProduct(
+                          DataProduct(
+                            id: 2,
+                            name: 'Bodrexin',
+                            producent: 'PT Biofarma Firma',
+                            imageUrl: 'assets/top2.png',
+                            price: '7000',
+                          ),
+                        ),
+                        SizedBox(
+                          width: semiEdge,
+                        ),
+                        TopSellingProduct(
+                          DataProduct(
+                            id: 3,
+                            name: 'FG Throcest',
+                            producent: 'Dexa Medica',
+                            imageUrl: 'assets/top3.png',
+                            price: '8000',
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
-                // End Top Selling Product
-              ],
-            ),
+              ),
+              // End Top Selling Product
+
+              // Log Transaction
+              Padding(
+                padding: EdgeInsets.only(bottom: edge),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Last Transactions',
+                          style: titleTextStyle,
+                        ),
+                        Spacer(),
+                        Text(
+                          'See all',
+                          style: seeAllTextStyle,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    LastTransactions(
+                      DataTransactions(
+                          id: 1,
+                          code: '#3882128763678',
+                          time: '13 : 32 PM',
+                          price: '50.000'),
+                    ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    LastTransactions(
+                      DataTransactions(
+                          id: 2,
+                          code: '#3882128763678',
+                          time: '13 : 30 PM',
+                          price: '50.000'),
+                    ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    LastTransactions(
+                      DataTransactions(
+                          id: 3,
+                          code: '#3882128763678',
+                          time: '13 : 25 PM',
+                          price: '50.000'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

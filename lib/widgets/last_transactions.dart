@@ -1,11 +1,12 @@
 import 'package:apoo_flutter/models/data_product.dart';
+import 'package:apoo_flutter/models/last_transactions.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-class TopSellingProduct extends StatelessWidget {
-  final DataProduct product;
+class LastTransactions extends StatelessWidget {
+  final DataTransactions transaction;
 
-  TopSellingProduct(this.product);
+  LastTransactions(this.transaction);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class TopSellingProduct extends StatelessWidget {
                 vertical: 12,
               ),
               child: Image.asset(
-                product.imageUrl,
+                'assets/transaction.png',
                 width: 66,
                 height: 66,
                 fit: BoxFit.cover,
@@ -38,43 +39,43 @@ class TopSellingProduct extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.name,
+                    transaction.code,
                     style: titleTextStyle,
                   ),
                   Spacer(),
-                  Text(
-                    product.producent,
-                    style: descTextStyle.copyWith(
-                      fontSize: 12,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      right: 12,
+                    ),
+                    child: Text.rich(
+                      TextSpan(
+                        text: 'Rp.',
+                        style: descTextStyle.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                          color: greenColor,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: transaction.price,
+                            style: descTextStyle.copyWith(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                              color: greenColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             Spacer(),
-            Padding(
-              padding: EdgeInsets.only(
-                right: 12,
-              ),
-              child: Text.rich(
-                TextSpan(
-                  text: 'Rp.',
-                  style: descTextStyle.copyWith(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 18,
-                    color: greenColor,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: product.price,
-                      style: descTextStyle.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18,
-                        color: greenColor,
-                      ),
-                    ),
-                  ],
-                ),
+            Text(
+              transaction.time,
+              style: descTextStyle.copyWith(
+                fontSize: 12,
               ),
             ),
           ],

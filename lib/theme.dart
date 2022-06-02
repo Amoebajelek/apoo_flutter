@@ -21,9 +21,14 @@ TextStyle helloTextStyle = GoogleFonts.poppins(
   fontSize: 18,
   color: greenColor,
 );
+TextStyle sliderTextStyle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w700,
+  fontSize: 18,
+  color: blackColor,
+);
 TextStyle titleTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
-  fontSize: 18,
+  fontSize: 16,
   color: blackColor,
 );
 TextStyle seeAllTextStyle = GoogleFonts.poppins(

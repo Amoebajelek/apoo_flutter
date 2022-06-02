@@ -29,7 +29,7 @@ class StartedPage extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 15),
               child: Text(
                 'Temukan obat yang anda\nbutuhkan dengan cepat dan\ntepat',
-                style: titleTextStyle,
+                style: sliderTextStyle,
                 textAlign: TextAlign.center,
               ),
             ),

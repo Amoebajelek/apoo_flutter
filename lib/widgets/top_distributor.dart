@@ -9,45 +9,85 @@ class TopDistributor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        height: 112,
-        width: 262,
-        color: Color(0xffF6F7F8),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
+    return Container(
+      // height: 110,
+      width: 285,
+      decoration: BoxDecoration(
+        color: whiteColor,
+        boxShadow: [
+          BoxShadow(
+            color: secondColor.withOpacity(0.05),
+            spreadRadius: 3,
+            blurRadius: 3,
+            offset: Offset(5.0, 5.0),
+          )
+        ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
               distributor.imageUrl,
-              width: 104,
-              height: 104,
+              width: 124,
+              height: 124,
               fit: BoxFit.cover,
             ),
-            SizedBox(
-              width: semiEdge,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: semiEdge),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    distributor.name,
-                    style: titleTextStyle.copyWith(
+          ),
+          SizedBox(
+            width: semiEdge,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: semiEdge),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  distributor.name,
+                  style: titleTextStyle,
+                ),
+                SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Image.asset(
+                      'assets/ic-loc.png',
+                      height: 15,
+                      width: 11,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      distributor.location,
+                      style: descTextStyle,
+                    )
+                  ],
+                ),
+                Spacer(),
+                Text.rich(
+                  TextSpan(
+                    text: distributor.stocks,
+                    style: descTextStyle.copyWith(
                       color: greenColor,
                     ),
+                    children: [
+                      TextSpan(
+                        text: ' Products',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  Text(
-                    '241 Products',
-                    style: descTextStyle,
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

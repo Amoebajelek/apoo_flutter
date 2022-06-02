@@ -1,9 +1,9 @@
 class DataProduct {
   int id;
   String name;
-  int price;
+  String producent;
   String imageUrl;
-  int stocks;
+  String price;
 
-  DataProduct({this.id, this.name, this.price, this.imageUrl, this.stocks});
+  DataProduct({this.id, this.name, this.producent, this.imageUrl, this.price});
 }
