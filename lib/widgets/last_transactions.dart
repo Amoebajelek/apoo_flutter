@@ -1,5 +1,5 @@
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/models/last_transactions.dart';
+import 'package:apoo_flutter/models/data_lastTransactions.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -43,40 +43,60 @@ class LastTransactions extends StatelessWidget {
                     style: titleTextStyle,
                   ),
                   Spacer(),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      right: 12,
-                    ),
-                    child: Text.rich(
-                      TextSpan(
-                        text: 'Rp.',
-                        style: descTextStyle.copyWith(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                          color: greenColor,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: transaction.price,
-                            style: descTextStyle.copyWith(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 14,
-                              color: greenColor,
-                            ),
-                          ),
-                        ],
+                  Text.rich(
+                    TextSpan(
+                      text: 'Rp.',
+                      style: descTextStyle.copyWith(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        color: greenColor,
                       ),
+                      children: [
+                        TextSpan(
+                          text: transaction.price,
+                          style: descTextStyle.copyWith(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            color: greenColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
             Spacer(),
-            Text(
-              transaction.time,
-              style: descTextStyle.copyWith(
-                fontSize: 12,
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Column(
+                children: [
+                  Text(
+                    transaction.time,
+                    style: descTextStyle.copyWith(
+                      fontSize: 12,
+                    ),
+                  ),
+                  // Container(
+                  //   height: 25,
+                  //   child: RaisedButton(
+                  //     color: Color(0xffFFD124),
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(12),
+                  //     ),
+                  //     child: Text(
+                  //       'Credit Card',
+                  //       style: buttonTextStyle.copyWith(
+                  //         fontSize: 12,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                ],
               ),
+            ),
+            SizedBox(
+              width: 12,
             ),
           ],
         ),

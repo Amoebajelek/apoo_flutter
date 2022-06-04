@@ -1,5 +1,7 @@
-import 'package:apoo_flutter/models/last_transactions.dart';
+import 'package:apoo_flutter/models/data_lastTransactions.dart';
+import 'package:apoo_flutter/models/data_tipsAndGuides.dart';
 import 'package:apoo_flutter/widgets/last_transactions.dart';
+import 'package:apoo_flutter/widgets/tips_and_guides.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:apoo_flutter/widgets/top_selling_product.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: edge, vertical: edge),
+          padding: EdgeInsets.symmetric(horizontal: edge),
           child: ListView(
             children: [
               // Greeting
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> {
               // End Greeting
 
               SizedBox(
-                height: edge,
+                height: semiEdge,
               ),
 
               // Search
@@ -192,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: semiEdge,
+                          height: semiEdge,
                         ),
                         TopSellingProduct(
                           DataProduct(
@@ -204,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: semiEdge,
+                          height: semiEdge,
                         ),
                         TopSellingProduct(
                           DataProduct(
@@ -269,6 +271,40 @@ class _HomePageState extends State<HomePage> {
                           code: '#3882128763678',
                           time: '13 : 25 PM',
                           price: '50.000'),
+                    ),
+                  ],
+                ),
+              ),
+              // End Last Transaction
+
+              // Tips and Guides
+              Padding(
+                padding: EdgeInsets.only(bottom: edge),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Tips and Guides',
+                          style: titleTextStyle,
+                        ),
+                        Spacer(),
+                        Text(
+                          'See all',
+                          style: seeAllTextStyle,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    TipsandGuides(
+                      DataTipsandGuides(
+                        id: 1,
+                        imageUrl: 'assets/bgTips1.png',
+                        title: 'How to add new product?',
+                        caption: 'Read and update your product',
+                      ),
                     ),
                   ],
                 ),

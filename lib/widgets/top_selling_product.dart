@@ -45,7 +45,7 @@ class TopSellingProduct extends StatelessWidget {
                   Text(
                     product.producent,
                     style: descTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 14,
                     ),
                   ),
                 ],
