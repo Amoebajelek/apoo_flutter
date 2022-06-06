@@ -36,6 +36,11 @@ TextStyle seeAllTextStyle = GoogleFonts.poppins(
   fontSize: 14,
   color: thirdColor,
 );
+TextStyle navTextStyle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w500,
+  fontSize: 10,
+  color: thirdColor,
+);
 TextStyle buttonTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
   fontSize: 18,

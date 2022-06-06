@@ -16,7 +16,7 @@ class TipsandGuides extends StatelessWidget {
         decoration: BoxDecoration(
           color: blackColor,
           image: DecorationImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image: AssetImage(
               tipsandguides.imageUrl,
             ),
