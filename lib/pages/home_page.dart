@@ -1,5 +1,6 @@
 import 'package:apoo_flutter/models/data_lastTransactions.dart';
 import 'package:apoo_flutter/models/data_tipsAndGuides.dart';
+import 'package:apoo_flutter/pages/catalog_page.dart';
 import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:apoo_flutter/widgets/last_transactions.dart';
 import 'package:apoo_flutter/widgets/tips_and_guides.dart';
@@ -72,10 +73,20 @@ class _HomePageState extends State<HomePage> {
               isActive: true,
               name: 'home',
             ),
-            BottomNavbarItem(
-              imageUrl: 'assets/icon-catalog.png',
-              isActive: false,
-              name: 'catalog',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CatalogPage(),
+                  ),
+                );
+              },
+              child: BottomNavbarItem(
+                imageUrl: 'assets/icon-catalog.png',
+                isActive: false,
+                name: 'catalog',
+              ),
             ),
             BottomNavbarItem(
               imageUrl: 'assets/icon-order.png',
