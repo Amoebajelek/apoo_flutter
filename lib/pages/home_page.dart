@@ -306,6 +306,17 @@ class _HomePageState extends State<HomePage> {
                         caption: 'Read and update your product',
                       ),
                     ),
+                    SizedBox(
+                      height: semiEdge,
+                    ),
+                    TipsandGuides(
+                      DataTipsandGuides(
+                        id: 1,
+                        imageUrl: 'assets/bgTips2.png',
+                        title: 'Upgrade selling points',
+                        caption: 'Increase your sales now',
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -14,6 +14,7 @@ class TipsandGuides extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(
+          color: blackColor,
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(
@@ -23,47 +24,41 @@ class TipsandGuides extends StatelessWidget {
         ),
         height: 90,
         width: 315,
-        alignment: Alignment.center,
+        // alignment: Alignment.center,
         child: Row(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 12,
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 20,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tipsandguides.title,
+                    style: titleTextStyle.copyWith(
+                      color: whiteColor,
+                    ),
                   ),
-                  child: Image.asset(
-                    tipsandguides.imageUrl,
-                    width: 66,
-                    height: 66,
-                    fit: BoxFit.cover,
+                  Text(
+                    tipsandguides.caption,
+                    style: descTextStyle.copyWith(
+                      fontSize: 12,
+                      color: whiteColor,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 20,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tipsandguides.title,
-                        style: titleTextStyle,
-                      ),
-                      Spacer(),
-                      Text(
-                        tipsandguides.caption,
-                        style: titleTextStyle,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Image.asset(
-              'assets/ic-next.png',
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: Image.asset(
+                'assets/ic-next.png',
+                height: 40,
+                width: 40,
+              ),
             ),
           ],
         ),
