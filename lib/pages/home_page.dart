@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: Color(0xffFAFAFA),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -44,6 +44,10 @@ class _HomePageState extends State<HomePage> {
               // Search
               search(),
               // End Search
+
+              // Highlight
+              highlight(),
+              // End Highlight
 
               // Top Distributor
               topDistributor(),
@@ -195,35 +199,119 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget highlight() {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: semiEdge,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          height: 191,
+          width: 315,
+          color: Color(0xffDBFFF3),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'CURRENT BALANCE',
+                style: descTextStyle.copyWith(
+                  color: secondColor,
+                ),
+              ),
+              SizedBox(
+                height: 2,
+              ),
+              Text(
+                'RP 2.421.400',
+                style: titleTextStyle.copyWith(
+                  color: greenColor,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              Spacer(),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  height: 60,
+                  width: 259,
+                  color: whiteColor,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Image.asset(
+                        'assets/icon-balance-active.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                      Image.asset(
+                        'assets/icon-transactions.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                      Image.asset(
+                        'assets/icon-profit.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                      Image.asset(
+                        'assets/icon-expences.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget search() {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: semiEdge,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-                fillColor: whiteColor,
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Seach your medicine',
-                hintStyle: descTextStyle.copyWith(
-                  color: thirdColor,
+    return Padding(
+      padding: EdgeInsets.only(
+        top: semiEdge,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          color: whiteColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                    fillColor: whiteColor,
+                    prefixIcon: Icon(Icons.search),
+                    hintText: 'Find your medicine',
+                    hintStyle: descTextStyle.copyWith(
+                      color: thirdColor,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
+                    )),
+                style: TextStyle(
+                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                )),
-            style: TextStyle(
-              color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

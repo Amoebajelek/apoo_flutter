@@ -10,7 +10,7 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF6F7F8),
+      backgroundColor: Color(0xffFAFAFA),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(

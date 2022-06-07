@@ -24,7 +24,7 @@ class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF6F7F8),
+      backgroundColor: Color(0xffFAFAFA),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -151,37 +151,40 @@ class _OrderPageState extends State<OrderPage> {
   }
 
   Widget search() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xffF6F7F8),
+    return Padding(
+      padding: EdgeInsets.only(
+        top: semiEdge,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: semiEdge,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-                fillColor: whiteColor,
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Seach your medicine',
-                hintStyle: descTextStyle.copyWith(
-                  color: thirdColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          color: whiteColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                    fillColor: whiteColor,
+                    prefixIcon: Icon(Icons.search),
+                    hintText: 'Find your medicine',
+                    hintStyle: descTextStyle.copyWith(
+                      color: thirdColor,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
+                    )),
+                style: TextStyle(
+                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                )),
-            style: TextStyle(
-              color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
