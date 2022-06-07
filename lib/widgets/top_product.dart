@@ -12,17 +12,27 @@ class TopProduct extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        height: 230,
+        height: 266,
         width: 148,
-        color: Color(0xffF6F7F8),
+        decoration: BoxDecoration(
+          color: Color(0xffFFFFFF),
+          boxShadow: [
+            BoxShadow(
+              color: secondColor.withOpacity(0.5),
+              spreadRadius: 3,
+              blurRadius: 3,
+              offset: Offset(5.0, 5.0),
+            ),
+          ],
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.only(
+                top: 8,
                 right: 12,
                 left: 12,
-                bottom: 12,
               ),
               child: Image.asset(
                 product.imageUrl,
@@ -43,24 +53,50 @@ class TopProduct extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: 12,
               ),
-              child: Text(
-                product.price,
-                style: titleTextStyle,
+              child: Text.rich(
+                TextSpan(
+                    text: 'Rp ',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: greenColor,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: product.price,
+                        style: titleTextStyle.copyWith(
+                          fontSize: 18,
+                          color: greenColor,
+                        ),
+                      ),
+                    ]),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 12,
-              ),
-              child: Text.rich(
-                TextSpan(text: 'stocks', children: [
-                  TextSpan(text: product.stocks, children: [
+            Spacer(),
+            Row(
+              children: [
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 12,
+                    bottom: 12,
+                  ),
+                  child: Text.rich(
                     TextSpan(
-                      text: product.unit,
-                    )
-                  ]),
-                ]),
-              ),
+                        text: 'stocks ',
+                        style: seeAllTextStyle.copyWith(
+                          color: secondColor,
+                          fontSize: 12,
+                        ),
+                        children: [
+                          TextSpan(text: product.stocks, children: [
+                            TextSpan(
+                              text: product.unit,
+                            )
+                          ]),
+                        ]),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

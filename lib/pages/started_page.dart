@@ -28,7 +28,7 @@ class StartedPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: Text(
-                'Temukan obat yang anda\nbutuhkan dengan cepat dan\ntepat',
+                'Temukan obat yang anda butuhkan dengan cepat dan tepat',
                 style: sliderTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -38,38 +38,39 @@ class StartedPage extends StatelessWidget {
               style: descTextStyle,
               textAlign: TextAlign.center,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 100),
-              child: Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                margin: EdgeInsets.symmetric(horizontal: edge),
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    );
-                  },
-                  color: greenColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      Spacer(),
-                      Text(
-                        'Get Started',
-                        style: buttonTextStyle,
-                      ),
-                      Spacer(),
-                    ],
-                  ),
+            Spacer(),
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width - (2 * edge),
+              margin: EdgeInsets.symmetric(horizontal: edge),
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
+                color: greenColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    Spacer(),
+                    Text(
+                      'Get Started',
+                      style: buttonTextStyle,
+                    ),
+                    Spacer(),
+                  ],
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: edge,
+            ),
           ],
         ),
       )),

@@ -11,6 +11,9 @@ import 'package:flutter/material.dart';
 import '../models/data_distributors.dart';
 import '../models/data_product.dart';
 import '../theme.dart';
+import 'history_page.dart';
+import 'order_page.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,11 +26,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: edge),
+          padding: EdgeInsets.symmetric(
+            horizontal: edge,
+          ),
           child: ListView(
             children: [
+              SizedBox(
+                height: semiEdge,
+              ),
               // Greeting
               header(),
               // End Greeting
@@ -68,10 +77,20 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            BottomNavbarItem(
-              imageUrl: 'assets/icon-home-green.png',
-              isActive: true,
-              name: 'home',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+              child: BottomNavbarItem(
+                imageUrl: 'assets/icon-home-green.png',
+                isActive: true,
+                name: 'home',
+              ),
             ),
             InkWell(
               onTap: () {
@@ -88,20 +107,50 @@ class _HomePageState extends State<HomePage> {
                 name: 'catalog',
               ),
             ),
-            BottomNavbarItem(
-              imageUrl: 'assets/icon-order.png',
-              isActive: false,
-              name: 'order',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OrderPage(),
+                  ),
+                );
+              },
+              child: BottomNavbarItem(
+                imageUrl: 'assets/icon-order.png',
+                isActive: false,
+                name: 'order',
+              ),
             ),
-            BottomNavbarItem(
-              imageUrl: 'assets/icon-order.png',
-              isActive: false,
-              name: 'history',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HistoryPage(),
+                  ),
+                );
+              },
+              child: BottomNavbarItem(
+                imageUrl: 'assets/icon-history.png',
+                isActive: false,
+                name: 'history',
+              ),
             ),
-            BottomNavbarItem(
-              imageUrl: 'assets/icon-history.png',
-              isActive: false,
-              name: 'profile',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfilePage(),
+                  ),
+                );
+              },
+              child: BottomNavbarItem(
+                imageUrl: 'assets/icon-profile.png',
+                isActive: false,
+                name: 'profile',
+              ),
             ),
           ],
         ),

@@ -14,7 +14,6 @@ class TopSellingProduct extends StatelessWidget {
       child: Container(
         height: 90,
         width: 315,
-        color: Color(0xffF6F7F8),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
