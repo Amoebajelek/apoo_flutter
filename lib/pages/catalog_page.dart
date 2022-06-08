@@ -43,7 +43,7 @@ class _CatalogPageState extends State<CatalogPage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * 30),
+        width: MediaQuery.of(context).size.width - (2 * edge),
         margin: EdgeInsets.symmetric(
           horizontal: 30,
         ),
@@ -424,7 +424,7 @@ class _CatalogPageState extends State<CatalogPage> {
           Row(
             children: [
               Text(
-                'Find Your Medicine',
+                'Search Your Medicine...',
                 style: titleTextStyle,
               ),
               Spacer(),

@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * 30),
+        width: MediaQuery.of(context).size.width - (2 * edge),
         margin: EdgeInsets.symmetric(
           horizontal: 30,
         ),
@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                     fillColor: whiteColor,
                     prefixIcon: Icon(Icons.search),
-                    hintText: 'Find your medicine',
+                    hintText: 'Search your medicine...',
                     hintStyle: descTextStyle.copyWith(
                       color: thirdColor,
                     ),

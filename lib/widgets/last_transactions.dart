@@ -15,7 +15,7 @@ class LastTransactions extends StatelessWidget {
       child: Container(
         height: 90,
         width: 315,
-        color: Color(0xffF6F7F8),
+        color: whiteColor,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -43,6 +43,44 @@ class LastTransactions extends StatelessWidget {
                     style: titleTextStyle,
                   ),
                   Spacer(),
+                  Container(
+                    height: 24,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      color: Color(0xffFFD124),
+                      border: Border.all(
+                        color: Color(0xffFFD124),
+                        width: 1.0,
+                        style: BorderStyle.solid,
+                      ),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Credit Card',
+                        style: titleTextStyle.copyWith(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 10,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Column(
+                children: [
+                  Text(
+                    transaction.time,
+                    style: descTextStyle.copyWith(
+                      fontSize: 12,
+                    ),
+                  ),
+                  Spacer(),
                   Text.rich(
                     TextSpan(
                       text: 'Rp.',
@@ -63,35 +101,6 @@ class LastTransactions extends StatelessWidget {
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            Spacer(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
-              child: Column(
-                children: [
-                  Text(
-                    transaction.time,
-                    style: descTextStyle.copyWith(
-                      fontSize: 12,
-                    ),
-                  ),
-                  // Container(
-                  //   height: 25,
-                  //   child: RaisedButton(
-                  //     color: Color(0xffFFD124),
-                  //     shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(12),
-                  //     ),
-                  //     child: Text(
-                  //       'Credit Card',
-                  //       style: buttonTextStyle.copyWith(
-                  //         fontSize: 12,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               ),
             ),
