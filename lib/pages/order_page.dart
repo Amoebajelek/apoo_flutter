@@ -7,6 +7,7 @@ import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
+import 'package:apoo_flutter/widgets/list_distributor.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:apoo_flutter/widgets/top_product.dart';
 import 'package:flutter/material.dart';
@@ -32,12 +33,15 @@ class _OrderPageState extends State<OrderPage> {
           ),
           child: ListView(
             children: [
+              SizedBox(
+                height: semiEdge,
+              ),
               header(),
               search(),
               topDistributor(),
-              topSellingProduct(),
+              // topSellingProduct(),
               // tags(),
-              findYourMedicine(),
+              findYourDistributor(),
             ],
           ),
         ),
@@ -199,7 +203,7 @@ class _OrderPageState extends State<OrderPage> {
           Row(
             children: [
               Text(
-                'Top Distributor',
+                'Recommended for you',
                 style: titleTextStyle,
               ),
               Spacer(),
@@ -217,6 +221,9 @@ class _OrderPageState extends State<OrderPage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
+                SizedBox(
+                  width: semiEdge,
+                ),
                 TopDistributor(
                   DataDistributor(
                     id: 1,
@@ -250,6 +257,9 @@ class _OrderPageState extends State<OrderPage> {
                     location: 'Kota Sukabumi',
                   ),
                 ),
+                SizedBox(
+                  width: edge,
+                ),
               ],
             ),
           )
@@ -268,7 +278,7 @@ class _OrderPageState extends State<OrderPage> {
           Row(
             children: [
               Text(
-                'Top Selling Product',
+                'Top Selling Distributor',
                 style: titleTextStyle,
               ),
               Spacer(),
@@ -286,67 +296,63 @@ class _OrderPageState extends State<OrderPage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                TopProduct(
-                  DataProduct(
+                SizedBox(
+                  width: semiEdge,
+                ),
+                ListDistributor(
+                  DataDistributor(
                     id: 1,
                     imageUrl: 'assets/top1.png',
                     name: 'Paracetamol',
-                    price: '6500',
                     stocks: '71',
-                    unit: ' strips',
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                TopProduct(
-                  DataProduct(
+                ListDistributor(
+                  DataDistributor(
                     id: 2,
                     imageUrl: 'assets/top2.png',
                     name: 'Bodrexin',
-                    price: '4500',
                     stocks: '102',
-                    unit: ' strips',
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                TopProduct(
-                  DataProduct(
+                ListDistributor(
+                  DataDistributor(
                     id: 3,
                     imageUrl: 'assets/top3.png',
                     name: 'Bodrex',
-                    price: '4500',
                     stocks: '102',
-                    unit: ' strips',
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                TopProduct(
-                  DataProduct(
+                ListDistributor(
+                  DataDistributor(
                     id: 4,
                     imageUrl: 'assets/top1.png',
                     name: 'FG Thochest',
-                    price: '4000',
                     stocks: '213',
-                    unit: ' strips',
                   ),
                 ),
                 SizedBox(
                   width: 12,
                 ),
-                TopProduct(
-                  DataProduct(
+                ListDistributor(
+                  DataDistributor(
                     id: 5,
                     imageUrl: 'assets/top2.png',
                     name: 'Combantrin',
-                    price: '5500',
                     stocks: '112',
-                    unit: ' strips',
                   ),
+                ),
+                SizedBox(
+                  width: semiEdge,
                 ),
               ],
             ),
@@ -356,42 +362,7 @@ class _OrderPageState extends State<OrderPage> {
     );
   }
 
-  Widget tags() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(3),
-      child: Container(
-        height: 50,
-        // width: MediaQuery.of(context).size.width - (2 * edge),
-        // margin: EdgeInsets.symmetric(horizontal: edge),
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginPage(),
-              ),
-            );
-          },
-          color: greenColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Spacer(),
-              Text(
-                'Get Started',
-                style: buttonTextStyle,
-              ),
-              Spacer(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget findYourMedicine() {
+  Widget findYourDistributor() {
     return Container(
       child: Column(
         children: [
@@ -401,7 +372,7 @@ class _OrderPageState extends State<OrderPage> {
           Row(
             children: [
               Text(
-                'FInd Your Medicine',
+                'Find Your Distributors',
                 style: titleTextStyle,
               ),
               Spacer(),
@@ -416,14 +387,13 @@ class _OrderPageState extends State<OrderPage> {
                 Row(
                   children: [
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 1,
-                          imageUrl: 'assets/prod1.png',
-                          name: 'Paracetamol',
-                          price: '6.500',
+                          imageUrl: 'assets/dist1.png',
+                          name: 'Kalbe Farma',
+                          location: 'Kota Bandung',
                           stocks: '71',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -431,14 +401,13 @@ class _OrderPageState extends State<OrderPage> {
                       width: semiEdge,
                     ),
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 2,
-                          imageUrl: 'assets/prod2.png',
-                          name: 'Acarbose',
-                          price: '3.500',
+                          imageUrl: 'assets/dist2.png',
+                          name: 'Sanbe Farma',
+                          location: 'Kota Bandung',
                           stocks: '102',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -450,14 +419,13 @@ class _OrderPageState extends State<OrderPage> {
                 Row(
                   children: [
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 3,
-                          imageUrl: 'assets/prod3.png',
-                          name: 'Amiodrone',
-                          price: '4.000',
+                          imageUrl: 'assets/dist3.png',
+                          name: 'Dexa Medica',
+                          location: 'Kota Bandung',
                           stocks: '381',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -465,14 +433,13 @@ class _OrderPageState extends State<OrderPage> {
                       width: semiEdge,
                     ),
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 4,
-                          imageUrl: 'assets/prod4.png',
-                          name: 'Allylestrenol',
-                          price: '5.000',
+                          imageUrl: 'assets/dist4.png',
+                          name: 'Pharos Indonesia',
+                          location: 'Kota Bandung',
                           stocks: '143',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -484,14 +451,13 @@ class _OrderPageState extends State<OrderPage> {
                 Row(
                   children: [
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 5,
-                          imageUrl: 'assets/prod5.png',
-                          name: 'Amineptine',
-                          price: '7.000',
+                          imageUrl: 'assets/dist5.png',
+                          name: 'Tempo Scan Pasific Bandung',
+                          location: 'Kota Bandung',
                           stocks: '347',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -499,14 +465,13 @@ class _OrderPageState extends State<OrderPage> {
                       width: semiEdge,
                     ),
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 6,
-                          imageUrl: 'assets/prod6.png',
-                          name: 'Amoxapine',
-                          price: '4.500',
+                          imageUrl: 'assets/dist2.png',
+                          name: 'Farmindo',
+                          location: 'Kota Bandung',
                           stocks: '222',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -515,14 +480,13 @@ class _OrderPageState extends State<OrderPage> {
                 Row(
                   children: [
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 7,
-                          imageUrl: 'assets/prod7.png',
-                          name: 'Ampicillin',
-                          price: '6.500',
+                          imageUrl: 'assets/dist3.png',
+                          name: 'Apex Pharma Indonesia',
+                          location: 'Kota Bandung',
                           stocks: '711',
-                          unit: ' strips',
                         ),
                       ),
                     ),
@@ -530,14 +494,13 @@ class _OrderPageState extends State<OrderPage> {
                       width: semiEdge,
                     ),
                     Expanded(
-                      child: TopProduct(
-                        DataProduct(
+                      child: ListDistributor(
+                        DataDistributor(
                           id: 8,
-                          imageUrl: 'assets/prod8.png',
-                          name: 'Amoxillin',
-                          price: '4.500',
+                          imageUrl: 'assets/dist1.png',
+                          name: 'Armoxindo Farma',
+                          location: 'Kota Bandung',
                           stocks: '102',
-                          unit: ' strips',
                         ),
                       ),
                     ),

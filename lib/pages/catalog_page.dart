@@ -30,11 +30,12 @@ class _CatalogPageState extends State<CatalogPage> {
           ),
           child: ListView(
             children: [
+              SizedBox(
+                height: semiEdge,
+              ),
               header(),
               search(),
               topDistributor(),
-              topSellingProduct(),
-              // tags(),
               findYourMedicine(),
             ],
           ),
@@ -217,6 +218,9 @@ class _CatalogPageState extends State<CatalogPage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
+                SizedBox(
+                  width: semiEdge,
+                ),
                 TopDistributor(
                   DataDistributor(
                     id: 1,
@@ -250,103 +254,8 @@ class _CatalogPageState extends State<CatalogPage> {
                     location: 'Kota Sukabumi',
                   ),
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget topSellingProduct() {
-    return Container(
-      child: Column(
-        children: [
-          SizedBox(
-            height: edge,
-          ),
-          Row(
-            children: [
-              Text(
-                'Top Selling Product',
-                style: titleTextStyle,
-              ),
-              Spacer(),
-              Text(
-                'See all',
-                style: seeAllTextStyle,
-              )
-            ],
-          ),
-          SizedBox(
-            height: semiEdge,
-          ),
-          Container(
-            height: 230,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                TopProduct(
-                  DataProduct(
-                    id: 1,
-                    imageUrl: 'assets/top1.png',
-                    name: 'Paracetamol',
-                    price: '6500',
-                    stocks: '71',
-                    unit: ' strips',
-                  ),
-                ),
                 SizedBox(
-                  width: 12,
-                ),
-                TopProduct(
-                  DataProduct(
-                    id: 2,
-                    imageUrl: 'assets/top2.png',
-                    name: 'Bodrexin',
-                    price: '4500',
-                    stocks: '102',
-                    unit: ' strips',
-                  ),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                TopProduct(
-                  DataProduct(
-                    id: 3,
-                    imageUrl: 'assets/top3.png',
-                    name: 'Bodrex',
-                    price: '4500',
-                    stocks: '102',
-                    unit: ' strips',
-                  ),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                TopProduct(
-                  DataProduct(
-                    id: 4,
-                    imageUrl: 'assets/top1.png',
-                    name: 'FG Thochest',
-                    price: '4000',
-                    stocks: '213',
-                    unit: ' strips',
-                  ),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                TopProduct(
-                  DataProduct(
-                    id: 5,
-                    imageUrl: 'assets/top2.png',
-                    name: 'Combantrin',
-                    price: '5500',
-                    stocks: '112',
-                    unit: ' strips',
-                  ),
+                  width: edge,
                 ),
               ],
             ),
@@ -357,37 +266,151 @@ class _CatalogPageState extends State<CatalogPage> {
   }
 
   Widget tags() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(3),
-      child: Container(
-        height: 50,
-        // width: MediaQuery.of(context).size.width - (2 * edge),
-        // margin: EdgeInsets.symmetric(horizontal: edge),
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginPage(),
-              ),
-            );
-          },
-          color: greenColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Spacer(),
-              Text(
-                'Get Started',
-                style: buttonTextStyle,
-              ),
-              Spacer(),
-            ],
-          ),
-        ),
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: semiEdge,
       ),
+      child: Container(
+          height: 33,
+          width: MediaQuery.of(context).size.width - (2 * edge),
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              SizedBox(
+                width: semiEdge,
+              ),
+              Container(
+                height: 30,
+                width: 115,
+                decoration: BoxDecoration(
+                  color: greenColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'Paracetamol',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: whiteColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: semiEdge,
+              ),
+              Container(
+                height: 30,
+                width: 115,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'FG Throches',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: greenColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: semiEdge,
+              ),
+              Container(
+                height: 30,
+                width: 115,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'Caffein',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: greenColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: semiEdge,
+              ),
+              Container(
+                height: 30,
+                width: 115,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'Amoxillin',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: greenColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: semiEdge,
+              ),
+              Container(
+                height: 30,
+                width: 115,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    'Amiodrone',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: greenColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: semiEdge,
+              ),
+            ],
+          )),
     );
   }
 
@@ -401,7 +424,7 @@ class _CatalogPageState extends State<CatalogPage> {
           Row(
             children: [
               Text(
-                'FInd Your Medicine',
+                'Find Your Medicine',
                 style: titleTextStyle,
               ),
               Spacer(),
@@ -413,6 +436,7 @@ class _CatalogPageState extends State<CatalogPage> {
           Container(
             child: Column(
               children: [
+                tags(),
                 Row(
                   children: [
                     Expanded(
