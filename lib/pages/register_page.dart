@@ -1,6 +1,5 @@
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/login_page.dart';
-import 'package:apoo_flutter/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 

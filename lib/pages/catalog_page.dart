@@ -2,7 +2,6 @@ import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/login_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
@@ -167,7 +166,7 @@ class _CatalogPageState extends State<CatalogPage> {
                 decoration: InputDecoration(
                     fillColor: whiteColor,
                     prefixIcon: Icon(Icons.search),
-                    hintText: 'Find your medicine',
+                    hintText: 'Search your medicine',
                     hintStyle: descTextStyle.copyWith(
                       color: thirdColor,
                     ),
@@ -424,7 +423,7 @@ class _CatalogPageState extends State<CatalogPage> {
           Row(
             children: [
               Text(
-                'Search Your Medicine...',
+                'Find your medicines',
                 style: titleTextStyle,
               ),
               Spacer(),

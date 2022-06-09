@@ -1,4 +1,3 @@
-import 'package:apoo_flutter/models/data_product.dart';
 import 'package:apoo_flutter/models/data_lastTransactions.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';

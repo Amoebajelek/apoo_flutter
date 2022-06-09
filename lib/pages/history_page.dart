@@ -5,8 +5,6 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:flutter/material.dart';
 
-import '../models/data_lastTransactions.dart';
-import '../widgets/last_transactions.dart';
 import 'catalog_page.dart';
 
 class HistoryPage extends StatefulWidget {
