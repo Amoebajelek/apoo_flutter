@@ -172,6 +172,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     'SIPA: 446/-153/1427/1-16',
                     style: descTextStyle.copyWith(
                       color: blackColor,
+                      fontSize: 12,
                     ),
                   ),
                 ],

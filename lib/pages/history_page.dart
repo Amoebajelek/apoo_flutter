@@ -1,3 +1,4 @@
+import 'package:apoo_flutter/pages/detail-transaction-processed.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
@@ -388,106 +389,119 @@ class _HistoryPageState extends State<HistoryPage> {
         padding: EdgeInsets.only(bottom: edge),
         child: Column(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailTransactionProcessed(),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  height: 90,
+                  width: 315,
+                  color: whiteColor,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 12,
+                        ),
+                        child: Image.asset(
+                          'assets/transaction.png',
+                          width: 66,
+                          height: 66,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128763678',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xffFFD124),
-                              border: Border.all(
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 20,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '#3882128763678',
+                              style: titleTextStyle,
+                            ),
+                            Spacer(),
+                            Container(
+                              height: 24,
+                              width: 80,
+                              decoration: BoxDecoration(
                                 color: Color(0xffFFD124),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Credit Card',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
+                                border: Border.all(
+                                  color: Color(0xffFFD124),
+                                  width: 1.0,
+                                  style: BorderStyle.solid,
                                 ),
-                                textAlign: TextAlign.center,
+                                borderRadius: BorderRadius.circular(5),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 32 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '50.000',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
+                              child: Center(
+                                child: Text(
+                                  'Credit Card',
+                                  style: titleTextStyle.copyWith(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 10,
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Spacer(),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Column(
+                          children: [
+                            Text(
+                              '13 : 32 PM',
+                              style: descTextStyle.copyWith(
+                                fontSize: 12,
+                              ),
+                            ),
+                            Spacer(),
+                            Text.rich(
+                              TextSpan(
+                                text: 'Rp.',
+                                style: descTextStyle.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: greenColor,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: '50.000',
+                                    style: descTextStyle.copyWith(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 14,
+                                      color: greenColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: semiEdge,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: semiEdge,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -589,6 +603,9 @@ class _HistoryPageState extends State<HistoryPage> {
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: semiEdge,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -692,309 +709,8 @@ class _HistoryPageState extends State<HistoryPage> {
                 ),
               ),
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128763678',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xffFFD124),
-                              border: Border.all(
-                                color: Color(0xffFFD124),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Credit Card',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 32 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '50.000',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128123456',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 120,
-                            decoration: BoxDecoration(
-                              color: Color(0xff9FE6CE),
-                              border: Border.all(
-                                color: Color(0xff9FE6CE),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Cash on Delivery',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 30 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '71.400',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128666754',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xff0093AB),
-                              border: Border.all(
-                                color: Color(0xff0093AB),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Merchant',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
-                                  color: whiteColor,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 28 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '32.300',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            SizedBox(
+              height: semiEdge,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -1078,209 +794,6 @@ class _HistoryPageState extends State<HistoryPage> {
                               children: [
                                 TextSpan(
                                   text: '50.000',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128123456',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 120,
-                            decoration: BoxDecoration(
-                              color: Color(0xff9FE6CE),
-                              border: Border.all(
-                                color: Color(0xff9FE6CE),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Cash on Delivery',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 30 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '71.400',
-                                  style: descTextStyle.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 14,
-                                    color: greenColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: semiEdge,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 90,
-                width: 315,
-                color: whiteColor,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      child: Image.asset(
-                        'assets/transaction.png',
-                        width: 66,
-                        height: 66,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '#3882128666754',
-                            style: titleTextStyle,
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 24,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xff0093AB),
-                              border: Border.all(
-                                color: Color(0xff0093AB),
-                                width: 1.0,
-                                style: BorderStyle.solid,
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Merchant',
-                                style: titleTextStyle.copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10,
-                                  color: whiteColor,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Column(
-                        children: [
-                          Text(
-                            '13 : 28 PM',
-                            style: descTextStyle.copyWith(
-                              fontSize: 12,
-                            ),
-                          ),
-                          Spacer(),
-                          Text.rich(
-                            TextSpan(
-                              text: 'Rp.',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: greenColor,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '32.300',
                                   style: descTextStyle.copyWith(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 14,
