@@ -1,4 +1,4 @@
-import 'package:apoo_flutter/pages/detail-transaction-processed.dart';
+import 'package:apoo_flutter/pages/detail_transaction-processed.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
@@ -34,6 +34,10 @@ class _HistoryPageState extends State<HistoryPage> {
               search(),
               tags(),
               lastTransaction(),
+              printButton(),
+              SizedBox(
+                height: semiEdge,
+              ),
             ],
           ),
         ),
@@ -135,13 +139,27 @@ class _HistoryPageState extends State<HistoryPage> {
 
   Widget header() {
     return Container(
-      child: Center(
-        child: Text(
-          'History',
-          style: titleTextStyle.copyWith(
-            fontSize: 18,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            height: 28,
+            width: 28,
           ),
-        ),
+          Center(
+            child: Text(
+              'Log Transactions',
+              style: titleTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Image.asset(
+            'assets/icon-filter.png',
+            height: 28,
+            width: 28,
+          )
+        ],
       ),
     );
   }
@@ -813,6 +831,30 @@ class _HistoryPageState extends State<HistoryPage> {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget printButton() {
+    return Container(
+      height: 50,
+      width: MediaQuery.of(context).size.width - (2 * edge),
+      child: RaisedButton(
+        onPressed: () {},
+        color: greenColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          children: [
+            Spacer(),
+            Text(
+              'Print',
+              style: buttonTextStyle,
+            ),
+            Spacer(),
           ],
         ),
       ),

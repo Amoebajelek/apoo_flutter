@@ -9,6 +9,7 @@ import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:flutter/material.dart';
 
 import 'catalog_page.dart';
+import 'distributor_catalog_page.dart';
 
 class OrderPage extends StatefulWidget {
   @override
@@ -34,9 +35,17 @@ class _OrderPageState extends State<OrderPage> {
               ),
               header(),
               search(),
-              topDistributor(),
-              // topSellingProduct(),
-              // tags(),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DistributorCatalogPage(),
+                    ),
+                  );
+                },
+                child: topDistributor(),
+              ),
               findYourDistributor(),
             ],
           ),

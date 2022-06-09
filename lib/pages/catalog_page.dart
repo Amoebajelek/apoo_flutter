@@ -1,5 +1,6 @@
 import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
+import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
@@ -34,7 +35,17 @@ class _CatalogPageState extends State<CatalogPage> {
               ),
               header(),
               search(),
-              topDistributor(),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DistributorCatalogPage(),
+                    ),
+                  );
+                },
+                child: topDistributor(),
+              ),
               findYourMedicine(),
             ],
           ),

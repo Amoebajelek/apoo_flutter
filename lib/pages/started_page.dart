@@ -42,7 +42,6 @@ class StartedPage extends StatelessWidget {
             Container(
               height: 50,
               width: MediaQuery.of(context).size.width - (2 * edge),
-              margin: EdgeInsets.symmetric(horizontal: edge),
               child: RaisedButton(
                 onPressed: () {
                   Navigator.push(
