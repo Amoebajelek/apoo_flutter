@@ -1,17 +1,18 @@
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/checkout_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_catalog.dart';
+import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
 import 'catalog_page.dart';
+import 'detail_catalog_page.dart';
 
-class DetailCatalogPage extends StatefulWidget {
+class CheckoutPage extends StatefulWidget {
   @override
-  State<DetailCatalogPage> createState() => _DetailCatalogPageState();
+  State<CheckoutPage> createState() => _CheckoutPageState();
 }
 
-class _DetailCatalogPageState extends State<DetailCatalogPage> {
+class _CheckoutPageState extends State<CheckoutPage> {
   bool isEmailValid = true;
 
   @override
@@ -32,12 +33,11 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
               SizedBox(
                 height: edge,
               ),
-              DetailCatalog(
+              DetailCheckout(
                 DataProduct(
                   name: 'Paracetamol Biofarma Firma 10 mg 1 Strip 10 Tablet',
                   price: '6.500',
                   unit: 'Strips',
-                  stocks: '786',
                   producent: 'PT Biofarma Firma',
                 ),
               ),
@@ -60,9 +60,9 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
           children: [
             Container(
               height: 50,
-              width: 50,
+              width: MediaQuery.of(context).size.width - (2 * edge),
               decoration: BoxDecoration(
-                color: whiteColor,
+                color: greenColor,
                 border: Border.all(
                   color: greenColor,
                   width: 1.0,
@@ -71,46 +71,13 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
-                child: Image.asset(
-                  'assets/icon-order-green.png',
-                  height: 24,
-                  width: 24,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: semiEdge,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CheckoutPage(),
+                child: Text(
+                  'Choose Payment',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 18,
+                    color: whiteColor,
                   ),
-                );
-              },
-              child: Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                  color: greenColor,
-                  border: Border.all(
-                    color: greenColor,
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Text(
-                    'Checkout',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 18,
-                      color: whiteColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -130,7 +97,7 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CatalogPage(),
+                  builder: (context) => DetailCatalogPage(),
                 ),
               );
             },
@@ -143,7 +110,7 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
           Spacer(),
           Center(
             child: Text(
-              'Detail Catalog',
+              'Checkout',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),
