@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../widgets/bottom_navbar_item.dart';
 import 'catalog_page.dart';
+import 'distributors_page.dart';
 import 'history_page.dart';
 import 'home_page.dart';
 import 'order_page.dart';
@@ -273,21 +274,31 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: semiEdge,
           ),
-          Row(
-            children: [
-              Image.asset(
-                'assets/ic-distributors.png',
-                height: 24,
-                width: 24,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Text(
-                'Distributors',
-                style: titleTextStyle,
-              )
-            ],
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DistributorsPage(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/ic-distributors.png',
+                  height: 24,
+                  width: 24,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Distributors',
+                  style: titleTextStyle,
+                )
+              ],
+            ),
           ),
           SizedBox(
             height: semiEdge,
@@ -329,22 +340,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           SizedBox(
             height: semiEdge,
-          ),
-          Row(
-            children: [
-              Image.asset(
-                'assets/ic-edit-profile.png',
-                height: 24,
-                width: 24,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Text(
-                'Edit Profile',
-                style: titleTextStyle,
-              )
-            ],
           ),
         ],
       ),
