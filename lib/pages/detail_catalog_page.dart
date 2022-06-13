@@ -17,7 +17,7 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFAFA),
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -47,17 +47,28 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
       ),
       bottomNavigationBar: Container(
         height: 135,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
+          color: whiteColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 10.0,
+              spreadRadius: 0.2,
+              offset: Offset(
+                0.5,
+                0.5,
+              ),
+            ),
+          ],
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: edge,
+            ),
             Container(
               height: 50,
               width: 50,
@@ -113,6 +124,9 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              width: edge,
             ),
           ],
         ),

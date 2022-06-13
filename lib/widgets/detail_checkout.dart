@@ -13,99 +13,111 @@ class DetailCheckout extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              height: 120,
-              width: MediaQuery.of(context).size.width - (2 * edge),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: semiEdge,
-                      horizontal: semiEdge,
-                    ),
-                    child: Image.asset(
-                      'assets/prod1.png',
-                      height: 90,
-                      width: 90,
-                    ),
+          Container(
+            height: 120,
+            width: MediaQuery.of(context).size.width - (2 * edge),
+            decoration: BoxDecoration(
+              color: whiteColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade200,
+                  blurRadius: 10.0,
+                  spreadRadius: 0.2,
+                  offset: Offset(
+                    0.5,
+                    0.5,
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: semiEdge,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 200,
-                          child: Text(
-                            product.name,
-                            style: titleTextStyle,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                ),
+              ],
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: semiEdge,
+                    horizontal: semiEdge,
+                  ),
+                  child: Image.asset(
+                    'assets/prod1.png',
+                    height: 90,
+                    width: 90,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: semiEdge,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 200,
+                        child: Text(
+                          product.name,
+                          style: titleTextStyle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        Text.rich(
-                          TextSpan(
-                            text: 'Rp ',
-                            style: titleTextStyle.copyWith(
-                              color: greenColor,
-                              fontSize: 16,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: product.price,
-                                style: titleTextStyle.copyWith(
-                                  color: greenColor,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: ' /',
-                                    style: descTextStyle,
-                                    children: [
-                                      TextSpan(
-                                        text: product.unit,
-                                        style: descTextStyle,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
+                      ),
+                      Text.rich(
+                        TextSpan(
+                          text: 'Rp ',
+                          style: titleTextStyle.copyWith(
+                            color: greenColor,
+                            fontSize: 16,
                           ),
-                        ),
-                        Spacer(),
-                        Row(
                           children: [
-                            Image.asset(
-                              'assets/icon-minus.png',
-                              height: 25,
-                              width: 25,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 10,
+                            TextSpan(
+                              text: product.price,
+                              style: titleTextStyle.copyWith(
+                                color: greenColor,
                               ),
-                              child: Text(
-                                '1',
-                                style: titleTextStyle,
-                              ),
-                            ),
-                            Image.asset(
-                              'assets/icon-plus.png',
-                              height: 25,
-                              width: 25,
+                              children: [
+                                TextSpan(
+                                  text: ' /',
+                                  style: descTextStyle,
+                                  children: [
+                                    TextSpan(
+                                      text: product.unit,
+                                      style: descTextStyle,
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/icon-minus.png',
+                            height: 25,
+                            width: 25,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                            ),
+                            child: Text(
+                              '1',
+                              style: titleTextStyle,
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/icon-plus.png',
+                            height: 25,
+                            width: 25,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           SizedBox(
@@ -136,8 +148,9 @@ class DetailCheckout extends StatelessWidget {
               width: 120,
               child: Text(
                 product.name,
-                style: titleTextStyle.copyWith(
+                style: descTextStyle.copyWith(
                   fontSize: 14,
+                  color: blackColor,
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 3,
@@ -145,14 +158,16 @@ class DetailCheckout extends StatelessWidget {
             ),
             Text(
               '1',
-              style: titleTextStyle.copyWith(
+              style: descTextStyle.copyWith(
                 fontSize: 14,
+                color: blackColor,
               ),
             ),
             Text(
               product.unit,
-              style: titleTextStyle.copyWith(
+              style: descTextStyle.copyWith(
                 fontSize: 14,
+                color: blackColor,
               ),
             ),
             Text.rich(

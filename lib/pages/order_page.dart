@@ -219,12 +219,15 @@ class _OrderPageState extends State<OrderPage> {
             ],
           ),
           SizedBox(
-            height: semiEdge,
+            height: semiEdge - 2,
           ),
           Container(
-            height: 112,
+            height: 126,
             child: ListView(
               scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(
+                vertical: 10,
+              ),
               children: [
                 SizedBox(
                   width: semiEdge,
@@ -267,7 +270,7 @@ class _OrderPageState extends State<OrderPage> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

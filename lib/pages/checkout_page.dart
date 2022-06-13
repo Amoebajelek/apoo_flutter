@@ -1,4 +1,5 @@
 import 'package:apoo_flutter/models/data_product.dart';
+import 'package:apoo_flutter/pages/option_payment_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_catalog.dart';
 import 'package:apoo_flutter/widgets/detail_checkout.dart';
@@ -18,7 +19,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFAFA),
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -52,32 +53,53 @@ class _CheckoutPageState extends State<CheckoutPage> {
           horizontal: 30,
         ),
         decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
+          color: whiteColor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - (2 * edge),
-              decoration: BoxDecoration(
-                color: greenColor,
-                border: Border.all(
-                  color: greenColor,
-                  width: 1.0,
-                  style: BorderStyle.solid,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: Text(
-                  'Choose Payment',
-                  style: titleTextStyle.copyWith(
-                    fontSize: 18,
-                    color: whiteColor,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OptionPaymentPage(),
                   ),
-                  textAlign: TextAlign.center,
+                );
+              },
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                decoration: BoxDecoration(
+                  color: greenColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 10.0,
+                      spreadRadius: 0.2,
+                      offset: Offset(
+                        0.5,
+                        0.5,
+                      ),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    'Choose Payment',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 18,
+                      color: whiteColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ),
