@@ -1,14 +1,11 @@
-import 'package:apoo_flutter/pages/detail_transaction-processed.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
+import 'package:apoo_flutter/pages/add_catalog_product.dart';
+import 'package:apoo_flutter/pages/detail_catalog_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:flutter/material.dart';
 
 import '../models/data_product.dart';
 import '../widgets/top_product.dart';
-import 'catalog_page.dart';
 
 class DistributorCatalogPage extends StatefulWidget {
   @override
@@ -78,10 +75,20 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
               ),
             ),
           ),
-          Image.asset(
-            'assets/icon-add-product.png',
-            height: 30,
-            width: 30,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddCatalogProduct(),
+                ),
+              );
+            },
+            child: Image.asset(
+              'assets/icon-add-product.png',
+              height: 30,
+              width: 30,
+            ),
           ),
         ],
       ),
@@ -320,15 +327,25 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
               children: [
                 Row(
                   children: [
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 1,
-                          imageUrl: 'assets/prod1.png',
-                          name: 'Paracetamol',
-                          price: '6.500',
-                          stocks: '71',
-                          unit: ' strips',
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailCatalogPage(),
+                          ),
+                        );
+                      },
+                      child: Expanded(
+                        child: TopProduct(
+                          DataProduct(
+                            id: 1,
+                            imageUrl: 'assets/prod1.png',
+                            name: 'Paracetamol',
+                            price: '6.500',
+                            stocks: '71',
+                            unit: ' strips',
+                          ),
                         ),
                       ),
                     ),

@@ -1,11 +1,9 @@
 import 'package:apoo_flutter/models/data_product.dart';
 import 'package:apoo_flutter/pages/option_payment_page.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/detail_catalog.dart';
 import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
-import 'catalog_page.dart';
 import 'detail_catalog_page.dart';
 
 class CheckoutPage extends StatefulWidget {
