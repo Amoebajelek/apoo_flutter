@@ -1,3 +1,4 @@
+import 'package:apoo_flutter/pages/edit_profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -213,21 +214,31 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: semiEdge,
           ),
-          Row(
-            children: [
-              Image.asset(
-                'assets/ic-edit-profile.png',
-                height: 24,
-                width: 24,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Text(
-                'Edit Profile',
-                style: titleTextStyle,
-              )
-            ],
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditProfilePage(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/ic-edit-profile.png',
+                  height: 24,
+                  width: 24,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Edit Profile',
+                  style: titleTextStyle,
+                )
+              ],
+            ),
           ),
           SizedBox(
             height: semiEdge,
