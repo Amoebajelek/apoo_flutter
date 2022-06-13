@@ -1,14 +1,15 @@
 import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
+import 'package:apoo_flutter/pages/new_employee_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-class DistributorsPage extends StatefulWidget {
+class EmployeesPage extends StatefulWidget {
   @override
-  State<DistributorsPage> createState() => _DistributorsPageState();
+  State<EmployeesPage> createState() => _EmployeesPageState();
 }
 
-class _DistributorsPageState extends State<DistributorsPage> {
+class _EmployeesPageState extends State<EmployeesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +62,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DistributorCatalogPage(),
+                    builder: (context) => NewEmployeePage(),
                   ),
                 );
               },
@@ -79,7 +80,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                 ),
                 child: Center(
                   child: Text(
-                    'Add New Distributor',
+                    'Add New Employee',
                     style: titleTextStyle.copyWith(
                       fontSize: 18,
                       color: whiteColor,
@@ -118,7 +119,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
           Spacer(),
           Center(
             child: Text(
-              'Distributors',
+              'Employees',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),
@@ -166,7 +167,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/dist1.png',
+                    'assets/profile1.png',
                     width: 66,
                     height: 66,
                     fit: BoxFit.cover,
@@ -181,7 +182,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Kalbe Farma',
+                      'Ghea Rofifah, S.far.,Apt.',
                       style: titleTextStyle,
                     ),
                     Spacer(),
@@ -189,20 +190,15 @@ class _DistributorsPageState extends State<DistributorsPage> {
                       padding: EdgeInsets.only(
                         right: 12,
                       ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: '293',
+                      child: Container(
+                        width: 200,
+                        child: Text(
+                          'Apoteker Pengelola Apotek (APA)',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: descTextStyle.copyWith(
                             color: greenColor,
                           ),
-                          children: [
-                            TextSpan(
-                              text: ' products',
-                              style: descTextStyle.copyWith(
-                                color: greenColor,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),
@@ -244,7 +240,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/dist2.png',
+                    'assets/profile2.png',
                     width: 66,
                     height: 66,
                     fit: BoxFit.cover,
@@ -259,7 +255,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sanbe Farma',
+                      'Mustari Mahesa Lana',
                       style: titleTextStyle,
                     ),
                     Spacer(),
@@ -267,20 +263,10 @@ class _DistributorsPageState extends State<DistributorsPage> {
                       padding: EdgeInsets.only(
                         right: 12,
                       ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: '115',
-                          style: descTextStyle.copyWith(
-                            color: greenColor,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: ' products',
-                              style: descTextStyle.copyWith(
-                                color: greenColor,
-                              ),
-                            ),
-                          ],
+                      child: Text(
+                        'Aping',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
                         ),
                       ),
                     ),
@@ -322,7 +308,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/dist3.png',
+                    'assets/profile3.png',
                     width: 66,
                     height: 66,
                     fit: BoxFit.cover,
@@ -337,7 +323,7 @@ class _DistributorsPageState extends State<DistributorsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dexa Medica',
+                      'Sri Nurmala Dewi',
                       style: titleTextStyle,
                     ),
                     Spacer(),
@@ -345,20 +331,78 @@ class _DistributorsPageState extends State<DistributorsPage> {
                       padding: EdgeInsets.only(
                         right: 12,
                       ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: '321',
-                          style: descTextStyle.copyWith(
-                            color: greenColor,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: ' products',
-                              style: descTextStyle.copyWith(
-                                color: greenColor,
-                              ),
-                            ),
-                          ],
+                      child: Text(
+                        'Supervisor',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: semiEdge,
+        ),
+        Container(
+          height: 90,
+          width: MediaQuery.of(context).size.width - (2 * edge),
+          decoration: BoxDecoration(
+            color: whiteColor,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.shade200,
+                blurRadius: 10.0,
+                spreadRadius: 0.2,
+                offset: Offset(
+                  0.5,
+                  0.5,
+                ),
+              ),
+            ],
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 12,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    'assets/profile4.png',
+                    width: 66,
+                    height: 66,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Syifa Nurmala Rachmi',
+                      style: titleTextStyle,
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: 12,
+                      ),
+                      child: Text(
+                        'Asisten Apoteker',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
                         ),
                       ),
                     ),
