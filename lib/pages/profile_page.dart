@@ -1,3 +1,4 @@
+import 'package:apoo_flutter/pages/cost_center_page.dart';
 import 'package:apoo_flutter/pages/edit_profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -243,21 +244,31 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: semiEdge,
           ),
-          Row(
-            children: [
-              Image.asset(
-                'assets/ic-cost-center.png',
-                height: 24,
-                width: 24,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Text(
-                'Cost Center',
-                style: titleTextStyle,
-              )
-            ],
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CostCenterPage(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/ic-cost-center.png',
+                  height: 24,
+                  width: 24,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Cost Center',
+                  style: titleTextStyle,
+                )
+              ],
+            ),
           ),
           SizedBox(
             height: semiEdge,
