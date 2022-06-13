@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../widgets/bottom_navbar_item.dart';
 import 'catalog_page.dart';
+import 'departements_page.dart';
 import 'distributors_page.dart';
 import 'employees_page.dart';
 import 'history_page.dart';
@@ -333,21 +334,31 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: semiEdge,
           ),
-          Row(
-            children: [
-              Image.asset(
-                'assets/ic-departements.png',
-                height: 24,
-                width: 24,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Text(
-                'Departements',
-                style: titleTextStyle,
-              )
-            ],
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DepartementsPage(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/ic-departements.png',
+                  height: 24,
+                  width: 24,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'Departements',
+                  style: titleTextStyle,
+                )
+              ],
+            ),
           ),
           SizedBox(
             height: semiEdge,
