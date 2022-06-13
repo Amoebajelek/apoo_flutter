@@ -1,4 +1,5 @@
 import 'package:apoo_flutter/models/data_option_payment.dart';
+import 'package:apoo_flutter/pages/loading_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_option_payment.dart';
 import 'package:flutter/material.dart';
@@ -65,26 +66,36 @@ class _OptionPaymentPageState extends State<OptionPaymentPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - (2 * edge),
-              decoration: BoxDecoration(
-                color: greenColor,
-                border: Border.all(
-                  color: greenColor,
-                  width: 1.0,
-                  style: BorderStyle.solid,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: Text(
-                  'Pay',
-                  style: titleTextStyle.copyWith(
-                    fontSize: 18,
-                    color: whiteColor,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoadingPage(),
                   ),
-                  textAlign: TextAlign.center,
+                );
+              },
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                decoration: BoxDecoration(
+                  color: greenColor,
+                  border: Border.all(
+                    color: greenColor,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Center(
+                  child: Text(
+                    'Pay',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 18,
+                      color: whiteColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ),

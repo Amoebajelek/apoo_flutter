@@ -80,18 +80,75 @@ class _DetailTransactionProcessedState
               Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width - (2 * edge),
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: whiteColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+                decoration: BoxDecoration(
+                    color: whiteColor,
+                    border: Border.all(
+                      color: greenColor,
+                      width: 1.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Row(
+                  children: [
+                    Spacer(),
+                    Text(
+                      'Purchasing Order List',
+                      style: buttonTextStyle.copyWith(
+                        color: greenColor,
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: semiEdge,
+              ),
+              Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                decoration: BoxDecoration(
+                    color: Color(0xffF97F45),
+                    border: Border.all(
+                      color: Color(0xffF97F45),
+                      width: 1.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Row(
+                  children: [
+                    Spacer(),
+                    Text(
+                      'Cancel Order',
+                      style: buttonTextStyle,
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: semiEdge,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
                   child: Row(
                     children: [
                       Spacer(),
                       Text(
                         'Back to home',
-                        style: titleTextStyle,
+                        style: titleTextStyle.copyWith(
+                          color: secondColor,
+                        ),
                       ),
                       Spacer(),
                     ],
@@ -99,7 +156,7 @@ class _DetailTransactionProcessedState
                 ),
               ),
               SizedBox(
-                height: edge,
+                height: semiEdge,
               ),
             ],
           ),
