@@ -15,14 +15,14 @@ class TipsandGuides extends StatelessWidget {
         decoration: BoxDecoration(
           color: blackColor,
           image: DecorationImage(
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             image: AssetImage(
               tipsandguides.imageUrl,
             ),
           ),
         ),
         height: 90,
-        width: 315,
+        width: MediaQuery.of(context).size.width - (2 * edge),
         // alignment: Alignment.center,
         child: Row(
           children: [

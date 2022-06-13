@@ -11,68 +11,72 @@ class StartedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 120, bottom: 50),
-              child: Container(
-                height: 235,
-                width: 240,
-                decoration: BoxDecoration(
-                  image:
-                      DecorationImage(image: AssetImage('assets/slider1.png')),
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 120, bottom: 50),
+                child: Container(
+                  height: 235,
+                  width: 240,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/slider1.png',
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15),
-              child: Text(
-                'Temukan obat yang anda butuhkan dengan cepat dan tepat',
-                style: sliderTextStyle,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Text(
+                  'Temukan obat yang anda butuhkan dengan cepat dan tepat',
+                  style: sliderTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Text(
+                'Segera registrasi di Apoo, temukan semua obat\nyang kamu butuhkan dan order dengan cepat',
+                style: descTextStyle,
                 textAlign: TextAlign.center,
               ),
-            ),
-            Text(
-              'Segera registrasi di Apoo, temukan semua obat\nyang kamu butuhkan dan order dengan cepat',
-              style: descTextStyle,
-              textAlign: TextAlign.center,
-            ),
-            Spacer(),
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - (2 * edge),
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ),
-                  );
-                },
-                color: greenColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: [
-                    Spacer(),
-                    Text(
-                      'Get Started',
-                      style: buttonTextStyle,
-                    ),
-                    Spacer(),
-                  ],
+              Spacer(),
+              Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
+                  },
+                  color: greenColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Get Started',
+                        style: buttonTextStyle,
+                      ),
+                      Spacer(),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: edge,
-            ),
-          ],
+              SizedBox(
+                height: edge,
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFAFA),
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -70,17 +70,28 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
+          color: whiteColor,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 10.0,
+              spreadRadius: 0.2,
+              offset: Offset(
+                0.5,
+                0.5,
+              ),
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: 5,
+            ),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -156,6 +167,9 @@ class _HomePageState extends State<HomePage> {
                 name: 'profile',
               ),
             ),
+            SizedBox(
+              width: 5,
+            ),
           ],
         ),
       ),
@@ -208,7 +222,7 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(12),
         child: Container(
           height: 191,
-          width: 315,
+          width: MediaQuery.of(context).size.width - (2 * edge),
           color: Color(0xffDBFFF3),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -282,35 +296,46 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.only(
         top: semiEdge,
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          color: whiteColor,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextFormField(
-                decoration: InputDecoration(
-                    fillColor: whiteColor,
-                    prefixIcon: Icon(Icons.search),
-                    hintText: 'Search your medicine...',
-                    hintStyle: descTextStyle.copyWith(
-                      color: thirdColor,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    )),
-                style: TextStyle(
-                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
-                ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0xffFFFFFF),
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 10.0,
+              spreadRadius: 0.2,
+              offset: Offset(
+                0.5,
+                0.5,
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                  fillColor: whiteColor,
+                  prefixIcon: Icon(Icons.search),
+                  hintText: 'Search your medicine',
+                  hintStyle: descTextStyle.copyWith(
+                    color: thirdColor,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  )),
+              style: TextStyle(
+                color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+              ),
+            ),
+          ],
         ),
       ),
     );

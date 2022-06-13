@@ -19,7 +19,7 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFAFA),
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -44,17 +44,28 @@ class _HistoryPageState extends State<HistoryPage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
+          color: whiteColor,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 10.0,
+              spreadRadius: 0.2,
+              offset: Offset(
+                0.5,
+                0.5,
+              ),
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: 5,
+            ),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -129,6 +140,9 @@ class _HistoryPageState extends State<HistoryPage> {
                 isActive: false,
                 name: 'profile',
               ),
+            ),
+            SizedBox(
+              width: 5,
             ),
           ],
         ),
@@ -420,7 +434,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
                   height: 90,
-                  width: 315,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
                   color: whiteColor,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -525,7 +539,7 @@ class _HistoryPageState extends State<HistoryPage> {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 height: 90,
-                width: 315,
+                width: MediaQuery.of(context).size.width - (2 * edge),
                 color: whiteColor,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -629,7 +643,7 @@ class _HistoryPageState extends State<HistoryPage> {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 height: 90,
-                width: 315,
+                width: MediaQuery.of(context).size.width - (2 * edge),
                 color: whiteColor,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -734,7 +748,7 @@ class _HistoryPageState extends State<HistoryPage> {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 height: 90,
-                width: 315,
+                width: MediaQuery.of(context).size.width - (2 * edge),
                 color: whiteColor,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,

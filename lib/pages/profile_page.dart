@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAFAFA),
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -38,17 +38,28 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
+          color: whiteColor,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 10.0,
+              spreadRadius: 0.2,
+              offset: Offset(
+                0.5,
+                0.5,
+              ),
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: 5,
+            ),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -123,6 +134,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 isActive: false,
                 name: 'profile',
               ),
+            ),
+            SizedBox(
+              width: 5,
             ),
           ],
         ),

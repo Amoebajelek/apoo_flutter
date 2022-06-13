@@ -54,10 +54,7 @@ class _CatalogPageState extends State<CatalogPage> {
       ),
       bottomNavigationBar: Container(
         height: 76,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: BorderRadius.circular(10),
@@ -76,6 +73,9 @@ class _CatalogPageState extends State<CatalogPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: 5,
+            ),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -150,6 +150,9 @@ class _CatalogPageState extends State<CatalogPage> {
                 isActive: false,
                 name: 'profile',
               ),
+            ),
+            SizedBox(
+              width: 5,
             ),
           ],
         ),

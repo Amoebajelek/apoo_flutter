@@ -26,7 +26,7 @@ class DetailOptionPayment extends StatelessWidget {
         ],
       ),
       height: 90,
-      width: 315,
+      width: MediaQuery.of(context).size.width - (2 * edge),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
