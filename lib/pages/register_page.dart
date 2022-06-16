@@ -1,4 +1,4 @@
-import 'package:apoo_flutter/pages/home_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
@@ -182,7 +182,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => BasePage(),
                     ),
                   );
                 },

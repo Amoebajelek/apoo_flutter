@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:apoo_flutter/theme.dart';
 
 class BottomNavbarItem extends StatelessWidget {
-  final String imageUrl;
-  final bool isActive;
-  final String name;
+  int id;
+  String imageUrl;
+  bool isActive;
+  String name;
 
   BottomNavbarItem({
+    this.id,
     this.imageUrl,
     this.isActive,
     this.name,

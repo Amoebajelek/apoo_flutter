@@ -42,112 +42,6 @@ class _HistoryPageState extends State<HistoryPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 76,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: whiteColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade200,
-              blurRadius: 10.0,
-              spreadRadius: 0.2,
-              offset: Offset(
-                0.5,
-                0.5,
-              ),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            SizedBox(
-              width: 5,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ),
-                );
-              },
-              child: BottomNavbarItem(
-                imageUrl: 'assets/icon-home.png',
-                isActive: false,
-                name: 'home',
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CatalogPage(),
-                  ),
-                );
-              },
-              child: BottomNavbarItem(
-                imageUrl: 'assets/icon-catalog.png',
-                isActive: false,
-                name: 'catalog',
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OrderPage(),
-                  ),
-                );
-              },
-              child: BottomNavbarItem(
-                imageUrl: 'assets/icon-order.png',
-                isActive: false,
-                name: 'order',
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HistoryPage(),
-                  ),
-                );
-              },
-              child: BottomNavbarItem(
-                imageUrl: 'assets/icon-history-green.png',
-                isActive: true,
-                name: 'history',
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProfilePage(),
-                  ),
-                );
-              },
-              child: BottomNavbarItem(
-                imageUrl: 'assets/icon-profile.png',
-                isActive: false,
-                name: 'profile',
-              ),
-            ),
-            SizedBox(
-              width: 5,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -224,194 +118,195 @@ class _HistoryPageState extends State<HistoryPage> {
         bottom: semiEdge,
       ),
       child: Container(
-          height: 33,
-          width: MediaQuery.of(context).size.width - (2 * edge),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: blackColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Today (31)',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                    ),
-                    textAlign: TextAlign.center,
+        height: 33,
+        width: MediaQuery.of(context).size.width - (2 * edge),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: blackColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
                   ),
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
+              child: Center(
+                child: Text(
+                  'Today (31)',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Yesterday',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'This Week',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
                   ),
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
+              child: Center(
+                child: Text(
+                  'Yesterday',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    'This Month',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    '3 Months',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
                   ),
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
+              child: Center(
+                child: Text(
+                  'This Week',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    '6 Months',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
-                width: semiEdge,
-              ),
-              Container(
-                height: 30,
-                width: 100,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: whiteColor,
-                      width: 2.0,
-                      style: BorderStyle.solid,
-                    ),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'This Year',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 14,
-                      color: thirdColor,
-                    ),
-                    textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
                   ),
                 ),
               ),
-            ],
-          )),
+              child: Center(
+                child: Text(
+                  'This Month',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  '3 Months',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  '6 Months',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
+            Container(
+              height: 30,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: whiteColor,
+                    width: 2.0,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'This Year',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                    color: thirdColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
