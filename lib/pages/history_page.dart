@@ -1,4 +1,4 @@
-import 'package:apoo_flutter/pages/detail_transaction-processed.dart';
+import 'package:apoo_flutter/pages/catalog/detail_transaction-processed-catalog.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
@@ -56,7 +56,7 @@ class _HistoryPageState extends State<HistoryPage> {
           ),
           Center(
             child: Text(
-              'Log Transactions',
+              'History',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),
@@ -321,7 +321,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailTransactionProcessed(),
+                    builder: (context) => DetailTransactionProcessedCatalog(),
                   ),
                 );
               },

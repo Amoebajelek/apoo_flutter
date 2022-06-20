@@ -1,18 +1,20 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
-import 'package:apoo_flutter/pages/detail_purchasing_received_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
+import 'package:apoo_flutter/pages/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
-class DetailPurchasingOrderPage extends StatefulWidget {
+class DetailTransactionProcessedCatalog extends StatefulWidget {
   @override
-  State<DetailPurchasingOrderPage> createState() =>
-      _DetailPurchasingOrderPageState();
+  State<DetailTransactionProcessedCatalog> createState() =>
+      _DetailTransactionProcessedCatalogState();
 }
 
-class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
+class _DetailTransactionProcessedCatalogState
+    extends State<DetailTransactionProcessedCatalog> {
   bool isEmailValid = true;
 
   @override
@@ -35,7 +37,7 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                   id: 1,
                   code: '#3882128763678',
                   cashier: 'Rachel Pandawa (Cashier-1)',
-                  imageUrl: 'assets/status-processed.png',
+                  imageUrl: 'assets/status-completed.png',
                   product: 'Bodrexin Medical Center 15 gr 10 Tablet 1 Strip',
                   quantity: '3',
                   unit: 'strips',
@@ -50,14 +52,7 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                 height: 50,
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPurchasingReceivedPage(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   color: greenColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -66,7 +61,7 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                     children: [
                       Spacer(),
                       Text(
-                        'Received',
+                        'Print',
                         style: buttonTextStyle,
                       ),
                       Spacer(),
@@ -82,7 +77,7 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => BasePage(),
                     ),
                   );
                 },
@@ -93,9 +88,9 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                     children: [
                       Spacer(),
                       Text(
-                        'Cancel Order',
+                        'Back to home',
                         style: titleTextStyle.copyWith(
-                          color: Color(0xffF97F45),
+                          color: secondColor,
                         ),
                       ),
                       Spacer(),
@@ -115,38 +110,13 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
 
   Widget header() {
     return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HistoryPage(),
-                ),
-              );
-            },
-            child: Image.asset(
-              'assets/ic-back.png',
-              height: 30,
-              width: 30,
-            ),
+      child: Center(
+        child: Text(
+          'Detail Transaction',
+          style: titleTextStyle.copyWith(
+            fontSize: 18,
           ),
-          Spacer(),
-          Center(
-            child: Text(
-              'Detail Purchasing',
-              style: titleTextStyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Spacer(),
-          Container(
-            height: 30,
-            width: 30,
-          ),
-        ],
+        ),
       ),
     );
   }

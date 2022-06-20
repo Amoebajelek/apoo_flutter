@@ -1,4 +1,4 @@
-import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
+import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';

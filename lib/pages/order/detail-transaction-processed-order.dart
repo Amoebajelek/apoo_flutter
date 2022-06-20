@@ -1,18 +1,20 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
+import 'package:apoo_flutter/pages/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
-class DetailTransactionProcessed extends StatefulWidget {
+class DetailTransactionProcessedOrder extends StatefulWidget {
   @override
-  State<DetailTransactionProcessed> createState() =>
-      _DetailTransactionProcessedState();
+  State<DetailTransactionProcessedOrder> createState() =>
+      _DetailTransactionProcessedOrderState();
 }
 
-class _DetailTransactionProcessedState
-    extends State<DetailTransactionProcessed> {
+class _DetailTransactionProcessedOrderState
+    extends State<DetailTransactionProcessedOrder> {
   bool isEmailValid = true;
 
   @override
@@ -70,28 +72,38 @@ class _DetailTransactionProcessedState
               SizedBox(
                 height: semiEdge,
               ),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                decoration: BoxDecoration(
-                    color: whiteColor,
-                    border: Border.all(
-                      color: greenColor,
-                      width: 1.0,
-                      style: BorderStyle.solid,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PurchasingOrderListPage(),
                     ),
-                    borderRadius: BorderRadius.circular(12)),
-                child: Row(
-                  children: [
-                    Spacer(),
-                    Text(
-                      'Purchasing Order List',
-                      style: buttonTextStyle.copyWith(
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
+                  decoration: BoxDecoration(
+                      color: whiteColor,
+                      border: Border.all(
                         color: greenColor,
+                        width: 1.0,
+                        style: BorderStyle.solid,
                       ),
-                    ),
-                    Spacer(),
-                  ],
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Purchasing Order List',
+                        style: buttonTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                      Spacer(),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -127,7 +139,7 @@ class _DetailTransactionProcessedState
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => BasePage(),
                     ),
                   );
                 },
@@ -160,38 +172,13 @@ class _DetailTransactionProcessedState
 
   Widget header() {
     return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HistoryPage(),
-                ),
-              );
-            },
-            child: Image.asset(
-              'assets/ic-back.png',
-              height: 30,
-              width: 30,
-            ),
+      child: Center(
+        child: Text(
+          'Detail Transaction',
+          style: titleTextStyle.copyWith(
+            fontSize: 18,
           ),
-          Spacer(),
-          Center(
-            child: Text(
-              'Detail Transaction',
-              style: titleTextStyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Spacer(),
-          Container(
-            height: 30,
-            width: 30,
-          ),
-        ],
+        ),
       ),
     );
   }

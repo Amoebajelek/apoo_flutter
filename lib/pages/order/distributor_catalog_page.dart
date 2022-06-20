@@ -1,11 +1,11 @@
-import 'package:apoo_flutter/pages/add_catalog_product.dart';
-import 'package:apoo_flutter/pages/detail_catalog_page.dart';
+import 'package:apoo_flutter/pages/order/add_catalog_product.dart';
 import 'package:apoo_flutter/pages/order_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../models/data_product.dart';
-import '../widgets/top_product.dart';
+import '../../models/data_product.dart';
+import '../../widgets/top_product.dart';
+import 'detail_order_page.dart';
 
 class DistributorCatalogPage extends StatefulWidget {
   @override
@@ -332,7 +332,7 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailCatalogPage(),
+                            builder: (context) => DetailOrderPage(),
                           ),
                         );
                       },
