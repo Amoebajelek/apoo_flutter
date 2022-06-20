@@ -1,4 +1,5 @@
-import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
+import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
@@ -60,36 +61,26 @@ class _CostCenterPageState extends State<CostCenterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DistributorCatalogPage(),
-                  ),
-                );
-              },
-              child: Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                decoration: BoxDecoration(
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width - (2 * edge),
+              decoration: BoxDecoration(
+                color: greenColor,
+                border: Border.all(
                   color: greenColor,
-                  border: Border.all(
-                    color: greenColor,
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
+                  width: 1.0,
+                  style: BorderStyle.solid,
                 ),
-                child: Center(
-                  child: Text(
-                    'Add Cost Center',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 18,
-                      color: whiteColor,
-                    ),
-                    textAlign: TextAlign.center,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(
+                child: Text(
+                  'Add Cost Center',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 18,
+                    color: whiteColor,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -109,7 +100,7 @@ class _CostCenterPageState extends State<CostCenterPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
+                  builder: (context) => BasePage(),
                 ),
               );
             },

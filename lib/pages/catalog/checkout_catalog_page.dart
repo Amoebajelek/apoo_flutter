@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 import 'detail_catalog_page.dart';
 
-class CheckoutPage extends StatefulWidget {
+class CheckoutCatalogPage extends StatefulWidget {
   @override
-  State<CheckoutPage> createState() => _CheckoutPageState();
+  State<CheckoutCatalogPage> createState() => _CheckoutCatalogPageState();
 }
 
-class _CheckoutPageState extends State<CheckoutPage> {
+class _CheckoutCatalogPageState extends State<CheckoutCatalogPage> {
   bool isEmailValid = true;
 
   @override

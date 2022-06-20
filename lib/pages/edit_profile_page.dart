@@ -1,5 +1,4 @@
-import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +95,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DistributorCatalogPage(),
+                    builder: (context) => BasePage(),
                   ),
                 );
               },
@@ -140,7 +139,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
+                  builder: (context) => BasePage(),
                 ),
               );
             },
@@ -153,7 +152,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           Spacer(),
           Center(
             child: Text(
-              'Add Catalog Product',
+              'Edit Profile',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),

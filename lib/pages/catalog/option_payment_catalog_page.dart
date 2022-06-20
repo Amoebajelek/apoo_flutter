@@ -116,7 +116,7 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CheckoutPage(),
+                  builder: (context) => CheckoutCatalogPage(),
                 ),
               );
             },

@@ -97,7 +97,7 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CheckoutPage(),
+                    builder: (context) => CheckoutCatalogPage(),
                   ),
                 );
               },

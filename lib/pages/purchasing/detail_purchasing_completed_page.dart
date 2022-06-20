@@ -1,7 +1,7 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/purchasing_order_list_page.dart';
+import 'package:apoo_flutter/pages/purchasing/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +113,7 @@ class _DetailPurchasingCompletedPageState
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => BasePage(),
                     ),
                   );
                 },

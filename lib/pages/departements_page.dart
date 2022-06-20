@@ -1,5 +1,4 @@
-import 'package:apoo_flutter/pages/order_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -61,7 +60,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OrderPage(),
+                    builder: (context) => BasePage(),
                   ),
                 );
               },
@@ -105,7 +104,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
+                  builder: (context) => BasePage(),
                 ),
               );
             },

@@ -1,7 +1,7 @@
 import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/detail_catalog_page.dart';
-import 'package:apoo_flutter/pages/distributor_catalog_page.dart';
+import 'package:apoo_flutter/pages/catalog/detail_catalog_page.dart';
+import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/order_page.dart';

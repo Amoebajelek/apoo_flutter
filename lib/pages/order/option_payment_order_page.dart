@@ -1,10 +1,10 @@
 import 'package:apoo_flutter/models/data_option_payment.dart';
-import 'package:apoo_flutter/pages/catalog/loading_catalog_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_option_payment.dart';
 import 'package:flutter/material.dart';
 
-import '../catalog/checkout_catalog_page.dart';
+import 'checkout_order_page.dart';
+import 'loading_order_page.dart';
 
 class OptionPaymentOrderPage extends StatefulWidget {
   @override
@@ -71,7 +71,7 @@ class _OptionPaymentOrderPageState extends State<OptionPaymentOrderPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoadingCatalogPage(),
+                    builder: (context) => LoadingOrderPage(),
                   ),
                 );
               },
@@ -115,7 +115,7 @@ class _OptionPaymentOrderPageState extends State<OptionPaymentOrderPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CheckoutPage(),
+                  builder: (context) => CheckoutOrderPage(),
                 ),
               );
             },

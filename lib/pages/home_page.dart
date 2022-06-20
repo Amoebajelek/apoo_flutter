@@ -1,7 +1,6 @@
 import 'package:apoo_flutter/models/data_lastTransactions.dart';
 import 'package:apoo_flutter/models/data_tipsAndGuides.dart';
-import 'package:apoo_flutter/pages/catalog_page.dart';
-import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
+import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:apoo_flutter/widgets/last_transactions.dart';
 import 'package:apoo_flutter/widgets/tips_and_guides.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
@@ -11,9 +10,7 @@ import 'package:flutter/material.dart';
 import '../models/data_distributors.dart';
 import '../models/data_product.dart';
 import '../theme.dart';
-import 'history_page.dart';
-import 'order_page.dart';
-import 'profile_page.dart';
+import 'catalog/detail_catalog_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -263,13 +260,23 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                TopDistributor(
-                  DataDistributor(
-                    id: 1,
-                    name: 'Kalbe Farma',
-                    stocks: '241',
-                    imageUrl: 'assets/topDist1.png',
-                    location: 'Kota Bandung',
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (c) => DistributorCatalogPage(),
+                      ),
+                    );
+                  },
+                  child: TopDistributor(
+                    DataDistributor(
+                      id: 1,
+                      name: 'Kalbe Farma',
+                      stocks: '241',
+                      imageUrl: 'assets/topDist1.png',
+                      location: 'Kota Bandung',
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -328,13 +335,23 @@ class _HomePageState extends State<HomePage> {
             ),
             Column(
               children: [
-                TopSellingProduct(
-                  DataProduct(
-                    id: 1,
-                    name: 'Paracetamol',
-                    producent: 'PT Kalbe Farma',
-                    imageUrl: 'assets/top1.png',
-                    price: '5000',
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailCatalogPage(),
+                      ),
+                    );
+                  },
+                  child: TopSellingProduct(
+                    DataProduct(
+                      id: 1,
+                      name: 'Paracetamol',
+                      producent: 'PT Kalbe Farma',
+                      imageUrl: 'assets/top1.png',
+                      price: '5000',
+                    ),
                   ),
                 ),
                 SizedBox(

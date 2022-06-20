@@ -1,12 +1,8 @@
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:flutter/material.dart';
 
-import 'catalog_page.dart';
-import 'purchasing/detail_purchasing_order_page.dart';
-import 'profile_page.dart';
-import 'order_page.dart';
-import 'catalog/detail_transaction-processed-catalog.dart';
+import 'detail_purchasing_order_page.dart';
 
 class PurchasingOrderListPage extends StatefulWidget {
   @override
@@ -55,7 +51,7 @@ class _PurchasingOrderListPageState extends State<PurchasingOrderListPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
+                  builder: (context) => BasePage(),
                 ),
               );
             },

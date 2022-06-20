@@ -9,7 +9,7 @@ import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:flutter/material.dart';
 
 import 'catalog_page.dart';
-import 'distributor_catalog_page.dart';
+import 'order/distributor_catalog_page.dart';
 
 class OrderPage extends StatefulWidget {
   @override

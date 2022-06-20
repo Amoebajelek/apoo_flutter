@@ -10,7 +10,7 @@ import 'history_page.dart';
 import 'home_page.dart';
 import 'order_page.dart';
 import 'splash_page.dart';
-import 'purchasing_order_list_page.dart';
+import 'purchasing/purchasing_order_list_page.dart';
 import 'edit_profile_page.dart';
 import 'cost_center_page.dart';
 
