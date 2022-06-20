@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:apoo_flutter/pages/login_page.dart';
-import 'package:apoo_flutter/pages/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +50,7 @@ class StartedPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PurchasingOrderListPage(),
+                        builder: (context) => LoginPage(),
                       ),
                     );
                   },
