@@ -751,7 +751,27 @@ class _HistoryPageState extends State<HistoryPage> {
       height: 50,
       width: MediaQuery.of(context).size.width - (2 * edge),
       child: RaisedButton(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (c) => AlertDialog(
+              content: Text(
+                'Printed!',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Close',
+                    style: descTextStyle.copyWith(
+                      color: greenColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
         color: greenColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

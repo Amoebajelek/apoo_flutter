@@ -92,11 +92,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
+                Navigator.pop(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => BasePage(),
-                  ),
                 );
               },
               child: Container(
@@ -136,11 +133,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => BasePage(),
-                ),
               );
             },
             child: Image.asset(

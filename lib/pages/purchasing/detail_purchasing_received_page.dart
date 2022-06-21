@@ -1,6 +1,5 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
-import 'package:apoo_flutter/pages/good_receipt_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
+import 'package:apoo_flutter/pages/purchasing/good_receipt_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
@@ -90,11 +89,8 @@ class _DetailPurchasingReceivedPageState
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => HistoryPage(),
-                ),
               );
             },
             child: Image.asset(

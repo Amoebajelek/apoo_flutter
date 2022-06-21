@@ -1,10 +1,10 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
 import 'package:apoo_flutter/pages/purchasing/detail_purchasing_received_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
+
+import '../base_page.dart';
 
 class DetailPurchasingOrderPage extends StatefulWidget {
   @override
@@ -79,10 +79,37 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                  showDialog(
+                    context: context,
+                    builder: (c) => AlertDialog(
+                      content: Text(
+                        'Are you sure?',
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (c) => BasePage(),
+                            ),
+                          ),
+                          child: Text(
+                            'Yes',
+                            style: descTextStyle.copyWith(
+                              color: greenColor,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(
+                            'No',
+                            style: descTextStyle.copyWith(
+                              color: greenColor,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },
@@ -119,11 +146,8 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => HistoryPage(),
-                ),
               );
             },
             child: Image.asset(

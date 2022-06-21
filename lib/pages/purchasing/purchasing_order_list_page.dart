@@ -1,4 +1,3 @@
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -48,11 +47,8 @@ class _PurchasingOrderListPageState extends State<PurchasingOrderListPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => BasePage(),
-                ),
               );
             },
             child: Image.asset(
@@ -709,7 +705,27 @@ class _PurchasingOrderListPageState extends State<PurchasingOrderListPage> {
       height: 50,
       width: MediaQuery.of(context).size.width - (2 * edge),
       child: RaisedButton(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (c) => AlertDialog(
+              content: Text(
+                'Printed!',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Close',
+                    style: descTextStyle.copyWith(
+                      color: greenColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
         color: greenColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

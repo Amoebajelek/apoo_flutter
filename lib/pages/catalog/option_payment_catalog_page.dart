@@ -113,11 +113,8 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => CheckoutCatalogPage(),
-                ),
               );
             },
             child: Image.asset(

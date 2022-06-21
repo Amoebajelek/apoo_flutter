@@ -141,11 +141,8 @@ class _DetailOrderPageState extends State<DetailOrderPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => OrderPage(),
-                ),
               );
             },
             child: Image.asset(

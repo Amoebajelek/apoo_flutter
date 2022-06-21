@@ -102,11 +102,8 @@ class _EmployeesPageState extends State<EmployeesPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => BasePage(),
-                ),
               );
             },
             child: Image.asset(

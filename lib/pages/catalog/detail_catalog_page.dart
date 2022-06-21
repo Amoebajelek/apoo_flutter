@@ -141,11 +141,8 @@ class _DetailCatalogPageState extends State<DetailCatalogPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => CatalogPage(),
-                ),
               );
             },
             child: Image.asset(

@@ -114,11 +114,8 @@ class _CheckoutOrderPageState extends State<CheckoutOrderPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => DetailOrderPage(),
-                ),
               );
             },
             child: Image.asset(

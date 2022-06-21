@@ -114,11 +114,8 @@ class _CheckoutCatalogPageState extends State<CheckoutCatalogPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => DetailCatalogPage(),
-                ),
               );
             },
             child: Image.asset(

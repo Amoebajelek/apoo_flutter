@@ -1,15 +1,10 @@
+import 'package:apoo_flutter/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
-import '../widgets/bottom_navbar_item.dart';
-import 'catalog_page.dart';
 import 'departements_page.dart';
 import 'distributors_page.dart';
 import 'employees_page.dart';
-import 'history_page.dart';
-import 'home_page.dart';
-import 'order_page.dart';
-import 'splash_page.dart';
 import 'purchasing/purchasing_order_list_page.dart';
 import 'edit_profile_page.dart';
 import 'cost_center_page.dart';
@@ -488,7 +483,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Text(
                   'FAQs',
-                  style: titleTextStyle,
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                  ),
                 ),
                 Spacer(),
                 Icon(
@@ -517,7 +514,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Text(
                   'Our Handbook',
-                  style: titleTextStyle,
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                  ),
                 ),
                 Spacer(),
                 Icon(
@@ -546,7 +545,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Text(
                   'Switch to other employee',
-                  style: titleTextStyle,
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                  ),
                 ),
                 Spacer(),
                 Icon(
@@ -562,10 +563,40 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (c) => SplashPage(),
+              showDialog(
+                context: context,
+                builder: (c) => AlertDialog(
+                  content: Text(
+                    'Are you sure?',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (c) => SplashPage(),
+                        ),
+                      ),
+                      child: Text(
+                        'Yes',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(
+                        'No',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
@@ -582,7 +613,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Text(
                   'Logout',
-                  style: titleTextStyle,
+                  style: titleTextStyle.copyWith(
+                    fontSize: 14,
+                  ),
                 ),
               ],
             ),

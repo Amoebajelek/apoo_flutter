@@ -1,7 +1,5 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
 import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/purchasing/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
@@ -52,7 +50,27 @@ class _DetailTransactionProcessedOrderState
                 height: 50,
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (c) => AlertDialog(
+                        content: Text(
+                          'Printed!',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              'Close',
+                              style: descTextStyle.copyWith(
+                                color: greenColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   color: greenColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -109,26 +127,63 @@ class _DetailTransactionProcessedOrderState
               SizedBox(
                 height: semiEdge,
               ),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                decoration: BoxDecoration(
-                    color: Color(0xffF97F45),
-                    border: Border.all(
+              InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (c) => AlertDialog(
+                      content: Text(
+                        'Are you sure?',
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (c) => BasePage(),
+                            ),
+                          ),
+                          child: Text(
+                            'Yes',
+                            style: descTextStyle.copyWith(
+                              color: greenColor,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(
+                            'No',
+                            style: descTextStyle.copyWith(
+                              color: greenColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
+                  decoration: BoxDecoration(
                       color: Color(0xffF97F45),
-                      width: 1.0,
-                      style: BorderStyle.solid,
-                    ),
-                    borderRadius: BorderRadius.circular(12)),
-                child: Row(
-                  children: [
-                    Spacer(),
-                    Text(
-                      'Cancel Order',
-                      style: buttonTextStyle,
-                    ),
-                    Spacer(),
-                  ],
+                      border: Border.all(
+                        color: Color(0xffF97F45),
+                        width: 1.0,
+                        style: BorderStyle.solid,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Cancel Order',
+                        style: buttonTextStyle,
+                      ),
+                      Spacer(),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(

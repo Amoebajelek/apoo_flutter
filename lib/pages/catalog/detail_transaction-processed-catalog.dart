@@ -52,7 +52,27 @@ class _DetailTransactionProcessedCatalogState
                 height: 50,
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (c) => AlertDialog(
+                        content: Text(
+                          'Printed!',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              'Close',
+                              style: descTextStyle.copyWith(
+                                color: greenColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   color: greenColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -110,13 +130,35 @@ class _DetailTransactionProcessedCatalogState
 
   Widget header() {
     return Container(
-      child: Center(
-        child: Text(
-          'Detail Transaction',
-          style: titleTextStyle.copyWith(
-            fontSize: 18,
+      child: Row(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pop(
+                context,
+              );
+            },
+            child: Image.asset(
+              'assets/ic-back.png',
+              height: 30,
+              width: 30,
+            ),
           ),
-        ),
+          Spacer(),
+          Center(
+            child: Text(
+              'Detail Transaction',
+              style: titleTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Spacer(),
+          Container(
+            height: 30,
+            width: 30,
+          ),
+        ],
       ),
     );
   }

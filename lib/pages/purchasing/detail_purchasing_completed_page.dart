@@ -1,6 +1,5 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
 import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/purchasing/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
@@ -51,7 +50,27 @@ class _DetailPurchasingCompletedPageState
                 height: 50,
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (c) => AlertDialog(
+                        content: Text(
+                          'Printed!',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              'Close',
+                              style: descTextStyle.copyWith(
+                                color: greenColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   color: greenColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -60,7 +79,7 @@ class _DetailPurchasingCompletedPageState
                     children: [
                       Spacer(),
                       Text(
-                        'Goods Receipt',
+                        'Print',
                         style: buttonTextStyle,
                       ),
                       Spacer(),
@@ -146,38 +165,13 @@ class _DetailPurchasingCompletedPageState
 
   Widget header() {
     return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HistoryPage(),
-                ),
-              );
-            },
-            child: Image.asset(
-              'assets/ic-back.png',
-              height: 30,
-              width: 30,
-            ),
+      child: Center(
+        child: Text(
+          'Detail Purchasing',
+          style: titleTextStyle.copyWith(
+            fontSize: 18,
           ),
-          Spacer(),
-          Center(
-            child: Text(
-              'Detail Purchasing',
-              style: titleTextStyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Spacer(),
-          Container(
-            height: 30,
-            width: 30,
-          ),
-        ],
+        ),
       ),
     );
   }

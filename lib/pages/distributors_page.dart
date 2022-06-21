@@ -101,11 +101,8 @@ class _DistributorsPageState extends State<DistributorsPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => BasePage(),
-                ),
               );
             },
             child: Image.asset(

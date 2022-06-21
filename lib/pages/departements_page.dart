@@ -101,11 +101,8 @@ class _DepartementsPageState extends State<DepartementsPage> {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => BasePage(),
-                ),
               );
             },
             child: Image.asset(
