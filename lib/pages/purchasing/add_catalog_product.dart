@@ -1,7 +1,8 @@
-import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'distributor_catalog_page.dart';
 
 class AddCatalogProduct extends StatefulWidget {
   @override
@@ -104,7 +105,7 @@ class _AddCatalogProductState extends State<AddCatalogProduct> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DistributorCatalogPage(),
+                    builder: (context) => DistributorPurchasingPage(),
                   ),
                 );
               },
@@ -148,7 +149,7 @@ class _AddCatalogProductState extends State<AddCatalogProduct> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DistributorCatalogPage(),
+                  builder: (context) => DistributorPurchasingPage(),
                 ),
               );
             },

@@ -1,6 +1,5 @@
 import 'package:apoo_flutter/models/data_lastTransactions.dart';
 import 'package:apoo_flutter/models/data_tipsAndGuides.dart';
-import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
 import 'package:apoo_flutter/widgets/last_transactions.dart';
 import 'package:apoo_flutter/widgets/tips_and_guides.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
@@ -10,7 +9,8 @@ import 'package:flutter/material.dart';
 import '../models/data_distributors.dart';
 import '../models/data_product.dart';
 import '../theme.dart';
-import 'catalog/detail_catalog_page.dart';
+import 'purchasing/distributor_catalog_page.dart';
+import 'sales/detail_sales_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -265,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (c) => DistributorCatalogPage(),
+                        builder: (c) => DistributorPurchasingPage(),
                       ),
                     );
                   },
@@ -340,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailCatalogPage(),
+                        builder: (context) => DetailSalesPage(),
                       ),
                     );
                   },

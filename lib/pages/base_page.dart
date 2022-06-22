@@ -1,7 +1,7 @@
-import 'package:apoo_flutter/pages/catalog_page.dart';
+import 'package:apoo_flutter/pages/sales_page.dart';
 import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/order_page.dart';
+import 'package:apoo_flutter/pages/purchasing_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
@@ -57,12 +57,12 @@ class _BasePageState extends State<BasePage> {
             buildNavBarItem(
               'assets/icon-catalog.png',
               1,
-              'Catalog',
+              'Sales',
             ),
             buildNavBarItem(
               'assets/icon-order.png',
               2,
-              'Order',
+              'Purchasing',
             ),
             buildNavBarItem(
               'assets/icon-history.png',

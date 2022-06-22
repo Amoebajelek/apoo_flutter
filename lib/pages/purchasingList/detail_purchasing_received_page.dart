@@ -1,20 +1,18 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
-import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/purchasing/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
-class DetailTransactionProcessedCatalog extends StatefulWidget {
+import 'good_receipt_page.dart';
+
+class DetailPurchasingReceivedPage extends StatefulWidget {
   @override
-  State<DetailTransactionProcessedCatalog> createState() =>
-      _DetailTransactionProcessedCatalogState();
+  State<DetailPurchasingReceivedPage> createState() =>
+      _DetailPurchasingReceivedPageState();
 }
 
-class _DetailTransactionProcessedCatalogState
-    extends State<DetailTransactionProcessedCatalog> {
+class _DetailPurchasingReceivedPageState
+    extends State<DetailPurchasingReceivedPage> {
   bool isEmailValid = true;
 
   @override
@@ -37,7 +35,7 @@ class _DetailTransactionProcessedCatalogState
                   id: 1,
                   code: '#3882128763678',
                   cashier: 'Rachel Pandawa (Cashier-1)',
-                  imageUrl: 'assets/status-completed.png',
+                  imageUrl: 'assets/status-received.png',
                   product: 'Bodrexin Medical Center 15 gr 10 Tablet 1 Strip',
                   quantity: '3',
                   unit: 'strips',
@@ -53,23 +51,10 @@ class _DetailTransactionProcessedCatalogState
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
                   onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (c) => AlertDialog(
-                        content: Text(
-                          'Printed!',
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: Text(
-                              'Close',
-                              style: descTextStyle.copyWith(
-                                color: greenColor,
-                              ),
-                            ),
-                          ),
-                        ],
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GoodsReceiptPage(),
                       ),
                     );
                   },
@@ -81,37 +66,8 @@ class _DetailTransactionProcessedCatalogState
                     children: [
                       Spacer(),
                       Text(
-                        'Print',
+                        'Goods Receipt',
                         style: buttonTextStyle,
-                      ),
-                      Spacer(),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: semiEdge,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BasePage(),
-                    ),
-                  );
-                },
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width - (2 * edge),
-                  child: Row(
-                    children: [
-                      Spacer(),
-                      Text(
-                        'Back to home',
-                        style: titleTextStyle.copyWith(
-                          color: secondColor,
-                        ),
                       ),
                       Spacer(),
                     ],
@@ -147,7 +103,7 @@ class _DetailTransactionProcessedCatalogState
           Spacer(),
           Center(
             child: Text(
-              'Detail Transaction',
+              'Detail Purchasing',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),

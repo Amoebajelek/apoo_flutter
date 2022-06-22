@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'package:apoo_flutter/pages/order/detail-transaction-processed-order.dart';
+import 'package:apoo_flutter/pages/sales/detail_transaction-processed-sales.dart';
 import 'package:flutter/material.dart';
 import '../../theme.dart';
 
-class LoadingOrderPage extends StatefulWidget {
+class LoadingSalesPage extends StatefulWidget {
   @override
-  State<LoadingOrderPage> createState() => _LoadingOrderPageState();
+  State<LoadingSalesPage> createState() => _LoadingSalesPageState();
 }
 
-class _LoadingOrderPageState extends State<LoadingOrderPage> {
+class _LoadingSalesPageState extends State<LoadingSalesPage> {
   @override
   void initState() {
     super.initState();
@@ -17,7 +17,7 @@ class _LoadingOrderPageState extends State<LoadingOrderPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailTransactionProcessedOrder(),
+          builder: (context) => DetailTransactionProcessedSales(),
         ),
       );
     });

@@ -2,7 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-import 'employees_page.dart';
+import '../profile/employees_page.dart';
 
 class NewEmployeePage extends StatefulWidget {
   @override

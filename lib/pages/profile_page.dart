@@ -1,13 +1,13 @@
-import 'package:apoo_flutter/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
-import 'departements_page.dart';
-import 'distributors_page.dart';
-import 'employees_page.dart';
-import 'purchasing/purchasing_order_list_page.dart';
-import 'edit_profile_page.dart';
-import 'cost_center_page.dart';
+import 'profile/departements_page.dart';
+import 'profile/distributors_page.dart';
+import 'profile/employees_page.dart';
+import 'purchasingList/purchasing_order_list_page.dart';
+import 'profile/edit_profile_page.dart';
+import 'profile/cost_center_page.dart';
+import 'splash_page.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -15,8 +15,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  bool isEmailValid = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -238,6 +236,53 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Text(
                       'Distributor list',
+                      style: seeAllTextStyle,
+                    )
+                  ],
+                ),
+                Spacer(),
+                Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Color(0xffC6D6EB),
+                  size: 20.0,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: semiEdge,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DistributorsPage(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/ic-medicines.png',
+                  height: 24,
+                  width: 24,
+                  color: Color(0xffC6D6EB),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Medicines',
+                      style: titleTextStyle.copyWith(
+                        fontSize: 14,
+                      ),
+                    ),
+                    Text(
+                      'Medicine list',
                       style: seeAllTextStyle,
                     )
                   ],

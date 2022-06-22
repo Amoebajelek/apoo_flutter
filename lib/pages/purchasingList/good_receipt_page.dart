@@ -1,7 +1,8 @@
-import 'package:apoo_flutter/pages/purchasing/detail_purchasing_completed_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+
+import 'detail_purchasing_completed_page.dart';
 
 class GoodsReceiptPage extends StatefulWidget {
   @override

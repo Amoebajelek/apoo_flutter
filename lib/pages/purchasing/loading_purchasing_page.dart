@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'package:apoo_flutter/pages/catalog/detail_transaction-processed-catalog.dart';
 import 'package:flutter/material.dart';
 import '../../theme.dart';
+import 'detail-transaction-processed-purchasing.dart';
 
-class LoadingCatalogPage extends StatefulWidget {
+class LoadingPurchasingPage extends StatefulWidget {
   @override
-  State<LoadingCatalogPage> createState() => _LoadingCatalogPageState();
+  State<LoadingPurchasingPage> createState() => _LoadingPurchasingPageState();
 }
 
-class _LoadingCatalogPageState extends State<LoadingCatalogPage> {
+class _LoadingPurchasingPageState extends State<LoadingPurchasingPage> {
   @override
   void initState() {
     super.initState();
@@ -17,7 +17,7 @@ class _LoadingCatalogPageState extends State<LoadingCatalogPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailTransactionProcessedCatalog(),
+          builder: (context) => DetailTransactionProcessedPurchasing(),
         ),
       );
     });

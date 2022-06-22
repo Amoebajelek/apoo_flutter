@@ -1,12 +1,12 @@
-import 'package:apoo_flutter/pages/catalog/detail_transaction-processed-catalog.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/order_page.dart';
+import 'package:apoo_flutter/pages/purchasing_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:flutter/material.dart';
 
-import 'catalog_page.dart';
+import 'sales_page.dart';
+import 'sales/detail_transaction-processed-sales.dart';
 
 class HistoryPage extends StatefulWidget {
   @override
@@ -321,7 +321,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailTransactionProcessedCatalog(),
+                    builder: (context) => DetailTransactionProcessedSales(),
                   ),
                 );
               },

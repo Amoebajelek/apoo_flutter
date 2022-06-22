@@ -3,15 +3,14 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
-import 'detail_order_page.dart';
-import 'option_payment_order_page.dart';
+import 'option_payment_sales_page.dart';
 
-class CheckoutOrderPage extends StatefulWidget {
+class CheckoutSalesPage extends StatefulWidget {
   @override
-  State<CheckoutOrderPage> createState() => _CheckoutOrderPageState();
+  State<CheckoutSalesPage> createState() => _CheckoutSalesPageState();
 }
 
-class _CheckoutOrderPageState extends State<CheckoutOrderPage> {
+class _CheckoutSalesPageState extends State<CheckoutSalesPage> {
   bool isEmailValid = true;
 
   @override
@@ -62,7 +61,7 @@ class _CheckoutOrderPageState extends State<CheckoutOrderPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OptionPaymentOrderPage(),
+                    builder: (context) => OptionPaymentSalesPage(),
                   ),
                 );
               },

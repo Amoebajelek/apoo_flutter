@@ -1,18 +1,17 @@
-import 'package:apoo_flutter/models/data_option_payment.dart';
-import 'package:apoo_flutter/pages/catalog/loading_catalog_page.dart';
+import 'package:apoo_flutter/models/data_product.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/detail_option_payment.dart';
+import 'package:apoo_flutter/widgets/detail_catalog.dart';
 import 'package:flutter/material.dart';
 
-import 'checkout_catalog_page.dart';
+import '../purchasing_page.dart';
+import 'checkout_purchasing_page.dart';
 
-class OptionPaymentCatalogPage extends StatefulWidget {
+class DetailPurchasingPage extends StatefulWidget {
   @override
-  State<OptionPaymentCatalogPage> createState() =>
-      _OptionPaymentCatalogPageState();
+  State<DetailPurchasingPage> createState() => _DetailPurchasingPageState();
 }
 
-class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
+class _DetailPurchasingPageState extends State<DetailPurchasingPage> {
   bool isEmailValid = true;
 
   @override
@@ -33,15 +32,15 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
               SizedBox(
                 height: edge,
               ),
-              cod(),
-              SizedBox(
-                height: edge,
+              DetailCatalog(
+                DataProduct(
+                  name: 'Paracetamol Biofarma Firma 10 mg 1 Strip 10 Tablet',
+                  price: '6.500',
+                  unit: 'Strips',
+                  stocks: '786',
+                  producent: 'PT Biofarma Firma',
+                ),
               ),
-              creditCard(),
-              SizedBox(
-                height: edge,
-              ),
-              merchant(),
             ],
           ),
         ),
@@ -51,7 +50,6 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: whiteColor,
-          borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade200,
@@ -63,22 +61,49 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
               ),
             ),
           ],
+          borderRadius: BorderRadius.circular(10),
         ),
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              width: edge,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: whiteColor,
+                border: Border.all(
+                  color: greenColor,
+                  width: 1.0,
+                  style: BorderStyle.solid,
+                ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(
+                child: Image.asset(
+                  'assets/icon-order-green.png',
+                  height: 24,
+                  width: 24,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: semiEdge,
+            ),
             InkWell(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoadingCatalogPage(),
+                    builder: (context) => CheckoutPurchasingPage(),
                   ),
                 );
               },
               child: Container(
                 height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
+                width: 250,
                 decoration: BoxDecoration(
                   color: greenColor,
                   border: Border.all(
@@ -90,7 +115,7 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
                 ),
                 child: Center(
                   child: Text(
-                    'Pay',
+                    'Checkout',
                     style: titleTextStyle.copyWith(
                       fontSize: 18,
                       color: whiteColor,
@@ -99,6 +124,9 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              width: edge,
             ),
           ],
         ),
@@ -126,7 +154,7 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
           Spacer(),
           Center(
             child: Text(
-              'Payment',
+              'Detail Catalog',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),
@@ -139,99 +167,6 @@ class _OptionPaymentCatalogPageState extends State<OptionPaymentCatalogPage> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget cod() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Cash on Delivery',
-          style: titleTextStyle,
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'Cash on Delivery (COD)',
-            caption: 'via Apotek terdekat',
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget creditCard() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Credit Card',
-          style: titleTextStyle,
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'BCA',
-            caption: '0390 7798134134',
-          ),
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'BNI',
-            caption: '022 87141843746',
-          ),
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'BRI',
-            caption: '0543 87681734100',
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget merchant() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Merchant',
-          style: titleTextStyle,
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'Alfamart',
-            caption: 'via Alfamart terdekat',
-          ),
-        ),
-        SizedBox(
-          height: semiEdge,
-        ),
-        DetailOptionPayment(
-          DataOptionPayment(
-            title: 'Indomart',
-            caption: 'via Indomart terdekat',
-          ),
-        ),
-        SizedBox(
-          height: edge,
-        ),
-      ],
     );
   }
 }

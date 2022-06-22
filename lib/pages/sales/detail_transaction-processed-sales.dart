@@ -1,18 +1,20 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
 import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/purchasing/purchasing_order_list_page.dart';
+import 'package:apoo_flutter/pages/history_page.dart';
+import 'package:apoo_flutter/pages/home_page.dart';
+import 'package:apoo_flutter/pages/purchasingList/purchasing_order_list_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
-class DetailPurchasingCompletedPage extends StatefulWidget {
+class DetailTransactionProcessedSales extends StatefulWidget {
   @override
-  State<DetailPurchasingCompletedPage> createState() =>
-      _DetailPurchasingCompletedPageState();
+  State<DetailTransactionProcessedSales> createState() =>
+      _DetailTransactionProcessedSalesState();
 }
 
-class _DetailPurchasingCompletedPageState
-    extends State<DetailPurchasingCompletedPage> {
+class _DetailTransactionProcessedSalesState
+    extends State<DetailTransactionProcessedSales> {
   bool isEmailValid = true;
 
   @override
@@ -95,43 +97,6 @@ class _DetailPurchasingCompletedPageState
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PurchasingOrderListPage(),
-                    ),
-                  );
-                },
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width - (2 * edge),
-                  decoration: BoxDecoration(
-                      color: whiteColor,
-                      border: Border.all(
-                        color: greenColor,
-                        width: 1.0,
-                        style: BorderStyle.solid,
-                      ),
-                      borderRadius: BorderRadius.circular(12)),
-                  child: Row(
-                    children: [
-                      Spacer(),
-                      Text(
-                        'Purchasing Order List',
-                        style: buttonTextStyle.copyWith(
-                          color: greenColor,
-                        ),
-                      ),
-                      Spacer(),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: semiEdge,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
                       builder: (context) => BasePage(),
                     ),
                   );
@@ -165,13 +130,35 @@ class _DetailPurchasingCompletedPageState
 
   Widget header() {
     return Container(
-      child: Center(
-        child: Text(
-          'Detail Purchasing',
-          style: titleTextStyle.copyWith(
-            fontSize: 18,
+      child: Row(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pop(
+                context,
+              );
+            },
+            child: Image.asset(
+              'assets/ic-back.png',
+              height: 30,
+              width: 30,
+            ),
           ),
-        ),
+          Spacer(),
+          Center(
+            child: Text(
+              'Detail Transaction',
+              style: titleTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Spacer(),
+          Container(
+            height: 30,
+            width: 30,
+          ),
+        ],
       ),
     );
   }

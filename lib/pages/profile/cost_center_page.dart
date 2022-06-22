@@ -1,6 +1,4 @@
 import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 

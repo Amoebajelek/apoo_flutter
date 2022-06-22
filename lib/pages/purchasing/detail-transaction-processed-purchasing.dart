@@ -1,18 +1,19 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
-import 'package:apoo_flutter/pages/purchasing/detail_purchasing_received_page.dart';
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
-import '../base_page.dart';
+import '../purchasingList/purchasing_order_list_page.dart';
 
-class DetailPurchasingOrderPage extends StatefulWidget {
+class DetailTransactionProcessedPurchasing extends StatefulWidget {
   @override
-  State<DetailPurchasingOrderPage> createState() =>
-      _DetailPurchasingOrderPageState();
+  State<DetailTransactionProcessedPurchasing> createState() =>
+      _DetailTransactionProcessedPurchasingState();
 }
 
-class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
+class _DetailTransactionProcessedPurchasingState
+    extends State<DetailTransactionProcessedPurchasing> {
   bool isEmailValid = true;
 
   @override
@@ -51,10 +52,23 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                 width: MediaQuery.of(context).size.width - (2 * edge),
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPurchasingReceivedPage(),
+                    showDialog(
+                      context: context,
+                      builder: (c) => AlertDialog(
+                        content: Text(
+                          'Printed!',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              'Close',
+                              style: descTextStyle.copyWith(
+                                color: greenColor,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     );
                   },
@@ -66,8 +80,45 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                     children: [
                       Spacer(),
                       Text(
-                        'Received',
+                        'Print',
                         style: buttonTextStyle,
+                      ),
+                      Spacer(),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: semiEdge,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PurchasingOrderListPage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
+                  decoration: BoxDecoration(
+                      color: whiteColor,
+                      border: Border.all(
+                        color: greenColor,
+                        width: 1.0,
+                        style: BorderStyle.solid,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Purchasing Order List',
+                        style: buttonTextStyle.copyWith(
+                          color: greenColor,
+                        ),
                       ),
                       Spacer(),
                     ],
@@ -116,13 +167,48 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
                 child: Container(
                   height: 50,
                   width: MediaQuery.of(context).size.width - (2 * edge),
+                  decoration: BoxDecoration(
+                      color: Color(0xffF97F45),
+                      border: Border.all(
+                        color: Color(0xffF97F45),
+                        width: 1.0,
+                        style: BorderStyle.solid,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
                   child: Row(
                     children: [
                       Spacer(),
                       Text(
                         'Cancel Order',
+                        style: buttonTextStyle,
+                      ),
+                      Spacer(),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: semiEdge,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BasePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - (2 * edge),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Back to home',
                         style: titleTextStyle.copyWith(
-                          color: Color(0xffF97F45),
+                          color: secondColor,
                         ),
                       ),
                       Spacer(),
@@ -142,35 +228,13 @@ class _DetailPurchasingOrderPageState extends State<DetailPurchasingOrderPage> {
 
   Widget header() {
     return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pop(
-                context,
-              );
-            },
-            child: Image.asset(
-              'assets/ic-back.png',
-              height: 30,
-              width: 30,
-            ),
+      child: Center(
+        child: Text(
+          'Detail Transaction',
+          style: titleTextStyle.copyWith(
+            fontSize: 18,
           ),
-          Spacer(),
-          Center(
-            child: Text(
-              'Detail Purchasing',
-              style: titleTextStyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Spacer(),
-          Container(
-            height: 30,
-            width: 30,
-          ),
-        ],
+        ),
       ),
     );
   }

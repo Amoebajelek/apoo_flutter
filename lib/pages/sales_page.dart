@@ -1,16 +1,12 @@
 import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/catalog/detail_catalog_page.dart';
-import 'package:apoo_flutter/pages/order/distributor_catalog_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/order_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:apoo_flutter/widgets/top_product.dart';
 import 'package:flutter/material.dart';
+
+import 'purchasing/distributor_catalog_page.dart';
+import 'sales/detail_sales_page.dart';
 
 class CatalogPage extends StatefulWidget {
   @override
@@ -41,7 +37,7 @@ class _CatalogPageState extends State<CatalogPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DistributorCatalogPage(),
+                      builder: (context) => DistributorPurchasingPage(),
                     ),
                   );
                 },
@@ -59,7 +55,7 @@ class _CatalogPageState extends State<CatalogPage> {
     return Container(
       child: Center(
         child: Text(
-          'Catalog',
+          'Sales',
           style: titleTextStyle.copyWith(
             fontSize: 18,
           ),
@@ -364,10 +360,13 @@ class _CatalogPageState extends State<CatalogPage> {
           SizedBox(
             height: semiEdge,
           ),
+          tags(),
+          SizedBox(
+            height: semiEdge,
+          ),
           Container(
             child: Column(
               children: [
-                tags(),
                 Row(
                   children: [
                     Expanded(
@@ -376,7 +375,7 @@ class _CatalogPageState extends State<CatalogPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => DetailCatalogPage(),
+                              builder: (context) => DetailSalesPage(),
                             ),
                           );
                         },
@@ -476,6 +475,9 @@ class _CatalogPageState extends State<CatalogPage> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  width: semiEdge,
                 ),
                 Row(
                   children: [
