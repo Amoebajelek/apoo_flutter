@@ -43,38 +43,38 @@ class _AddCatalogProductState extends State<AddCatalogProduct> {
               SizedBox(
                 height: semiEdge,
               ),
-              category(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              price(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              stocks(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              unit(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              ingredients(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              benefites(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              expiredDate(),
-              SizedBox(
-                height: semiEdge,
-              ),
-              tags(),
-              SizedBox(
-                height: semiEdge,
-              ),
+              // category(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // price(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // stocks(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // unit(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // ingredients(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // benefites(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // expiredDate(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
+              // tags(),
+              // SizedBox(
+              //   height: semiEdge,
+              // ),
             ],
           ),
         ),
@@ -105,7 +105,7 @@ class _AddCatalogProductState extends State<AddCatalogProduct> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DistributorPurchasingPage(),
+                    builder: (context) => DistributorCatalogPage(),
                   ),
                 );
               },
@@ -149,7 +149,7 @@ class _AddCatalogProductState extends State<AddCatalogProduct> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DistributorPurchasingPage(),
+                  builder: (context) => DistributorCatalogPage(),
                 ),
               );
             },

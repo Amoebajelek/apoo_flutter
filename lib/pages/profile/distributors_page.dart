@@ -1,4 +1,5 @@
 import 'package:apoo_flutter/pages/base_page.dart';
+import 'package:apoo_flutter/pages/purchasing/distributor_catalog_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -169,40 +170,50 @@ class _DistributorsPageState extends State<DistributorsPage> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Kalbe Farma',
-                      style: titleTextStyle,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (c) => DistributorCatalogPage(),
                     ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: 12,
+                  );
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 20,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Kalbe Farma',
+                        style: titleTextStyle,
                       ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: '293',
-                          style: descTextStyle.copyWith(
-                            color: greenColor,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: ' products',
-                              style: descTextStyle.copyWith(
-                                color: greenColor,
-                              ),
+                      Spacer(),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          right: 12,
+                        ),
+                        child: Text.rich(
+                          TextSpan(
+                            text: '293',
+                            style: descTextStyle.copyWith(
+                              color: greenColor,
                             ),
-                          ],
+                            children: [
+                              TextSpan(
+                                text: ' products',
+                                style: descTextStyle.copyWith(
+                                  color: greenColor,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -7,6 +7,7 @@ class DataProduct {
   String stocks;
   String unit;
   String location;
+  String category;
 
   DataProduct({
     this.id,
@@ -17,5 +18,6 @@ class DataProduct {
     this.stocks,
     this.unit,
     this.location,
+    this.category,
   });
 }

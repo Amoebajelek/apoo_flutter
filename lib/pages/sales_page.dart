@@ -1,5 +1,6 @@
 import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
+import 'package:apoo_flutter/pages/purchasing/checkout_purchasing_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:apoo_flutter/widgets/top_product.dart';
@@ -8,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'purchasing/distributor_catalog_page.dart';
 import 'sales/detail_sales_page.dart';
 
-class CatalogPage extends StatefulWidget {
+class SalesPage extends StatefulWidget {
   @override
-  State<CatalogPage> createState() => _CatalogPageState();
+  State<SalesPage> createState() => _SalesPageState();
 }
 
-class _CatalogPageState extends State<CatalogPage> {
+class _SalesPageState extends State<SalesPage> {
   bool isEmailValid = true;
 
   @override
@@ -37,7 +38,7 @@ class _CatalogPageState extends State<CatalogPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DistributorPurchasingPage(),
+                      builder: (context) => DistributorCatalogPage(),
                     ),
                   );
                 },
@@ -53,13 +54,38 @@ class _CatalogPageState extends State<CatalogPage> {
 
   Widget header() {
     return Container(
-      child: Center(
-        child: Text(
-          'Sales',
-          style: titleTextStyle.copyWith(
-            fontSize: 18,
+      child: Row(
+        children: [
+          Container(
+            height: 30,
+            width: 30,
           ),
-        ),
+          Spacer(),
+          Center(
+            child: Text(
+              'Sales',
+              style: titleTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Spacer(),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (c) => CheckoutPurchasingPage(),
+                ),
+              );
+            },
+            child: Image.asset(
+              'assets/ic-cart.png',
+              height: 30,
+              width: 30,
+            ),
+          )
+        ],
       ),
     );
   }

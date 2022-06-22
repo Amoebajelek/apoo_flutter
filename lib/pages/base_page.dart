@@ -15,8 +15,8 @@ class _BasePageState extends State<BasePage> {
   int currentIndex = 0;
   final List<Widget> body = [
     HomePage(),
-    CatalogPage(),
-    OrderPage(),
+    SalesPage(),
+    PurchasingPage(),
     HistoryPage(),
     ProfilePage(),
   ];

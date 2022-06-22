@@ -34,6 +34,9 @@ class _HistoryPageState extends State<HistoryPage> {
               search(),
               tags(),
               lastTransaction(),
+              SizedBox(
+                height: edge,
+              ),
               printButton(),
               SizedBox(
                 height: semiEdge,

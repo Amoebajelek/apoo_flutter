@@ -4,14 +4,15 @@ import 'package:apoo_flutter/widgets/list_distributor.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:flutter/material.dart';
 
+import 'purchasing/checkout_purchasing_page.dart';
 import 'purchasing/distributor_catalog_page.dart';
 
-class OrderPage extends StatefulWidget {
+class PurchasingPage extends StatefulWidget {
   @override
-  State<OrderPage> createState() => _OrderPageState();
+  State<PurchasingPage> createState() => _PurchasingPageState();
 }
 
-class _OrderPageState extends State<OrderPage> {
+class _PurchasingPageState extends State<PurchasingPage> {
   bool isEmailValid = true;
 
   @override
@@ -35,7 +36,7 @@ class _OrderPageState extends State<OrderPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DistributorPurchasingPage(),
+                      builder: (context) => DistributorCatalogPage(),
                     ),
                   );
                 },
@@ -51,13 +52,38 @@ class _OrderPageState extends State<OrderPage> {
 
   Widget header() {
     return Container(
-      child: Center(
-        child: Text(
-          'Purchasing',
-          style: titleTextStyle.copyWith(
-            fontSize: 18,
+      child: Row(
+        children: [
+          Container(
+            height: 30,
+            width: 30,
           ),
-        ),
+          Spacer(),
+          Center(
+            child: Text(
+              'Purchasing',
+              style: titleTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Spacer(),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (c) => CheckoutPurchasingPage(),
+                ),
+              );
+            },
+            child: Image.asset(
+              'assets/ic-cart.png',
+              height: 30,
+              width: 30,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -322,112 +348,112 @@ class _OrderPageState extends State<OrderPage> {
                     SizedBox(
                       width: semiEdge,
                     ),
-                    // Expanded(
-                    //   child: ListDistributor(
-                    //     DataDistributor(
-                    //       id: 2,
-                    //       imageUrl: 'assets/dist2.png',
-                    //       name: 'Sanbe Farma',
-                    //       location: 'Kota Bandung',
-                    //       stocks: '102',
-                    //     ),
-                    //   ),
-                    // ),
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 2,
+                          imageUrl: 'assets/dist2.png',
+                          name: 'Sanbe Farma',
+                          location: 'Kota Bandung',
+                          stocks: '102',
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
                   height: semiEdge,
                 ),
-                // Row(
-                //   children: [
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 3,
-                //           imageUrl: 'assets/dist3.png',
-                //           name: 'Dexa Medica',
-                //           location: 'Kota Bandung',
-                //           stocks: '381',
-                //         ),
-                //       ),
-                //     ),
-                //     SizedBox(
-                //       width: semiEdge,
-                //     ),
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 4,
-                //           imageUrl: 'assets/dist4.png',
-                //           name: 'Pharos Indonesia',
-                //           location: 'Kota Bandung',
-                //           stocks: '143',
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                // SizedBox(
-                //   height: semiEdge,
-                // ),
-                // Row(
-                //   children: [
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 5,
-                //           imageUrl: 'assets/dist5.png',
-                //           name: 'Tempo Scan Pasific Bandung',
-                //           location: 'Kota Bandung',
-                //           stocks: '347',
-                //         ),
-                //       ),
-                //     ),
-                //     SizedBox(
-                //       width: semiEdge,
-                //     ),
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 6,
-                //           imageUrl: 'assets/dist2.png',
-                //           name: 'Farmindo',
-                //           location: 'Kota Bandung',
-                //           stocks: '222',
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                // Row(
-                //   children: [
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 7,
-                //           imageUrl: 'assets/dist3.png',
-                //           name: 'Apex Pharma Indonesia',
-                //           location: 'Kota Bandung',
-                //           stocks: '711',
-                //         ),
-                //       ),
-                //     ),
-                //     SizedBox(
-                //       width: semiEdge,
-                //     ),
-                //     Expanded(
-                //       child: ListDistributor(
-                //         DataDistributor(
-                //           id: 8,
-                //           imageUrl: 'assets/dist1.png',
-                //           name: 'Armoxindo Farma',
-                //           location: 'Kota Bandung',
-                //           stocks: '102',
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 3,
+                          imageUrl: 'assets/dist3.png',
+                          name: 'Dexa Medica',
+                          location: 'Kota Bandung',
+                          stocks: '381',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: semiEdge,
+                    ),
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 4,
+                          imageUrl: 'assets/dist4.png',
+                          name: 'Pharos Indonesia',
+                          location: 'Kota Bandung',
+                          stocks: '143',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: semiEdge,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 5,
+                          imageUrl: 'assets/dist5.png',
+                          name: 'Tempo Scan Pasific Bandung',
+                          location: 'Kota Bandung',
+                          stocks: '347',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: semiEdge,
+                    ),
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 6,
+                          imageUrl: 'assets/dist2.png',
+                          name: 'Farmindo',
+                          location: 'Kota Bandung',
+                          stocks: '222',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 7,
+                          imageUrl: 'assets/dist3.png',
+                          name: 'Apex Pharma Indonesia',
+                          location: 'Kota Bandung',
+                          stocks: '711',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: semiEdge,
+                    ),
+                    Expanded(
+                      child: ListDistributor(
+                        DataDistributor(
+                          id: 8,
+                          imageUrl: 'assets/dist1.png',
+                          name: 'Armoxindo Farma',
+                          location: 'Kota Bandung',
+                          stocks: '102',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           )

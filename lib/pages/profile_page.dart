@@ -1,3 +1,4 @@
+import 'package:apoo_flutter/pages/profile/medicines_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -257,7 +258,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DistributorsPage(),
+                  builder: (context) => MedicinesPage(),
                 ),
               );
             },

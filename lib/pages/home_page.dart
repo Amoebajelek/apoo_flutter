@@ -265,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (c) => DistributorPurchasingPage(),
+                        builder: (c) => DistributorCatalogPage(),
                       ),
                     );
                   },

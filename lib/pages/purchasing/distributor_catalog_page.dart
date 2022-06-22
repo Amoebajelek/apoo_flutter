@@ -7,13 +7,12 @@ import '../../widgets/top_product.dart';
 import 'add_catalog_product.dart';
 import 'detail_purchasing_page.dart';
 
-class DistributorPurchasingPage extends StatefulWidget {
+class DistributorCatalogPage extends StatefulWidget {
   @override
-  State<DistributorPurchasingPage> createState() =>
-      _DistributorPurchasingPageState();
+  State<DistributorCatalogPage> createState() => _DistributorCatalogPageState();
 }
 
-class _DistributorPurchasingPageState extends State<DistributorPurchasingPage> {
+class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
   bool isEmailValid = true;
 
   @override
@@ -84,8 +83,8 @@ class _DistributorPurchasingPageState extends State<DistributorPurchasingPage> {
             },
             child: Image.asset(
               'assets/icon-add-product.png',
-              height: 30,
-              width: 30,
+              height: 28,
+              width: 28,
             ),
           ),
         ],

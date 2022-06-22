@@ -3,7 +3,7 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
-import 'detail_purchasing_page.dart';
+import '../base_page.dart';
 import 'option_payment_purchasing_page.dart';
 
 class CheckoutPurchasingPage extends StatefulWidget {
@@ -54,7 +54,7 @@ class _CheckoutPurchasingPageState extends State<CheckoutPurchasingPage> {
           color: whiteColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             InkWell(
@@ -100,6 +100,38 @@ class _CheckoutPurchasingPageState extends State<CheckoutPurchasingPage> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: semiEdge,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BasePage(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                child: Row(
+                  children: [
+                    Spacer(),
+                    Text(
+                      'Back to home',
+                      style: titleTextStyle.copyWith(
+                        color: secondColor,
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: semiEdge,
             ),
           ],
         ),
