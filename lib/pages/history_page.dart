@@ -1,11 +1,6 @@
-import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/purchasing_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/bottom_navbar_item.dart';
 import 'package:flutter/material.dart';
 
-import 'sales_page.dart';
 import 'sales/detail_transaction-processed-sales.dart';
 
 class HistoryPage extends StatefulWidget {

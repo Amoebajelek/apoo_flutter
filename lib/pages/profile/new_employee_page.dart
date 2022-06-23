@@ -1,8 +1,9 @@
+import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../profile/employees_page.dart';
+import 'employees_page.dart';
 
 class NewEmployeePage extends StatefulWidget {
   @override
@@ -81,7 +82,7 @@ class _NewEmployeePageState extends State<NewEmployeePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => EmployeesPage(),
+                    builder: (context) => BasePage(),
                   ),
                 );
               },

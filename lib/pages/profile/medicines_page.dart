@@ -1,5 +1,5 @@
 import 'package:apoo_flutter/theme.dart';
-import 'package:apoo_flutter/widgets/list_medicine.dart';
+import 'package:apoo_flutter/widgets/category_medicine.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/data_product.dart';
@@ -20,7 +20,7 @@ class _MedicinesPageState extends State<MedicinesPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: edge,
+            horizontal: semiEdge,
           ),
           child: ListView(
             children: [
@@ -33,7 +33,7 @@ class _MedicinesPageState extends State<MedicinesPage> {
               ),
               search(),
               SizedBox(
-                height: semiEdge,
+                height: edge,
               ),
               medicines(),
               SizedBox(
@@ -102,44 +102,50 @@ class _MedicinesPageState extends State<MedicinesPage> {
   }
 
   Widget header() {
-    return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pop(
-                context,
-              );
-            },
-            child: Image.asset(
-              'assets/ic-back.png',
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: semiEdge,
+      ),
+      child: Container(
+        child: Row(
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pop(
+                  context,
+                );
+              },
+              child: Image.asset(
+                'assets/ic-back.png',
+                height: 30,
+                width: 30,
+              ),
+            ),
+            Spacer(),
+            Center(
+              child: Text(
+                'Medicines',
+                style: titleTextStyle.copyWith(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            Spacer(),
+            Image.asset(
+              'assets/icon-filter.png',
               height: 30,
               width: 30,
             ),
-          ),
-          Spacer(),
-          Center(
-            child: Text(
-              'Medicines',
-              style: titleTextStyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-          ),
-          Spacer(),
-          Container(
-            height: 30,
-            width: 30,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   Widget search() {
     return Padding(
-      padding: EdgeInsets.only(
-        top: semiEdge,
+      padding: EdgeInsets.symmetric(
+        horizontal: semiEdge,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -190,140 +196,87 @@ class _MedicinesPageState extends State<MedicinesPage> {
     return Container(
       child: Column(
         children: [
+          Container(
+            child: Column(
+              children: [
+                CategoryMedicine(DataProduct(
+                  id: 1,
+                  name: 'Paracetamol',
+                  producent: 'PT Kimia Farma',
+                ))
+              ],
+            ),
+          ),
           SizedBox(
-            height: edge,
+            height: semiEdge,
           ),
           Container(
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 1,
-                          imageUrl: 'assets/prod1.png',
-                          name: 'Paracetamol',
-                          category: 'Obat Bebas',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 2,
-                          imageUrl: 'assets/prod2.png',
-                          name: 'Acarbose',
-                          category: 'Obat Keras',
-                          producent: 'PT Kimia Farma',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: semiEdge,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 3,
-                          imageUrl: 'assets/prod3.png',
-                          name: 'Amiodrone',
-                          category: 'Obat Herbal',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 4,
-                          imageUrl: 'assets/prod4.png',
-                          name: 'Allylestrenol',
-                          category: 'Obat Herbal',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: semiEdge,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 5,
-                          imageUrl: 'assets/prod5.png',
-                          name: 'Amineptine',
-                          category: 'Obat bebas',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 6,
-                          imageUrl: 'assets/prod6.png',
-                          name: 'Amoxapine',
-                          category: 'Obat Keras',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: semiEdge,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 7,
-                          imageUrl: 'assets/prod7.png',
-                          name: 'Ampicillin',
-                          category: 'Obat Herbal',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: ListMedicine(
-                        DataProduct(
-                          id: 8,
-                          imageUrl: 'assets/prod8.png',
-                          name: 'Amoxillin',
-                          category: 'Obat Herbal',
-                          producent: 'PT Kalbe Farma',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                CategoryMedicine(DataProduct(
+                  id: 2,
+                  name: 'Bodrex',
+                  producent: 'PT Halal Medica',
+                ))
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: semiEdge,
+          ),
+          Container(
+            child: Column(
+              children: [
+                CategoryMedicine(DataProduct(
+                  id: 3,
+                  name: 'Amoxillin',
+                  producent: 'PT Mutiara Utama',
+                ))
+              ],
+            ),
+          ),
+          SizedBox(
+            height: semiEdge,
+          ),
+          Container(
+            child: Column(
+              children: [
+                CategoryMedicine(DataProduct(
+                  id: 4,
+                  name: 'Laserin Madu',
+                  producent: 'PT Jamu Indonesia',
+                ))
+              ],
+            ),
+          ),
+          SizedBox(
+            height: semiEdge,
+          ),
+          Container(
+            child: Column(
+              children: [
+                CategoryMedicine(DataProduct(
+                  id: 5,
+                  name: 'Lasegar',
+                  producent: 'PT Kimia Farma',
+                ))
+              ],
+            ),
+          ),
+          SizedBox(
+            height: semiEdge,
+          ),
+          Container(
+            child: Column(
+              children: [
+                CategoryMedicine(DataProduct(
+                  id: 6,
+                  name: 'Adem Sari',
+                  producent: 'PT Mahkota Jaya Medica',
+                ))
+              ],
+            ),
+          ),
         ],
       ),
     );

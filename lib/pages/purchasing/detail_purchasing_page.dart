@@ -3,7 +3,6 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_catalog.dart';
 import 'package:flutter/material.dart';
 
-import '../purchasing_page.dart';
 import 'checkout_purchasing_page.dart';
 
 class DetailPurchasingPage extends StatefulWidget {

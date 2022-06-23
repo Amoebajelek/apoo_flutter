@@ -1,9 +1,8 @@
-import 'package:apoo_flutter/pages/profile/medicines_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import 'profile/categories_page.dart';
 import 'profile/departements_page.dart';
-import 'profile/distributors_page.dart';
 import 'profile/employees_page.dart';
 import 'purchasingList/purchasing_order_list_page.dart';
 import 'profile/edit_profile_page.dart';
@@ -211,14 +210,14 @@ class _ProfilePageState extends State<ProfilePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DistributorsPage(),
+                  builder: (context) => CategoriesPage(),
                 ),
               );
             },
             child: Row(
               children: [
                 Image.asset(
-                  'assets/ic-distributors.png',
+                  'assets/ic-categories.png',
                   height: 24,
                   width: 24,
                   color: Color(0xffC6D6EB),
@@ -230,60 +229,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Distributors',
+                      'Categories',
                       style: titleTextStyle.copyWith(
                         fontSize: 14,
                       ),
                     ),
                     Text(
-                      'Distributor list',
-                      style: seeAllTextStyle,
-                    )
-                  ],
-                ),
-                Spacer(),
-                Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Color(0xffC6D6EB),
-                  size: 20.0,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: semiEdge,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MedicinesPage(),
-                ),
-              );
-            },
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/ic-medicines.png',
-                  height: 24,
-                  width: 24,
-                  color: Color(0xffC6D6EB),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Medicines',
-                      style: titleTextStyle.copyWith(
-                        fontSize: 14,
-                      ),
-                    ),
-                    Text(
-                      'Medicine list',
+                      'Distributors list, Medicines list',
                       style: seeAllTextStyle,
                     )
                   ],

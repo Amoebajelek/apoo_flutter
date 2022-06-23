@@ -1,7 +1,7 @@
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../purchasingList/new_employee_page.dart';
+import 'new_employee_page.dart';
 
 class EmployeesPage extends StatefulWidget {
   @override

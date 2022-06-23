@@ -3,7 +3,6 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_option_payment.dart';
 import 'package:flutter/material.dart';
 
-import 'checkout_purchasing_page.dart';
 import 'loading_purchasing_page.dart';
 
 class OptionPaymentOrderPage extends StatefulWidget {

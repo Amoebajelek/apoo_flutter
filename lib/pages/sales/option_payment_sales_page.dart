@@ -4,8 +4,6 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_option_payment.dart';
 import 'package:flutter/material.dart';
 
-import 'checkout_sales_page.dart';
-
 class OptionPaymentSalesPage extends StatefulWidget {
   @override
   State<OptionPaymentSalesPage> createState() => _OptionPaymentSalesPageState();
