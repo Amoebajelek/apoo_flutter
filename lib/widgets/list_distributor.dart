@@ -9,8 +9,8 @@ class ListDistributor extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
-      height: 266,
-      width: 148,
+      height: 246,
+      width: 156,
       decoration: BoxDecoration(
         color: Color(0xffFFFFFF),
         boxShadow: [
@@ -52,6 +52,7 @@ class ListDistributor extends StatelessWidget {
                   color: greenColor,
                 ),
                 overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
           ),

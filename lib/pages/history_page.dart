@@ -62,8 +62,8 @@ class _HistoryPageState extends State<HistoryPage> {
           ),
           Image.asset(
             'assets/icon-filter.png',
-            height: 28,
-            width: 28,
+            height: 25,
+            width: 25,
           )
         ],
       ),

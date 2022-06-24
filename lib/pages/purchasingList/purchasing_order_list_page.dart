@@ -30,6 +30,9 @@ class _PurchasingOrderListPageState extends State<PurchasingOrderListPage> {
               search(),
               tags(),
               lastTransaction(),
+              SizedBox(
+                height: edge,
+              ),
               printButton(),
               SizedBox(
                 height: semiEdge,
@@ -67,9 +70,10 @@ class _PurchasingOrderListPageState extends State<PurchasingOrderListPage> {
             ),
           ),
           Spacer(),
-          Container(
-            height: 30,
-            width: 30,
+          Image.asset(
+            'assets/icon-filter.png',
+            height: 25,
+            width: 25,
           ),
         ],
       ),

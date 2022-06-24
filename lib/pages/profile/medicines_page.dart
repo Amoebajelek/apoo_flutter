@@ -133,8 +133,8 @@ class _MedicinesPageState extends State<MedicinesPage> {
             Spacer(),
             Image.asset(
               'assets/icon-filter.png',
-              height: 30,
-              width: 30,
+              height: 25,
+              width: 25,
             ),
           ],
         ),

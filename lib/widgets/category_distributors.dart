@@ -137,9 +137,9 @@ class CategoryDistributors extends StatelessWidget {
               },
               child: Image.asset(
                 'assets/ic-trash.png',
-                color: thirdColor,
-                height: 25,
-                width: 25,
+                color: Color(0xffC6D6EB),
+                height: 22,
+                width: 22,
               ),
             ),
             SizedBox(

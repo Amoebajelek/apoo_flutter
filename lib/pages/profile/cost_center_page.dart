@@ -1,4 +1,6 @@
+import 'package:apoo_flutter/models/data_cost_center.dart';
 import 'package:apoo_flutter/theme.dart';
+import 'package:apoo_flutter/widgets/list_cost_center.dart';
 import 'package:flutter/material.dart';
 
 class CostCenterPage extends StatefulWidget {
@@ -116,8 +118,8 @@ class _CostCenterPageState extends State<CostCenterPage> {
           Spacer(),
           Image.asset(
             'assets/icon-filter.png',
-            height: edge,
-            width: edge,
+            height: 25,
+            width: 25,
           )
         ],
       ),
@@ -327,159 +329,19 @@ class _CostCenterPageState extends State<CostCenterPage> {
   Widget list() {
     return Column(
       children: [
-        Container(
-          height: 90,
-          width: MediaQuery.of(context).size.width - (2 * edge),
-          decoration: BoxDecoration(
-            color: whiteColor,
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade200,
-                blurRadius: 10.0,
-                spreadRadius: 0.2,
-                offset: Offset(
-                  0.5,
-                  0.5,
-                ),
-              ),
-            ],
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 12,
-                ),
-                child: Image.asset(
-                  'assets/costcenter.png',
-                  width: 66,
-                  height: 66,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Anggaran Operasional',
-                      style: titleTextStyle,
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: 12,
-                      ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: 'Rp.',
-                          style: descTextStyle.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                            color: greenColor,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: '5.000.000',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
-                                color: greenColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+        ListCostCenter(
+          DataCostCenter(
+            title: 'Anggaran Operasional',
+            caption: 'Periode Bulan Juli 2022',
           ),
         ),
         SizedBox(
           height: semiEdge,
         ),
-        Container(
-          height: 90,
-          width: MediaQuery.of(context).size.width - (2 * edge),
-          decoration: BoxDecoration(
-            color: whiteColor,
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade200,
-                blurRadius: 10.0,
-                spreadRadius: 0.2,
-                offset: Offset(
-                  0.5,
-                  0.5,
-                ),
-              ),
-            ],
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 12,
-                ),
-                child: Image.asset(
-                  'assets/costcenter.png',
-                  width: 66,
-                  height: 66,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Pengadaan 2021',
-                      style: titleTextStyle,
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: 12,
-                      ),
-                      child: Text.rich(
-                        TextSpan(
-                          text: 'Rp.',
-                          style: descTextStyle.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                            color: greenColor,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: '20.000.000',
-                              style: descTextStyle.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
-                                color: greenColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+        ListCostCenter(
+          DataCostCenter(
+            title: 'Pengadaan 2022',
+            caption: 'Inventaris kantor dan operasional',
           ),
         ),
       ],

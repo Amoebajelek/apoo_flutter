@@ -82,8 +82,8 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
             },
             child: Image.asset(
               'assets/icon-add-product.png',
-              height: 28,
-              width: 28,
+              height: 27,
+              width: 27,
             ),
           ),
         ],

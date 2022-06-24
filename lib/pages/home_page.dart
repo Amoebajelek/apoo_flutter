@@ -463,23 +463,83 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: semiEdge,
             ),
-            TipsandGuides(
-              DataTipsandGuides(
-                id: 1,
-                imageUrl: 'assets/bgTips1.png',
-                title: 'How to add new product?',
-                caption: 'Read and update your product',
+            InkWell(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (c) => AlertDialog(
+                    title: Text(
+                      'How to add new product?',
+                      style: titleTextStyle,
+                    ),
+                    content: Text(
+                      'Proident et dolore excepteur exercitation Lorem duis. Aute ea duis est excepteur dolor nisi est ipsum magna pariatur. Lorem velit esse velit minim fugiat tempor laboris. Nisi minim Lorem cupidatat eu incididunt minim eiusmod velit dolore fugiat. Incididunt aliquip sint culpa nostrud aliqua nisi dolore elit consectetur proident. Minim tempor enim commodo tempor labore ad minim eu id deserunt aute.',
+                      style: descTextStyle,
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(
+                          context,
+                        ),
+                        child: Text(
+                          'Close',
+                          style: descTextStyle.copyWith(
+                            color: greenColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              child: TipsandGuides(
+                DataTipsandGuides(
+                  id: 1,
+                  imageUrl: 'assets/bgTips1.png',
+                  title: 'How to add new product?',
+                  caption: 'Read and update your product',
+                ),
               ),
             ),
             SizedBox(
               height: semiEdge,
             ),
-            TipsandGuides(
-              DataTipsandGuides(
-                id: 1,
-                imageUrl: 'assets/bgTips2.png',
-                title: 'Upgrade selling points',
-                caption: 'Increase your sales now',
+            InkWell(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (c) => AlertDialog(
+                    title: Text(
+                      'Upgrade selling points',
+                      style: titleTextStyle,
+                    ),
+                    content: Text(
+                      'Proident et dolore excepteur exercitation Lorem duis. Aute ea duis est excepteur dolor nisi est ipsum magna pariatur. Lorem velit esse velit minim fugiat tempor laboris. Nisi minim Lorem cupidatat eu incididunt minim eiusmod velit dolore fugiat. Incididunt aliquip sint culpa nostrud aliqua nisi dolore elit consectetur proident. Minim tempor enim commodo tempor labore ad minim eu id deserunt aute.',
+                      style: descTextStyle,
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(
+                          context,
+                        ),
+                        child: Text(
+                          'Close',
+                          style: descTextStyle.copyWith(
+                            color: greenColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              child: TipsandGuides(
+                DataTipsandGuides(
+                  id: 1,
+                  imageUrl: 'assets/bgTips2.png',
+                  title: 'Upgrade selling points',
+                  caption: 'Increase your sales now',
+                ),
               ),
             ),
             // SizedBox(

@@ -81,8 +81,8 @@ class _SalesPageState extends State<SalesPage> {
             },
             child: Image.asset(
               'assets/ic-cart.png',
-              height: 30,
-              width: 30,
+              height: 28,
+              width: 28,
             ),
           )
         ],

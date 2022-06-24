@@ -79,8 +79,8 @@ class _PurchasingPageState extends State<PurchasingPage> {
             },
             child: Image.asset(
               'assets/ic-cart.png',
-              height: 30,
-              width: 30,
+              height: 28,
+              width: 28,
             ),
           ),
         ],
@@ -333,30 +333,24 @@ class _PurchasingPageState extends State<PurchasingPage> {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 1,
-                          imageUrl: 'assets/dist1.png',
-                          name: 'Kalbe Farma',
-                          location: 'Kota Bandung',
-                          stocks: '71',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 1,
+                        imageUrl: 'assets/dist1.png',
+                        name: 'Kalbe Farma',
+                        location: 'Kota Bandung',
+                        stocks: '71',
                       ),
                     ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 2,
-                          imageUrl: 'assets/dist2.png',
-                          name: 'Sanbe Farma',
-                          location: 'Kota Bandung',
-                          stocks: '102',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 2,
+                        imageUrl: 'assets/dist2.png',
+                        name: 'Sanbe Farma',
+                        location: 'Kota Bandung',
+                        stocks: '102',
                       ),
                     ),
                   ],
@@ -365,30 +359,27 @@ class _PurchasingPageState extends State<PurchasingPage> {
                   height: semiEdge,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 3,
-                          imageUrl: 'assets/dist3.png',
-                          name: 'Dexa Medica',
-                          location: 'Kota Bandung',
-                          stocks: '381',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 3,
+                        imageUrl: 'assets/dist3.png',
+                        name: 'Dexa Medica',
+                        location: 'Kota Bandung',
+                        stocks: '381',
                       ),
                     ),
                     SizedBox(
                       width: semiEdge,
                     ),
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 4,
-                          imageUrl: 'assets/dist4.png',
-                          name: 'Pharos Indonesia',
-                          location: 'Kota Bandung',
-                          stocks: '143',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 4,
+                        imageUrl: 'assets/dist4.png',
+                        name: 'Pharos Indonesia',
+                        location: 'Kota Bandung',
+                        stocks: '143',
                       ),
                     ),
                   ],
@@ -397,59 +388,56 @@ class _PurchasingPageState extends State<PurchasingPage> {
                   height: semiEdge,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 5,
-                          imageUrl: 'assets/dist5.png',
-                          name: 'Tempo Scan Pasific Bandung',
-                          location: 'Kota Bandung',
-                          stocks: '347',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 5,
+                        imageUrl: 'assets/dist5.png',
+                        name: 'Tempo Scan Pasific Bandung',
+                        location: 'Kota Bandung',
+                        stocks: '347',
                       ),
                     ),
                     SizedBox(
                       width: semiEdge,
                     ),
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 6,
-                          imageUrl: 'assets/dist2.png',
-                          name: 'Farmindo',
-                          location: 'Kota Bandung',
-                          stocks: '222',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 6,
+                        imageUrl: 'assets/dist2.png',
+                        name: 'Farmindo',
+                        location: 'Kota Bandung',
+                        stocks: '222',
                       ),
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: semiEdge,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 7,
-                          imageUrl: 'assets/dist3.png',
-                          name: 'Apex Pharma Indonesia',
-                          location: 'Kota Bandung',
-                          stocks: '711',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 7,
+                        imageUrl: 'assets/dist3.png',
+                        name: 'Apex Pharma Indonesia',
+                        location: 'Kota Bandung',
+                        stocks: '711',
                       ),
                     ),
                     SizedBox(
                       width: semiEdge,
                     ),
-                    Expanded(
-                      child: ListDistributor(
-                        DataDistributor(
-                          id: 8,
-                          imageUrl: 'assets/dist1.png',
-                          name: 'Armoxindo Farma',
-                          location: 'Kota Bandung',
-                          stocks: '102',
-                        ),
+                    ListDistributor(
+                      DataDistributor(
+                        id: 8,
+                        imageUrl: 'assets/dist1.png',
+                        name: 'Armoxindo Farma',
+                        location: 'Kota Bandung',
+                        stocks: '102',
                       ),
                     ),
                   ],
