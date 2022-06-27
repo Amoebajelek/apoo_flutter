@@ -13,6 +13,9 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
   bool isEmailValid = true;
 
   TextEditingController emailController = TextEditingController(text: '');
+
+  List items = ['Strip', 'Box', 'Bottle'];
+  var selectedItem = 'Strip';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -210,31 +213,52 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
             ),
             Container(
               width: 80,
-              child: TextFormField(
-                controller: emailController,
-                onChanged: (value) {
-                  print(value);
-                  bool isValid = EmailValidator.validate(value);
-                  print(isValid);
-                  if (isValid) {
-                    setState(() {
-                      isEmailValid = true;
-                    });
-                  } else {
-                    setState(() {
-                      isEmailValid = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  hintText: 'Unit',
-                  hintStyle: descTextStyle,
-                ),
-                style: TextStyle(
-                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  underline: null,
+                  value: selectedItem,
+                  items: items
+                      .map(
+                        (item) => DropdownMenuItem(
+                          value: item,
+                          child: Text(
+                            item,
+                            style: descTextStyle,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (item) => setState(() => selectedItem = item),
                 ),
               ),
             ),
+            // Container(
+            //   width: 80,
+            //   child: TextFormField(
+            //     controller: emailController,
+            //     onChanged: (value) {
+            //       print(value);
+            //       bool isValid = EmailValidator.validate(value);
+            //       print(isValid);
+            //       if (isValid) {
+            //         setState(() {
+            //           isEmailValid = true;
+            //         });
+            //       } else {
+            //         setState(() {
+            //           isEmailValid = false;
+            //         });
+            //       }
+            //     },
+            //     decoration: InputDecoration(
+            //       hintText: 'Unit',
+            //       hintStyle: descTextStyle,
+            //     ),
+            //     style: TextStyle(
+            //       color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               width: semiEdge,
             ),

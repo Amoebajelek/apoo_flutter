@@ -51,7 +51,7 @@ class ListCostCenter extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width - 8 * edge,
+                  width: MediaQuery.of(context).size.width - 11 * edge,
                   child: Text(
                     costCenter.title,
                     style: titleTextStyle,
@@ -61,7 +61,7 @@ class ListCostCenter extends StatelessWidget {
                 ),
                 Spacer(),
                 Container(
-                  width: MediaQuery.of(context).size.width - 8 * edge,
+                  width: MediaQuery.of(context).size.width - 11 * edge,
                   child: Text(
                     costCenter.caption,
                     style: descTextStyle,

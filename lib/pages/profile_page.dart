@@ -376,12 +376,17 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: titleTextStyle.copyWith(
                         fontSize: 14,
                       ),
-                    ),
-                    Text(
-                      'Restock product list, purchasing status',
-                      style: seeAllTextStyle,
-                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Container(
+                      width: 250,
+                      child: Text(
+                        'Restock product list, purchasing status',
+                        style: seeAllTextStyle,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     )
                   ],
                 ),

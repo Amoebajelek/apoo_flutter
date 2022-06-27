@@ -27,7 +27,9 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.symmetric(horizontal: edge),
               child: Text(
                 'Create your account',
-                style: titleTextStyle,
+                style: titleTextStyle.copyWith(
+                  fontSize: 18,
+                ),
               ),
             ),
             Padding(
@@ -171,7 +173,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             SizedBox(
-              height: 2 * edge,
+              height: 3 * edge,
             ),
             Container(
               height: 50,

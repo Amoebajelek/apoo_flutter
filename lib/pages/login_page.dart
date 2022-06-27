@@ -18,8 +18,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: edge,
@@ -28,7 +28,9 @@ class _LoginPageState extends State<LoginPage> {
               padding: EdgeInsets.symmetric(horizontal: edge),
               child: Text(
                 'Welcome Back,',
-                style: titleTextStyle,
+                style: titleTextStyle.copyWith(
+                  fontSize: 18,
+                ),
               ),
             ),
             Padding(
@@ -131,7 +133,10 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-            Spacer(),
+            // Spacer(),
+            SizedBox(
+              height: 3 * edge,
+            ),
             Container(
               height: 50,
               width: MediaQuery.of(context).size.width - (2 * edge),

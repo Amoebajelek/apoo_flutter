@@ -11,11 +11,14 @@ class StartedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: edge,
+          ),
+          child: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 120, bottom: 50),
+                padding: EdgeInsets.only(top: 120, bottom: 50),
                 child: Container(
                   height: 235,
                   width: 240,
@@ -29,7 +32,7 @@ class StartedPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 15),
+                padding: EdgeInsets.only(bottom: 15),
                 child: Text(
                   'Temukan obat yang anda butuhkan dengan cepat dan tepat',
                   style: sliderTextStyle,
@@ -37,14 +40,18 @@ class StartedPage extends StatelessWidget {
                 ),
               ),
               Text(
-                'Segera registrasi di Apoo, temukan semua obat\nyang kamu butuhkan dan order dengan cepat',
+                'Segera registrasi di Apoo, temukan semua obat yang kamu butuhkan dan order dengan cepat',
                 style: descTextStyle,
                 textAlign: TextAlign.center,
+                maxLines: 3,
+                overflow: TextOverflow.clip,
               ),
-              Spacer(),
+              SizedBox(
+                height: 4 * edge,
+              ),
               Container(
                 height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
+                width: MediaQuery.of(context).size.width,
                 child: RaisedButton(
                   onPressed: () {
                     Navigator.push(

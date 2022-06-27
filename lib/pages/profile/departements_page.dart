@@ -173,11 +173,15 @@ class _DepartementsPageState extends State<DepartementsPage> {
                   ],
                 ),
               ),
+              Spacer(),
               Image.asset(
                 'assets/dropdown-green.png',
                 height: 8,
                 width: 14,
-              )
+              ),
+              SizedBox(
+                width: edge,
+              ),
             ],
           ),
         ),
@@ -224,11 +228,15 @@ class _DepartementsPageState extends State<DepartementsPage> {
                   ],
                 ),
               ),
+              Spacer(),
               Image.asset(
                 'assets/dropdown-green.png',
                 height: 8,
                 width: 14,
-              )
+              ),
+              SizedBox(
+                width: edge,
+              ),
             ],
           ),
         ),
@@ -275,10 +283,14 @@ class _DepartementsPageState extends State<DepartementsPage> {
                   ],
                 ),
               ),
+              Spacer(),
               Image.asset(
                 'assets/dropdown-green.png',
                 height: 8,
                 width: 14,
+              ),
+              SizedBox(
+                width: edge,
               ),
             ],
           ),
@@ -326,10 +338,14 @@ class _DepartementsPageState extends State<DepartementsPage> {
                   ],
                 ),
               ),
+              Spacer(),
               Image.asset(
                 'assets/dropdown-green.png',
                 height: 8,
                 width: 14,
+              ),
+              SizedBox(
+                width: edge,
               ),
             ],
           ),
