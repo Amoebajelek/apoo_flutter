@@ -3,12 +3,12 @@ import 'package:apoo_flutter/pages/profile/medicines_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-class CategoriesPage extends StatefulWidget {
+class ConfigurationsPage extends StatefulWidget {
   @override
-  State<CategoriesPage> createState() => _CategoriesPageState();
+  State<ConfigurationsPage> createState() => _ConfigurationsPageState();
 }
 
-class _CategoriesPageState extends State<CategoriesPage> {
+class _ConfigurationsPageState extends State<ConfigurationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,7 +115,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
           Spacer(),
           Center(
             child: Text(
-              'Categories',
+              'Configurations',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),

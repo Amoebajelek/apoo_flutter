@@ -307,7 +307,7 @@ class _EditMedicinePageState extends State<EditMedicinePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Distributor',
+          'Benefites',
           style: descTextStyle.copyWith(
             color: greenColor,
           ),
@@ -329,8 +329,9 @@ class _EditMedicinePageState extends State<EditMedicinePage> {
             }
           },
           decoration: InputDecoration(
-            hintText: 'Sanbe Farma',
+            hintText: 'Meringankan sakit kepala',
             hintStyle: descTextStyle,
+            hintMaxLines: 10,
           ),
           style: TextStyle(
             color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),

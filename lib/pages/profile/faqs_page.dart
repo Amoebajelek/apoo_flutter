@@ -2,12 +2,12 @@ import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-class DepartementsPage extends StatefulWidget {
+class FaqsPage extends StatefulWidget {
   @override
-  State<DepartementsPage> createState() => _DepartementsPageState();
+  State<FaqsPage> createState() => _FaqsPageState();
 }
 
-class _DepartementsPageState extends State<DepartementsPage> {
+class _FaqsPageState extends State<FaqsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,64 +34,6 @@ class _DepartementsPageState extends State<DepartementsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 135,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: whiteColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade200,
-              blurRadius: 10.0,
-              spreadRadius: 0.2,
-              offset: Offset(
-                0.5,
-                0.5,
-              ),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BasePage(),
-                  ),
-                );
-              },
-              child: Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                decoration: BoxDecoration(
-                  color: greenColor,
-                  border: Border.all(
-                    color: greenColor,
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Text(
-                    'Add New Departement',
-                    style: titleTextStyle.copyWith(
-                      fontSize: 18,
-                      color: whiteColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -114,7 +56,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
           Spacer(),
           Center(
             child: Text(
-              'Departements',
+              'FAQs',
               style: titleTextStyle.copyWith(
                 fontSize: 18,
               ),
@@ -164,7 +106,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
                     Container(
                       width: 200,
                       child: Text(
-                        'Apoteker Pengelola Apotek (APA)',
+                        'Memaksimalkan omzet usaha apotek',
                         style: titleTextStyle,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -274,7 +216,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
                     Container(
                       width: 200,
                       child: Text(
-                        'Supervisor',
+                        'Pengelolaan apotek yang baik',
                         style: titleTextStyle,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -329,7 +271,7 @@ class _DepartementsPageState extends State<DepartementsPage> {
                     Container(
                       width: 200,
                       child: Text(
-                        'Asisten Apoteker',
+                        'Strategi bisnis online untuk apotek',
                         style: titleTextStyle,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,

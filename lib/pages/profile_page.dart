@@ -1,7 +1,8 @@
+import 'package:apoo_flutter/pages/profile/faqs_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
-import 'profile/categories_page.dart';
+import 'profile/configurations_page.dart';
 import 'profile/departements_page.dart';
 import 'profile/employees_page.dart';
 import 'purchasingList/purchasing_order_list_page.dart';
@@ -210,7 +211,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CategoriesPage(),
+                  builder: (context) => ConfigurationsPage(),
                 ),
               );
             },
@@ -229,7 +230,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Categories',
+                      'Configurations',
                       style: titleTextStyle.copyWith(
                         fontSize: 14,
                       ),
@@ -472,7 +473,14 @@ class _ProfilePageState extends State<ProfilePage> {
             height: semiEdge,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FaqsPage(),
+                ),
+              );
+            },
             child: Row(
               children: [
                 Image.asset(
@@ -534,7 +542,30 @@ class _ProfilePageState extends State<ProfilePage> {
             height: semiEdge,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (c) => AlertDialog(
+                  content: Text(
+                    'Choose an account',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 14,
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(
+                        'Choose',
+                        style: descTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
             child: Row(
               children: [
                 Image.asset(

@@ -319,150 +319,98 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
             height: semiEdge,
           ),
           Container(
-            child: Column(
+            child: Wrap(
+              spacing: semiEdge,
               children: [
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPurchasingPage(),
-                          ),
-                        );
-                      },
-                      child: Expanded(
-                        child: TopProduct(
-                          DataProduct(
-                            id: 1,
-                            imageUrl: 'assets/prod1.png',
-                            name: 'Paracetamol',
-                            price: '6.500',
-                            stocks: '71',
-                            unit: ' strips',
-                          ),
-                        ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPurchasingPage(),
                       ),
+                    );
+                  },
+                  child: TopProduct(
+                    DataProduct(
+                      id: 1,
+                      imageUrl: 'assets/prod1.png',
+                      name: 'Paracetamol',
+                      price: '6.500',
+                      stocks: '71',
+                      unit: ' strips',
                     ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 2,
-                          imageUrl: 'assets/prod2.png',
-                          name: 'Acarbose',
-                          price: '3.500',
-                          stocks: '102',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-                SizedBox(
-                  height: semiEdge,
+                TopProduct(
+                  DataProduct(
+                    id: 2,
+                    imageUrl: 'assets/prod2.png',
+                    name: 'Acarbose',
+                    price: '3.500',
+                    stocks: '102',
+                    unit: ' strips',
+                  ),
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 3,
-                          imageUrl: 'assets/prod3.png',
-                          name: 'Amiodrone',
-                          price: '4.000',
-                          stocks: '381',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 4,
-                          imageUrl: 'assets/prod4.png',
-                          name: 'Allylestrenol',
-                          price: '5.000',
-                          stocks: '143',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                  ],
+                TopProduct(
+                  DataProduct(
+                    id: 3,
+                    imageUrl: 'assets/prod3.png',
+                    name: 'Amiodrone',
+                    price: '4.000',
+                    stocks: '381',
+                    unit: ' strips',
+                  ),
                 ),
-                SizedBox(
-                  height: semiEdge,
+                TopProduct(
+                  DataProduct(
+                    id: 4,
+                    imageUrl: 'assets/prod4.png',
+                    name: 'Allylestrenol',
+                    price: '5.000',
+                    stocks: '143',
+                    unit: ' strips',
+                  ),
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 5,
-                          imageUrl: 'assets/prod5.png',
-                          name: 'Amineptine',
-                          price: '7.000',
-                          stocks: '347',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 6,
-                          imageUrl: 'assets/prod6.png',
-                          name: 'Amoxapine',
-                          price: '4.500',
-                          stocks: '222',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                  ],
+                TopProduct(
+                  DataProduct(
+                    id: 5,
+                    imageUrl: 'assets/prod5.png',
+                    name: 'Amineptine',
+                    price: '7.000',
+                    stocks: '347',
+                    unit: ' strips',
+                  ),
                 ),
-                SizedBox(
-                  height: semiEdge,
+                TopProduct(
+                  DataProduct(
+                    id: 6,
+                    imageUrl: 'assets/prod6.png',
+                    name: 'Amoxapine',
+                    price: '4.500',
+                    stocks: '222',
+                    unit: ' strips',
+                  ),
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 7,
-                          imageUrl: 'assets/prod7.png',
-                          name: 'Ampicillin',
-                          price: '6.500',
-                          stocks: '711',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: semiEdge,
-                    ),
-                    Expanded(
-                      child: TopProduct(
-                        DataProduct(
-                          id: 8,
-                          imageUrl: 'assets/prod8.png',
-                          name: 'Amoxillin',
-                          price: '4.500',
-                          stocks: '102',
-                          unit: ' strips',
-                        ),
-                      ),
-                    ),
-                  ],
+                TopProduct(
+                  DataProduct(
+                    id: 7,
+                    imageUrl: 'assets/prod7.png',
+                    name: 'Ampicillin',
+                    price: '6.500',
+                    stocks: '711',
+                    unit: ' strips',
+                  ),
+                ),
+                TopProduct(
+                  DataProduct(
+                    id: 8,
+                    imageUrl: 'assets/prod8.png',
+                    name: 'Amoxillin',
+                    price: '4.500',
+                    stocks: '102',
+                    unit: ' strips',
+                  ),
                 ),
               ],
             ),

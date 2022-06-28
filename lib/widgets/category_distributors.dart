@@ -136,10 +136,10 @@ class CategoryDistributors extends StatelessWidget {
                 );
               },
               child: Image.asset(
-                'assets/ic-trash.png',
+                'assets/ic-all.png',
                 color: Color(0xffC6D6EB),
-                height: 22,
-                width: 22,
+                height: 32,
+                width: 32,
               ),
             ),
             SizedBox(

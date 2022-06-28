@@ -16,183 +16,188 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController(text: '');
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: edge,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: edge),
-              child: Text(
-                'Welcome Back,',
-                style: titleTextStyle.copyWith(
-                  fontSize: 18,
-                ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        body: SafeArea(
+          child: ListView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            children: [
+              SizedBox(
+                height: edge,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: edge),
-              child: Text(
-                'Login to continue',
-                style: descTextStyle,
-              ),
-            ),
-            Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: edge,
-                  vertical: edge,
-                ),
-                child: Container(
-                  height: 235,
-                  width: 240,
-                  decoration: BoxDecoration(
-                    image:
-                        DecorationImage(image: AssetImage('assets/login.png')),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Text(
+                  'Welcome Back,',
+                  style: titleTextStyle.copyWith(
+                    fontSize: 18,
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: edge),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Username',
-                    style: descTextStyle,
-                  ),
-                  TextFormField(
-                    controller: emailController,
-                    onChanged: (value) {
-                      print(value);
-                      bool isValid = EmailValidator.validate(value);
-                      print(isValid);
-                      if (isValid) {
-                        setState(() {
-                          isEmailValid = true;
-                        });
-                      } else {
-                        setState(() {
-                          isEmailValid = false;
-                        });
-                      }
-                    },
-                    decoration: InputDecoration(
-                      hintText: 'Your Username',
-                      hintStyle: descTextStyle,
-                    ),
-                    style: TextStyle(
-                      color:
-                          isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: edge,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: edge),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Password',
-                    style: descTextStyle,
-                  ),
-                  TextFormField(
-                    controller: emailController,
-                    onChanged: (value) {
-                      print(value);
-                      bool isValid = EmailValidator.validate(value);
-                      print(isValid);
-                      if (isValid) {
-                        setState(() {
-                          isEmailValid = true;
-                        });
-                      } else {
-                        setState(() {
-                          isEmailValid = false;
-                        });
-                      }
-                    },
-                    decoration: InputDecoration(
-                      hintText: 'Your Password',
-                      hintStyle: descTextStyle,
-                    ),
-                    style: TextStyle(
-                      color:
-                          isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Spacer(),
-            SizedBox(
-              height: 3 * edge,
-            ),
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - (2 * edge),
-              margin: EdgeInsets.symmetric(horizontal: edge),
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BasePage(),
-                    ),
-                  );
-                },
-                color: greenColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Text(
+                  'Login to continue',
+                  style: descTextStyle,
                 ),
-                child: Row(
+              ),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: edge,
+                    vertical: edge,
+                  ),
+                  child: Container(
+                    height: 235,
+                    width: 240,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/login.png')),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Spacer(),
                     Text(
-                      'Login',
-                      style: buttonTextStyle,
+                      'Username',
+                      style: descTextStyle,
                     ),
-                    Spacer(),
+                    TextFormField(
+                      controller: emailController,
+                      onChanged: (value) {
+                        print(value);
+                        bool isValid = EmailValidator.validate(value);
+                        print(isValid);
+                        if (isValid) {
+                          setState(() {
+                            isEmailValid = true;
+                          });
+                        } else {
+                          setState(() {
+                            isEmailValid = false;
+                          });
+                        }
+                      },
+                      decoration: InputDecoration(
+                        hintText: 'Your Username',
+                        hintStyle: descTextStyle,
+                      ),
+                      style: TextStyle(
+                        color: isEmailValid
+                            ? Color(0xff2A2B3D)
+                            : Color(0xffFD4F56),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: edge),
-              child: Center(
-                child: InkWell(
-                  onTap: () {
+              SizedBox(
+                height: edge,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Password',
+                      style: descTextStyle,
+                    ),
+                    TextFormField(
+                      controller: emailController,
+                      onChanged: (value) {
+                        print(value);
+                        bool isValid = EmailValidator.validate(value);
+                        print(isValid);
+                        if (isValid) {
+                          setState(() {
+                            isEmailValid = true;
+                          });
+                        } else {
+                          setState(() {
+                            isEmailValid = false;
+                          });
+                        }
+                      },
+                      decoration: InputDecoration(
+                        hintText: 'Your Password',
+                        hintStyle: descTextStyle,
+                      ),
+                      style: TextStyle(
+                        color: isEmailValid
+                            ? Color(0xff2A2B3D)
+                            : Color(0xffFD4F56),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Spacer(),
+              SizedBox(
+                height: 3 * edge,
+              ),
+              Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                margin: EdgeInsets.symmetric(horizontal: edge),
+                child: RaisedButton(
+                  onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                      MaterialPageRoute(
+                        builder: (context) => BasePage(),
+                      ),
                     );
                   },
-                  child: Text.rich(
-                    TextSpan(
-                        text: 'Don\'t have an account?',
-                        style: descTextStyle,
-                        children: [
-                          TextSpan(
-                            text: ' Register',
-                            style: helloTextStyle.copyWith(
-                              fontSize: 14,
-                            ),
-                          )
-                        ]),
+                  color: greenColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        'Login',
+                        style: buttonTextStyle,
+                      ),
+                      Spacer(),
+                    ],
                   ),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: edge),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                      );
+                    },
+                    child: Text.rich(
+                      TextSpan(
+                          text: 'Don\'t have an account?',
+                          style: descTextStyle,
+                          children: [
+                            TextSpan(
+                              text: ' Register',
+                              style: helloTextStyle.copyWith(
+                                fontSize: 14,
+                              ),
+                            )
+                          ]),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

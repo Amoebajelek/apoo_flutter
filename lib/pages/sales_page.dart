@@ -392,7 +392,6 @@ class _SalesPageState extends State<SalesPage> {
           ),
           Wrap(
             spacing: semiEdge,
-            // runSpacing: 4.0,
             children: [
               InkWell(
                 onTap: () {

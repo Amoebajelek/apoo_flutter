@@ -22,46 +22,50 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: edge,
-          ),
-          child: ListView(
-            children: [
-              SizedBox(
-                height: semiEdge,
-              ),
-              // Greeting
-              header(),
-              // End Greeting
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        backgroundColor: whiteColor,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: edge,
+            ),
+            child: ListView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              children: [
+                SizedBox(
+                  height: semiEdge,
+                ),
+                // Greeting
+                header(),
+                // End Greeting
 
-              // Search
-              search(),
-              // End Search
+                // Search
+                search(),
+                // End Search
 
-              // Highlight
-              highlight(),
-              // End Highlight
+                // Highlight
+                highlight(),
+                // End Highlight
 
-              // Top Distributor
-              topDistributor(),
-              // End Top Distributor
+                // Top Distributor
+                topDistributor(),
+                // End Top Distributor
 
-              // Top Selling Product
-              topSellingProduct(),
-              // End Top Selling Product
+                // Top Selling Product
+                topSellingProduct(),
+                // End Top Selling Product
 
-              // Log Transaction
-              lastTransaction(),
-              // End Last Transaction
+                // Log Transaction
+                lastTransaction(),
+                // End Last Transaction
 
-              // Tips and Guides
-              tipsAndGuides(),
-              // End Tips and Guider
-            ],
+                // Tips and Guides
+                tipsAndGuides(),
+                // End Tips and Guider
+              ],
+            ),
           ),
         ),
       ),
