@@ -4,7 +4,6 @@ import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
 import '../base_page.dart';
-import 'option_payment_purchasing_page.dart';
 
 class CheckoutPurchasingPage extends StatefulWidget {
   static const routeName = '/checkoutpurchasingpage';
@@ -61,12 +60,7 @@ class _CheckoutPurchasingPageState extends State<CheckoutPurchasingPage> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OptionPaymentPurchasingPage(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/optionpaymentpurchasingpage');
               },
               child: Container(
                 height: 50,

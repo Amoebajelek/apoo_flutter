@@ -71,12 +71,7 @@ class _OptionPaymentPurchasingPageState
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoadingPurchasingPage(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/loadingpurchasingpage');
               },
               child: Container(
                 height: 50,

@@ -95,12 +95,8 @@ class _DetailPurchasingPageState extends State<DetailPurchasingPage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CheckoutPurchasingPage(),
-                  ),
-                );
+                Navigator.of(context)
+                    .pushReplacementNamed('/checkoutpurchasingpage');
               },
               child: Container(
                 height: 50,

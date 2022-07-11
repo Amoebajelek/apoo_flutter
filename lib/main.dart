@@ -3,6 +3,13 @@ import 'package:apoo_flutter/pages/history_page.dart';
 import 'package:apoo_flutter/pages/home_page.dart';
 import 'package:apoo_flutter/pages/login_page.dart';
 import 'package:apoo_flutter/pages/profile_page.dart';
+import 'package:apoo_flutter/pages/purchasing/add_catalog_product.dart';
+import 'package:apoo_flutter/pages/purchasing/checkout_purchasing_page.dart';
+import 'package:apoo_flutter/pages/purchasing/detail-transaction-processed-purchasing.dart';
+import 'package:apoo_flutter/pages/purchasing/detail_purchasing_page.dart';
+import 'package:apoo_flutter/pages/purchasing/distributor_catalog_page.dart';
+import 'package:apoo_flutter/pages/purchasing/loading_purchasing_page.dart';
+import 'package:apoo_flutter/pages/purchasing/option_payment_purchasing_page.dart';
 import 'package:apoo_flutter/pages/purchasing_page.dart';
 import 'package:apoo_flutter/pages/register_page.dart';
 import 'package:apoo_flutter/pages/sales/checkout_sales_page.dart';
@@ -38,6 +45,15 @@ class MyApp extends StatelessWidget {
         DetailTransactionSalesPage.routeName: (context) =>
             DetailTransactionSalesPage(),
         PurchasingPage.routeName: (context) => PurchasingPage(),
+        AddCatalogProductPage.routeName: (context) => AddCatalogProductPage(),
+        CheckoutPurchasingPage.routeName: (context) => CheckoutPurchasingPage(),
+        DetailTransactionPurchasingPage.routeName: (context) =>
+            DetailTransactionPurchasingPage(),
+        DetailPurchasingPage.routeName: (context) => DetailPurchasingPage(),
+        DistributorCatalogPage.routeName: (context) => DistributorCatalogPage(),
+        LoadingPurchasingPage.routeName: (context) => LoadingPurchasingPage(),
+        OptionPaymentPurchasingPage.routeName: (context) =>
+            OptionPaymentPurchasingPage(),
         HistoryPage.routeName: (context) => HistoryPage(),
         ProfilePage.routeName: (context) => ProfilePage(),
       },

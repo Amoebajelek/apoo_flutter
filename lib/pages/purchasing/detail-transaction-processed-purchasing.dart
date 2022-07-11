@@ -140,12 +140,8 @@ class _DetailTransactionPurchasingPageState
                       ),
                       actions: [
                         TextButton(
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BasePage(),
-                            ),
-                          ),
+                          onPressed: () => Navigator.of(context)
+                              .pushReplacementNamed('/basepage'),
                           child: Text(
                             'Yes',
                             style: descTextStyle.copyWith(

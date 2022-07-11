@@ -75,12 +75,7 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
           ),
           InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AddCatalogProductPage(),
-                ),
-              );
+              Navigator.of(context).pushNamed('/addcatalogproductpage');
             },
             child: Image.asset(
               'assets/icon-add-product.png',
