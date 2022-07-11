@@ -4,6 +4,8 @@ import 'package:apoo_flutter/widgets/list_cost_center.dart';
 import 'package:flutter/material.dart';
 
 class CostCenterPage extends StatefulWidget {
+  static const routeName = '/costcenterpage';
+
   @override
   State<CostCenterPage> createState() => _CostCenterPageState();
 }

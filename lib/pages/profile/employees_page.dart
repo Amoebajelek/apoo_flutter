@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'new_employee_page.dart';
 
 class EmployeesPage extends StatefulWidget {
+  static const routeName = '/employeespage';
+
   @override
   State<EmployeesPage> createState() => _EmployeesPageState();
 }

@@ -1,12 +1,15 @@
-import 'package:apoo_flutter/pages/sales_page.dart';
-import 'package:apoo_flutter/pages/history_page.dart';
-import 'package:apoo_flutter/pages/home_page.dart';
-import 'package:apoo_flutter/pages/purchasing_page.dart';
-import 'package:apoo_flutter/pages/profile_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
+import 'history_page.dart';
+import 'home_page.dart';
+import 'profile_page.dart';
+import 'purchasing_page.dart';
+import 'sales_page.dart';
+
 class BasePage extends StatefulWidget {
+  static const routeName = '/basepage';
+
   @override
   State<BasePage> createState() => _BasePageState();
 }

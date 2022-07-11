@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'detail_purchasing_completed_page.dart';
 
 class GoodsReceiptPage extends StatefulWidget {
+  static const routeName = '/goodsreceiptpage';
+
   @override
   State<GoodsReceiptPage> createState() => _GoodsReceiptPageState();
 }
@@ -16,6 +18,16 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
 
   List items = ['Strip', 'Box', 'Bottle'];
   var selectedItem = 'Strip';
+
+  List unItem1 = ['Strip', 'Box', 'Bottle'];
+  var unSelectedItem1 = 'Strip';
+
+  List unItem2 = ['Strip', 'Box', 'Bottle'];
+  var unSelectedItem2 = 'Strip';
+
+  List unItem3 = ['Strip', 'Box', 'Bottle'];
+  var unSelectedItem3 = 'Strip';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -215,7 +227,6 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
               width: 80,
               child: DropdownButtonHideUnderline(
                 child: DropdownButton(
-                  underline: null,
                   value: selectedItem,
                   items: items
                       .map(
@@ -348,28 +359,22 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
             ),
             Container(
               width: 80,
-              child: TextFormField(
-                controller: emailController,
-                onChanged: (value) {
-                  print(value);
-                  bool isValid = EmailValidator.validate(value);
-                  print(isValid);
-                  if (isValid) {
-                    setState(() {
-                      isEmailValid = true;
-                    });
-                  } else {
-                    setState(() {
-                      isEmailValid = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  hintText: 'Unit',
-                  hintStyle: descTextStyle,
-                ),
-                style: TextStyle(
-                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  value: unSelectedItem1,
+                  items: unItem1
+                      .map(
+                        (unItem1) => DropdownMenuItem(
+                          value: unItem1,
+                          child: Text(
+                            unItem1,
+                            style: descTextStyle,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (unItem1) =>
+                      setState(() => unSelectedItem1 = unItem1),
                 ),
               ),
             ),
@@ -444,28 +449,22 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
             ),
             Container(
               width: 80,
-              child: TextFormField(
-                controller: emailController,
-                onChanged: (value) {
-                  print(value);
-                  bool isValid = EmailValidator.validate(value);
-                  print(isValid);
-                  if (isValid) {
-                    setState(() {
-                      isEmailValid = true;
-                    });
-                  } else {
-                    setState(() {
-                      isEmailValid = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  hintText: 'Unit',
-                  hintStyle: descTextStyle,
-                ),
-                style: TextStyle(
-                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  value: unSelectedItem2,
+                  items: unItem2
+                      .map(
+                        (unItem2) => DropdownMenuItem(
+                          value: unItem2,
+                          child: Text(
+                            unItem2,
+                            style: descTextStyle,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (unItem2) =>
+                      setState(() => unSelectedItem2 = unItem2),
                 ),
               ),
             ),
@@ -540,28 +539,22 @@ class _GoodsReceiptPageState extends State<GoodsReceiptPage> {
             ),
             Container(
               width: 80,
-              child: TextFormField(
-                controller: emailController,
-                onChanged: (value) {
-                  print(value);
-                  bool isValid = EmailValidator.validate(value);
-                  print(isValid);
-                  if (isValid) {
-                    setState(() {
-                      isEmailValid = true;
-                    });
-                  } else {
-                    setState(() {
-                      isEmailValid = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  hintText: 'Unit',
-                  hintStyle: descTextStyle,
-                ),
-                style: TextStyle(
-                  color: isEmailValid ? Color(0xff2A2B3D) : Color(0xffFD4F56),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  value: unSelectedItem3,
+                  items: unItem3
+                      .map(
+                        (unItem3) => DropdownMenuItem(
+                          value: unItem3,
+                          child: Text(
+                            unItem3,
+                            style: descTextStyle,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (unItem3) =>
+                      setState(() => unSelectedItem3 = unItem3),
                 ),
               ),
             ),

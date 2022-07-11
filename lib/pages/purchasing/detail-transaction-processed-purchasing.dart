@@ -1,19 +1,21 @@
 import 'package:apoo_flutter/models/data_detail_transaction.dart';
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_transactions.dart';
 import 'package:flutter/material.dart';
 
+import '../base_page.dart';
 import '../purchasingList/purchasing_order_list_page.dart';
 
-class DetailTransactionProcessedPurchasing extends StatefulWidget {
+class DetailTransactionPurchasingPage extends StatefulWidget {
+  static const routeName = '/detailtransactionpurchasingpage';
+
   @override
-  State<DetailTransactionProcessedPurchasing> createState() =>
-      _DetailTransactionProcessedPurchasingState();
+  State<DetailTransactionPurchasingPage> createState() =>
+      _DetailTransactionPurchasingPageState();
 }
 
-class _DetailTransactionProcessedPurchasingState
-    extends State<DetailTransactionProcessedPurchasing> {
+class _DetailTransactionPurchasingPageState
+    extends State<DetailTransactionPurchasingPage> {
   bool isEmailValid = true;
 
   @override
@@ -141,7 +143,7 @@ class _DetailTransactionProcessedPurchasingState
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (c) => BasePage(),
+                              builder: (context) => BasePage(),
                             ),
                           ),
                           child: Text(

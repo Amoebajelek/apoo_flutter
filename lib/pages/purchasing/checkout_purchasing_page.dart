@@ -7,6 +7,8 @@ import '../base_page.dart';
 import 'option_payment_purchasing_page.dart';
 
 class CheckoutPurchasingPage extends StatefulWidget {
+  static const routeName = '/checkoutpurchasingpage';
+
   @override
   State<CheckoutPurchasingPage> createState() => _CheckoutPurchasingPageState();
 }
@@ -62,7 +64,7 @@ class _CheckoutPurchasingPageState extends State<CheckoutPurchasingPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OptionPaymentOrderPage(),
+                    builder: (context) => OptionPaymentPurchasingPage(),
                   ),
                 );
               },

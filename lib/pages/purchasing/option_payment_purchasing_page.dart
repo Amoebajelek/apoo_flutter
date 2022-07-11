@@ -5,12 +5,16 @@ import 'package:flutter/material.dart';
 
 import 'loading_purchasing_page.dart';
 
-class OptionPaymentOrderPage extends StatefulWidget {
+class OptionPaymentPurchasingPage extends StatefulWidget {
+  static const routeName = '/optionpaymentpurchasingpage';
+
   @override
-  State<OptionPaymentOrderPage> createState() => _OptionPaymentOrderPageState();
+  State<OptionPaymentPurchasingPage> createState() =>
+      _OptionPaymentPurchasingPageState();
 }
 
-class _OptionPaymentOrderPageState extends State<OptionPaymentOrderPage> {
+class _OptionPaymentPurchasingPageState
+    extends State<OptionPaymentPurchasingPage> {
   bool isEmailValid = true;
 
   @override

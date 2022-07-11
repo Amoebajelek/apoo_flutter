@@ -1,9 +1,10 @@
 import 'dart:async';
-import 'package:apoo_flutter/pages/sales/detail_transaction-processed-sales.dart';
 import 'package:flutter/material.dart';
 import '../../theme.dart';
 
 class LoadingSalesPage extends StatefulWidget {
+  static const routeName = '/loadingsalespage';
+
   @override
   State<LoadingSalesPage> createState() => _LoadingSalesPageState();
 }
@@ -13,13 +14,8 @@ class _LoadingSalesPageState extends State<LoadingSalesPage> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => DetailTransactionProcessedSales(),
-        ),
-      );
+    Timer(Duration(seconds: 1), () {
+      Navigator.of(context).pushReplacementNamed('/detailtransactionsalespage');
     });
   }
 

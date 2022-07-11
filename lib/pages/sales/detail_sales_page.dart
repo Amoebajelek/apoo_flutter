@@ -1,10 +1,11 @@
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/sales/checkout_sales_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_catalog.dart';
 import 'package:flutter/material.dart';
 
 class DetailSalesPage extends StatefulWidget {
+  static const routeName = '/detailsalespage';
+
   @override
   State<DetailSalesPage> createState() => _DetailSalesPageState();
 }
@@ -92,12 +93,7 @@ class _DetailSalesPageState extends State<DetailSalesPage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CheckoutSalesPage(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/checkoutsalespage');
               },
               child: Container(
                 height: 50,

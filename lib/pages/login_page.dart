@@ -1,11 +1,13 @@
-import 'package:apoo_flutter/pages/base_page.dart';
-import 'package:apoo_flutter/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 
 import '../theme.dart';
+import 'base_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
+  static const routeName = '/loginpage';
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -147,12 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                 margin: EdgeInsets.symmetric(horizontal: edge),
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BasePage(),
-                      ),
-                    );
+                    Navigator.of(context).pushReplacementNamed('/basepage');
                   },
                   color: greenColor,
                   shape: RoundedRectangleBorder(
@@ -175,10 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Center(
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RegisterPage()),
-                      );
+                      Navigator.of(context).pushNamed('/registerpage');
                     },
                     child: Text.rich(
                       TextSpan(

@@ -1,15 +1,15 @@
 import 'package:apoo_flutter/models/data_distributors.dart';
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/purchasing/checkout_purchasing_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/top_distributor.dart';
 import 'package:apoo_flutter/widgets/top_product.dart';
 import 'package:flutter/material.dart';
 
 import 'purchasing/distributor_catalog_page.dart';
-import 'sales/detail_sales_page.dart';
 
 class SalesPage extends StatefulWidget {
+  static const routeName = '/salespage';
+
   @override
   State<SalesPage> createState() => _SalesPageState();
 }
@@ -72,12 +72,7 @@ class _SalesPageState extends State<SalesPage> {
           Spacer(),
           InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (c) => CheckoutPurchasingPage(),
-                ),
-              );
+              Navigator.of(context).pushNamed('checkoutsalespage');
             },
             child: Image.asset(
               'assets/ic-cart.png',
@@ -395,12 +390,7 @@ class _SalesPageState extends State<SalesPage> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailSalesPage(),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed('/detailsalespage');
                 },
                 child: TopProduct(
                   DataProduct(

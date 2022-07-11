@@ -1,9 +1,11 @@
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
-import 'sales/detail_transaction-processed-sales.dart';
+import 'sales/detail_transaction-sales-page.dart';
 
 class HistoryPage extends StatefulWidget {
+  static const routeName = '/historypage';
+
   @override
   State<HistoryPage> createState() => _HistoryPageState();
 }
@@ -316,12 +318,7 @@ class _HistoryPageState extends State<HistoryPage> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailTransactionProcessedSales(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/detailtransactionsalespage');
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),

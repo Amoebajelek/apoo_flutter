@@ -3,6 +3,8 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatefulWidget {
+  static const routeName = '/editprofilepage';
+
   @override
   State<EditProfilePage> createState() => _EditProfilePageState();
 }

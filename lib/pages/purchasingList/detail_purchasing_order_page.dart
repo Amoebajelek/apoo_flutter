@@ -7,6 +7,8 @@ import '../base_page.dart';
 import 'detail_purchasing_received_page.dart';
 
 class DetailPurchasingOrderPage extends StatefulWidget {
+  static const routeName = '/detailpurchasingorderpage';
+
   @override
   State<DetailPurchasingOrderPage> createState() =>
       _DetailPurchasingOrderPageState();

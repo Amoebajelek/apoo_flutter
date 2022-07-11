@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'distributor_catalog_page.dart';
 
-class AddCatalogProduct extends StatefulWidget {
+class AddCatalogProductPage extends StatefulWidget {
+  static const routeName = '/addcatalogproductpage';
+
   @override
-  State<AddCatalogProduct> createState() => _AddCatalogProductState();
+  State<AddCatalogProductPage> createState() => _AddCatalogProductPageState();
 }
 
-class _AddCatalogProductState extends State<AddCatalogProduct> {
+class _AddCatalogProductPageState extends State<AddCatalogProductPage> {
   bool isEmailValid = true;
 
   TextEditingController emailController = TextEditingController(text: '');

@@ -7,6 +7,8 @@ import 'add_catalog_product.dart';
 import 'detail_purchasing_page.dart';
 
 class DistributorCatalogPage extends StatefulWidget {
+  static const routeName = '/distributorscatalogpage';
+
   @override
   State<DistributorCatalogPage> createState() => _DistributorCatalogPageState();
 }
@@ -76,7 +78,7 @@ class _DistributorCatalogPageState extends State<DistributorCatalogPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddCatalogProduct(),
+                  builder: (context) => AddCatalogProductPage(),
                 ),
               );
             },

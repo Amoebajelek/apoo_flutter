@@ -8,6 +8,8 @@ import 'purchasing/checkout_purchasing_page.dart';
 import 'purchasing/distributor_catalog_page.dart';
 
 class PurchasingPage extends StatefulWidget {
+  static const routeName = '/purchasingpage';
+
   @override
   State<PurchasingPage> createState() => _PurchasingPageState();
 }

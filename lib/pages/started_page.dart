@@ -1,12 +1,13 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:apoo_flutter/pages/login_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
 class StartedPage extends StatelessWidget {
+  static const routeName = '/startedpage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,12 +55,7 @@ class StartedPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    );
+                    Navigator.of(context).pushNamed('/loginpage');
                   },
                   color: greenColor,
                   shape: RoundedRectangleBorder(

@@ -1,11 +1,13 @@
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../base_page.dart';
 import 'employees_page.dart';
 
 class NewEmployeePage extends StatefulWidget {
+  static const routeName = '/newemployeepage';
+
   @override
   State<NewEmployeePage> createState() => _NewEmployeePageState();
 }

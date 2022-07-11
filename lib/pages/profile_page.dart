@@ -1,16 +1,18 @@
-import 'package:apoo_flutter/pages/profile/faqs_page.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 import 'profile/configurations_page.dart';
 import 'profile/departements_page.dart';
 import 'profile/employees_page.dart';
+import 'profile/faqs_page.dart';
 import 'purchasingList/purchasing_order_list_page.dart';
 import 'profile/edit_profile_page.dart';
 import 'profile/cost_center_page.dart';
 import 'splash_page.dart';
 
 class ProfilePage extends StatefulWidget {
+  static const routeName = '/profilepage';
+
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }

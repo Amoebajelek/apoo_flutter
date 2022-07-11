@@ -3,10 +3,11 @@ import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/detail_checkout.dart';
 import 'package:flutter/material.dart';
 
-import '../base_page.dart';
 import 'option_payment_sales_page.dart';
 
 class CheckoutSalesPage extends StatefulWidget {
+  static const routeName = '/checkoutsalespage';
+
   @override
   State<CheckoutSalesPage> createState() => _CheckoutSalesPageState();
 }
@@ -106,12 +107,7 @@ class _CheckoutSalesPageState extends State<CheckoutSalesPage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BasePage(),
-                  ),
-                );
+                Navigator.of(context).pushReplacementNamed('/basepage');
               },
               child: Container(
                 height: 50,

@@ -1,8 +1,11 @@
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../base_page.dart';
+
 class DepartementsPage extends StatefulWidget {
+  static const routeName = '/departementspage';
+
   @override
   State<DepartementsPage> createState() => _DepartementsPageState();
 }

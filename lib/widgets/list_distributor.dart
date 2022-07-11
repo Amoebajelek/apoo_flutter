@@ -41,31 +41,35 @@ class ListDistributor extends StatelessWidget {
               width: 138,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 12,
-            ),
-            child: Flexible(
-              child: Text(
-                distributor.name,
-                style: titleTextStyle.copyWith(
-                  color: greenColor,
+          Row(
+            children: [
+              SizedBox(
+                width: 12,
+              ),
+              Flexible(
+                child: Text(
+                  distributor.name,
+                  style: titleTextStyle.copyWith(
+                    color: greenColor,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
                 ),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
               ),
-            ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 12,
-            ),
-            child: Text(
-              distributor.location,
-              style: descTextStyle.copyWith(
-                color: blackColor,
+          Row(
+            children: [
+              SizedBox(
+                width: 12,
               ),
-            ),
+              Text(
+                distributor.location,
+                style: descTextStyle.copyWith(
+                  color: blackColor,
+                ),
+              ),
+            ],
           ),
           Spacer(),
           Row(

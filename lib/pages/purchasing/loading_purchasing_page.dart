@@ -4,6 +4,8 @@ import '../../theme.dart';
 import 'detail-transaction-processed-purchasing.dart';
 
 class LoadingPurchasingPage extends StatefulWidget {
+  static const routeName = '/loadingourchasingpage';
+
   @override
   State<LoadingPurchasingPage> createState() => _LoadingPurchasingPageState();
 }
@@ -17,7 +19,7 @@ class _LoadingPurchasingPageState extends State<LoadingPurchasingPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailTransactionProcessedPurchasing(),
+          builder: (context) => DetailTransactionPurchasingPage(),
         ),
       );
     });

@@ -1,10 +1,13 @@
 import 'package:apoo_flutter/models/data_product.dart';
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:apoo_flutter/widgets/category_distributors.dart';
 import 'package:flutter/material.dart';
 
+import '../base_page.dart';
+
 class DistributorsPage extends StatefulWidget {
+  static const routeName = '/distributorspage';
+
   @override
   State<DistributorsPage> createState() => _DistributorsPageState();
 }

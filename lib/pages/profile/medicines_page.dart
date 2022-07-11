@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../../models/data_product.dart';
 
 class MedicinesPage extends StatefulWidget {
+  static const routeName = '/medicinespage';
+
   @override
   State<MedicinesPage> createState() => _MedicinesPageState();
 }

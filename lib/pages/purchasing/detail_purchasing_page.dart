@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'checkout_purchasing_page.dart';
 
 class DetailPurchasingPage extends StatefulWidget {
+  static const routeName = '/detailpurchasingpage';
+
   @override
   State<DetailPurchasingPage> createState() => _DetailPurchasingPageState();
 }

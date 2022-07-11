@@ -1,8 +1,9 @@
-import 'package:apoo_flutter/pages/base_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
 class FaqsPage extends StatefulWidget {
+  static const routeName = '/faqspage';
+
   @override
   State<FaqsPage> createState() => _FaqsPageState();
 }

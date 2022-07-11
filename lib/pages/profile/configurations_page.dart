@@ -1,9 +1,12 @@
-import 'package:apoo_flutter/pages/profile/distributors_page.dart';
-import 'package:apoo_flutter/pages/profile/medicines_page.dart';
 import 'package:apoo_flutter/theme.dart';
 import 'package:flutter/material.dart';
 
+import 'distributors_page.dart';
+import 'medicines_page.dart';
+
 class ConfigurationsPage extends StatefulWidget {
+  static const routeName = '/configurationspage';
+
   @override
   State<ConfigurationsPage> createState() => _ConfigurationsPageState();
 }

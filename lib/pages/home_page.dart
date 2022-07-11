@@ -13,6 +13,8 @@ import 'purchasing/distributor_catalog_page.dart';
 import 'sales/detail_sales_page.dart';
 
 class HomePage extends StatefulWidget {
+  static const routeName = '/homepage';
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
